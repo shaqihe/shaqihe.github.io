@@ -7,39 +7,48 @@
   <title>Promise笔记（一） | 沙-博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Promise 小结
- 在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“Promise/A+规范”是一种很方便的异步编程方式。
+在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“Promise/A+规范”是一种很方便的异步编程方式。
 
 使用promise进行编程有哪些好处？
 
 将复杂的异步处理轻松地进行模式化
 代码更清晰
 异常处理更方便
-代码链式操作，爽！">
+代码链式操作，爽！
+
+
+先来一段简单的promise的代">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise笔记（一）">
 <meta property="og:url" content="http://yoursite.com/2014/12/16/Promise笔记（一）/index.html">
 <meta property="og:site_name" content="沙-博客">
 <meta property="og:description" content="Promise 小结
- 在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“Promise/A+规范”是一种很方便的异步编程方式。
+在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“Promise/A+规范”是一种很方便的异步编程方式。
 
 使用promise进行编程有哪些好处？
 
 将复杂的异步处理轻松地进行模式化
 代码更清晰
 异常处理更方便
-代码链式操作，爽！">
-<meta property="og:updated_time" content="2016-04-23T08:51:05.000Z">
+代码链式操作，爽！
+
+
+先来一段简单的promise的代">
+<meta property="og:updated_time" content="2016-04-23T08:57:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise笔记（一）">
 <meta name="twitter:description" content="Promise 小结
- 在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“Promise/A+规范”是一种很方便的异步编程方式。
+在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“Promise/A+规范”是一种很方便的异步编程方式。
 
 使用promise进行编程有哪些好处？
 
 将复杂的异步处理轻松地进行模式化
 代码更清晰
 异常处理更方便
-代码链式操作，爽！">
+代码链式操作，爽！
+
+
+先来一段简单的promise的代">
   
     <link rel="alternative" href="/atom.xml" title="沙-博客" type="application/atom+xml">
   
@@ -226,18 +235,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Promise-小结"><a href="#Promise-小结" class="headerlink" title="Promise 小结"></a>Promise 小结</h1><hr>
-<p> 在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“<strong>Promise/A+规范</strong>”是一种很方便的异步编程方式。</p>
+<p>在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“<strong>Promise/A+规范</strong>”是一种很方便的异步编程方式。</p>
 <hr>
 <h2 id="使用promise进行编程有哪些好处？"><a href="#使用promise进行编程有哪些好处？" class="headerlink" title="使用promise进行编程有哪些好处？"></a>使用promise进行编程有哪些好处？</h2><blockquote>
 <ul>
 <li>将复杂的异步处理轻松地进行模式化</li>
 <li>代码更清晰</li>
 <li>异常处理更方便</li>
-<li>代码链式操作，<strong>爽</strong>！<a id="more"></a>
-先来一段简单的promise的代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var promise = getAsyncPromise(&quot;fileA.txt&quot;); </span><br><span class="line">promise.then(function(result)&#123;</span><br><span class="line">// 获取文件内容成功时的处理</span><br><span class="line">&#125;).catch(function(error)&#123;</span><br><span class="line">// 获取文件内容失败时的处理</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
+<li>代码链式操作，<strong>爽</strong>！</li>
 </ul>
 </blockquote>
+<p>先来一段简单的promise的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var promise = getAsyncPromise(&quot;fileA.txt&quot;); </span><br><span class="line">promise.then(function(result)&#123;</span><br><span class="line">// 获取文件内容成功时的处理</span><br><span class="line">&#125;).catch(function(error)&#123;</span><br><span class="line">// 获取文件内容失败时的处理</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>通过这个代码，是不是觉得promise异步编程很清晰？</p>
 <blockquote>
 <p>下面我详细介绍下promise实用的方法。</p>
@@ -306,13 +314,23 @@
 <p><strong>注</strong>：Promise.resolve作为newPromise()的快捷方式,在进行promise对象的初始化或者编写 测试代码的时候都非常方便。</p>
 <hr>
 <ul>
-<li>Promise.resolve方法另一个作用就是将thenable对象转换为promise对象。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">       **thenable对象**：</span><br><span class="line">简单来说它就是一个非常类似promise的东西(*就像我们有时称具有.length方法的非数组对象为Arraylike一样,thenable指的是一个具有.then 方法的对象*。)</span><br><span class="line">```    </span><br><span class="line"> - 最简单的例子就是jQuery.ajax(),它的返回值就是thenable的(因为 jQuery.ajax()的返回值是jqXHRObject对象,这个对象具有 .then 方法)</span><br><span class="line">     </span><br><span class="line">     - 用Promise.resolve来转换为一个promise对象。变成了promse对象的话,就能直接使用 then 或者 catch等这些在ES6Promises里定</span><br><span class="line">义的方法了。</span><br></pre></td></tr></table></figure>
+<li><p>Promise.resolve方法另一个作用就是将thenable对象转换为promise对象。</p>
+<pre><code>**thenable对象**：简单来说它就是一个非常类似promise的东西(*就像我们有时称具有.length方法的非数组对象为Arraylike一样,thenable指的是一个具有.then 方法的对象*。)   
+</code></pre><ul>
+<li><p>最简单的例子就是jQuery.ajax(),它的返回值就是thenable的(因为 jQuery.ajax()的返回值是jqXHRObject对象,这个对象具有 .then 方法)</p>
+</li>
+<li><p>用Promise.resolve来转换为一个promise对象。变成了promse对象的话,就能直接使用 then 或者 catch等这些在ES6Promises里定<br>义的方法了。</p>
 </li>
 </ul>
-<p>var promise = Promise.resolve(<br>    $.ajax(‘/json/comment.json’)<br>) // =&gt; promise对象 </p>
-<p>promise.then(function(value){<br>    console.log(value);<br>});</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**总结：简单总结一下 Promise.resolve 方法的话,可以认为它的作用就是将传递给它的参数填 充(Fulfilled)到promise对象后并返回这个promise对象。**</span><br><span class="line">    </span><br><span class="line">----------</span><br><span class="line"></span><br><span class="line">### 2. 使用 Promise.reject</span><br><span class="line"></span><br><span class="line"> - Promise.reject(error) 是和 Promise.resolve(value) 类似的静态方法,是 new Promise() 方 法的快捷方式。</span><br></pre></td></tr></table></figure>
-<p>new Promise(<br>    function (resolve,reject) {<br>        reject(new Error(“出错了”));<br>    }<br>);<br>// 是Promise.reject(newError(“出错了”))的语法糖。<br>//如下:<br>Promise.reject(new Error(“BOOM!”)).catch(<br>    function(error){<br>        console.error(error);<br>    }<br>);<br>```</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var promise = Promise.resolve(</span><br><span class="line">    $.ajax(&apos;/json/comment.json&apos;)</span><br><span class="line">) // =&gt; promise对象 </span><br><span class="line"></span><br><span class="line">promise.then(function(value)&#123;</span><br><span class="line">    console.log(value); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>总结：简单总结一下 Promise.resolve 方法的话,可以认为它的作用就是将传递给它的参数填 充(Fulfilled)到promise对象后并返回这个promise对象。</strong></p>
+<hr>
+<h3 id="2-使用-Promise-reject"><a href="#2-使用-Promise-reject" class="headerlink" title="2. 使用 Promise.reject"></a>2. 使用 Promise.reject</h3><ul>
+<li>Promise.reject(error) 是和 Promise.resolve(value) 类似的静态方法,是 new Promise() 方 法的快捷方式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">new Promise(</span><br><span class="line">    function (resolve,reject) &#123; </span><br><span class="line">        reject(new Error(&quot;出错了&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line">// 是Promise.reject(newError(&quot;出错了&quot;))的语法糖。</span><br><span class="line">//如下:</span><br><span class="line">Promise.reject(new Error(&quot;BOOM!&quot;)).catch(</span><br><span class="line">    function(error)&#123; </span><br><span class="line">        console.error(error);</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <hr>
 <p>今天先写到这，有空继续</p>
 <p>作者 [@sha Qihe]<br>2014 年 12月 15日    </p>
