@@ -28,7 +28,7 @@
 代码更清晰
 异常处理更方便
 代码链式操作，爽！">
-<meta property="og:updated_time" content="2016-04-23T08:42:36.000Z">
+<meta property="og:updated_time" content="2016-04-23T08:51:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise笔记（一）">
 <meta name="twitter:description" content="Promise 小结
@@ -306,23 +306,13 @@
 <p><strong>注</strong>：Promise.resolve作为newPromise()的快捷方式,在进行promise对象的初始化或者编写 测试代码的时候都非常方便。</p>
 <hr>
 <ul>
-<li><p>Promise.resolve方法另一个作用就是将thenable对象转换为promise对象。</p>
-<pre><code>**thenable对象**：简单来说它就是一个非常类似promise的东西(*就像我们有时称具有.length方法的非数组对象为Arraylike一样,thenable指的是一个具有.then 方法的对象*。)
-</code></pre><ul>
-<li><p>最简单的例子就是jQuery.ajax(),它的返回值就是thenable的(因为 jQuery.ajax()的返回值是jqXHRObject对象,这个对象具有 .then 方法)</p>
-</li>
-<li><p>用Promise.resolve来转换为一个promise对象。变成了promse对象的话,就能直接使用 then 或者 catch等这些在ES6Promises里定<br>义的方法了。</p>
+<li>Promise.resolve方法另一个作用就是将thenable对象转换为promise对象。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">       **thenable对象**：</span><br><span class="line">简单来说它就是一个非常类似promise的东西(*就像我们有时称具有.length方法的非数组对象为Arraylike一样,thenable指的是一个具有.then 方法的对象*。)</span><br><span class="line">```    </span><br><span class="line"> - 最简单的例子就是jQuery.ajax(),它的返回值就是thenable的(因为 jQuery.ajax()的返回值是jqXHRObject对象,这个对象具有 .then 方法)</span><br><span class="line">     </span><br><span class="line">     - 用Promise.resolve来转换为一个promise对象。变成了promse对象的话,就能直接使用 then 或者 catch等这些在ES6Promises里定</span><br><span class="line">义的方法了。</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var promise = Promise.resolve(</span><br><span class="line">    $.ajax(&apos;/json/comment.json&apos;)</span><br><span class="line">) // =&gt; promise对象 </span><br><span class="line"></span><br><span class="line">promise.then(function(value)&#123;</span><br><span class="line">    console.log(value); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>总结：简单总结一下 Promise.resolve 方法的话,可以认为它的作用就是将传递给它的参数填 充(Fulfilled)到promise对象后并返回这个promise对象。</strong></p>
-<hr>
-<h3 id="2-使用-Promise-reject"><a href="#2-使用-Promise-reject" class="headerlink" title="2. 使用 Promise.reject"></a>2. 使用 Promise.reject</h3><ul>
-<li>Promise.reject(error) 是和 Promise.resolve(value) 类似的静态方法,是 new Promise() 方 法的快捷方式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">new Promise(</span><br><span class="line">    function (resolve,reject) &#123; </span><br><span class="line">        reject(new Error(&quot;出错了&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line">// 是Promise.reject(newError(&quot;出错了&quot;))的语法糖。</span><br><span class="line">//如下:</span><br><span class="line">Promise.reject(new Error(&quot;BOOM!&quot;)).catch(</span><br><span class="line">    function(error)&#123; </span><br><span class="line">        console.error(error);</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p>var promise = Promise.resolve(<br>    $.ajax(‘/json/comment.json’)<br>) // =&gt; promise对象 </p>
+<p>promise.then(function(value){<br>    console.log(value);<br>});</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**总结：简单总结一下 Promise.resolve 方法的话,可以认为它的作用就是将传递给它的参数填 充(Fulfilled)到promise对象后并返回这个promise对象。**</span><br><span class="line">    </span><br><span class="line">----------</span><br><span class="line"></span><br><span class="line">### 2. 使用 Promise.reject</span><br><span class="line"></span><br><span class="line"> - Promise.reject(error) 是和 Promise.resolve(value) 类似的静态方法,是 new Promise() 方 法的快捷方式。</span><br></pre></td></tr></table></figure>
+<p>new Promise(<br>    function (resolve,reject) {<br>        reject(new Error(“出错了”));<br>    }<br>);<br>// 是Promise.reject(newError(“出错了”))的语法糖。<br>//如下:<br>Promise.reject(new Error(“BOOM!”)).catch(<br>    function(error){<br>        console.error(error);<br>    }<br>);<br>```</p>
 <hr>
 <p>今天先写到这，有空继续</p>
 <p>作者 [@sha Qihe]<br>2014 年 12月 15日    </p>
