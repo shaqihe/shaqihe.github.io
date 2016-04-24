@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Promise笔记（二） | 沙-博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Promise 小结(二)标签（空格分隔）： 异步 promise
+
+上一篇写了一部分，再写一些关于promise的笔记
+
+Promise.then() &amp;amp;&amp;amp;链式写法
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(va">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise笔记（二）">
+<meta property="og:url" content="http://yoursite.com/2014/12/23/Promise笔记（二）/index.html">
+<meta property="og:site_name" content="沙-博客">
+<meta property="og:description" content="Promise 小结(二)标签（空格分隔）： 异步 promise
+
+上一篇写了一部分，再写一些关于promise的笔记
+
+Promise.then() &amp;amp;&amp;amp;链式写法
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(va">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3ce44941df94e3c19e891b27fc1f847c.png">
+<meta property="og:updated_time" content="2016-04-24T11:53:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Promise笔记（二）">
+<meta name="twitter:description" content="Promise 小结(二)标签（空格分隔）： 异步 promise
+
+上一篇写了一部分，再写一些关于promise的笔记
+
+Promise.then() &amp;amp;&amp;amp;链式写法
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(va">
+<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3ce44941df94e3c19e891b27fc1f847c.png">
+  
+    <link rel="alternative" href="/atom.xml" title="沙-博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">sha Qihe</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">前端开发者，热爱生活，努力向上</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/shaqihe" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/promise/" style="font-size: 20px;">promise</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/异步/" style="font-size: 20px;">异步</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">沙！前端开发者，欢迎交流。QQ:330630770</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">sha Qihe</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">sha Qihe</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">前端开发者，热爱生活，努力向上</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/shaqihe" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Promise笔记（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/12/23/Promise笔记（二）/" class="article-date">
+  	<time datetime="2014-12-23T11:51:12.000Z" itemprop="datePublished">2014-12-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Promise笔记（二）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/promise/">promise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步/">异步</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Promise-小结-二"><a href="#Promise-小结-二" class="headerlink" title="Promise 小结(二)"></a>Promise 小结(二)</h1><p>标签（空格分隔）： 异步 promise</p>
+<hr>
+<p>上一篇写了一部分，再写一些关于promise的笔记</p>
+<hr>
+<h3 id="Promise-then-amp-amp-链式写法"><a href="#Promise-then-amp-amp-链式写法" class="headerlink" title="Promise.then() &amp;&amp;链式写法"></a>Promise.then() &amp;&amp;链式写法</h3><ul>
+<li>promise可以写成方法链的形式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> aPromise.then(function taskA(value) &#123; </span><br><span class="line"> // task A</span><br><span class="line">&#125;).then(function taskB(vaue)&#123;</span><br><span class="line">// task B</span><br><span class="line">&#125;).catch(function onRejected(error)&#123; //最后catch 统一捕捉异常</span><br><span class="line">console.log(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<p> 来段代码，看下链式操作的执行流程<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function taskA() &#123; </span><br><span class="line">    console.log(&quot;Task A&quot;);</span><br><span class="line">&#125;</span><br><span class="line">function taskB() &#123;</span><br><span class="line">    console.log(&quot;Task B&quot;); </span><br><span class="line">&#125;</span><br><span class="line">function onRejected(error) &#123; </span><br><span class="line">    console.log(&quot;Catch Error: A or B&quot;, error);</span><br><span class="line">&#125;</span><br><span class="line">function finalTask() &#123;</span><br><span class="line">    console.log(&quot;Final Task&quot;); </span><br><span class="line">&#125;</span><br><span class="line">var promise = Promise.resolve(); </span><br><span class="line">promise.then(taskA)</span><br><span class="line">        .then(taskB)</span><br><span class="line">        .catch(onRejected)</span><br><span class="line">        .then(finalTask);</span><br></pre></td></tr></table></figure></p>
+<p>上面这段代码的执行流程如下图：<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/3ce44941df94e3c19e891b27fc1f847c.png" alt="此处输入图片的描述"></p>
+<p>  <strong>注释：</strong> .cntch() 可以捕捉 taskA taskB出现的异常，但是 onRejected、finalTask这两个后面没有catch捕捉了，所以这两个函数出现问题不会被捕捉到。</p>
+<ul>
+<li><strong>用then、catch 链式写法，要比纯then写法好！！</strong><ul>
+<li>catch 可以捕捉到resolve函数里面的错误，有时候我可以主动在resolve函数里throw一个错误或者返回一个Rejected状态的promise对象（推荐后者）；</li>
+<li>链式操作代码更简洁</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Promise链式写法中参数如何传递"><a href="#Promise链式写法中参数如何传递" class="headerlink" title="Promise链式写法中参数如何传递"></a>Promise链式写法中参数如何传递</h3><p>前面例子中的Task都是相互独立的,只是被简单调用而已。这时候如果 Task A 想给 Task B 传递一个参数，那就是在 Task A 中 return 的返回值,会在 Task B 执行时传给它。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function doubleUp(value) &#123; </span><br><span class="line">    return value * 2;</span><br><span class="line">&#125;</span><br><span class="line">function increment(value) &#123;</span><br><span class="line">    return value + 1; </span><br><span class="line">&#125;</span><br><span class="line">function output(value) &#123; </span><br><span class="line">    console.log(value);</span><br><span class="line">&#125;</span><br><span class="line">var promise = Promise.resolve(1); </span><br><span class="line">promise</span><br><span class="line">.then(increment) </span><br><span class="line">.then(doubleUp) </span><br><span class="line">.then(output) </span><br><span class="line">.catch(function(error)&#123;</span><br><span class="line">    ￼￼￼// promise chain中出现异常的时候会被调用</span><br><span class="line">    console.error(error); </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"> 1. Promise.resolve(1); 传递 1 给 increment 函数</span><br><span class="line"> 2. 函数 increment 对接收的参数进行 +1 操作并返回(通过 return ) 3. 这时参数变为2,并再次传给 doubleUp 函数</span><br><span class="line"> 3. 最后在函数 output 中打印结果</span><br></pre></td></tr></table></figure></p>
+<p><strong>注：</strong>每个方法中return的值不仅只局限于字符串或者数值类型,也可以是对象或者promise 对象等复杂类型。</p>
+<ol>
+<li>return的值会由Promise.resolve进行相应的包装处理,因此不回调函数中会返回一个什么样的值,最终的结果都是返回一个新创建的promise对象。</li>
+</ol>
+<hr>
+<h3 id="Promise-catch-的一些小问题"><a href="#Promise-catch-的一些小问题" class="headerlink" title="Promise.catch 的一些小问题"></a>Promise.catch 的一些小问题</h3><ol>
+<li>IE8 兼容问题catch是ECMAScrip3中保留字是不能作为对象的属性名使用的（ie8大概是基于es3实现的）可以用Promise[‘catch’]来调用（不过很多压缩、打包工具自带转换功能，还不错）</li>
+</ol>
+<hr>
+<h3 id="Promise处理多个异步任务，promise-all-上场"><a href="#Promise处理多个异步任务，promise-all-上场" class="headerlink" title="Promise处理多个异步任务，promise.all 上场"></a>Promise处理多个异步任务，promise.all 上场</h3><p>Promise.all 接收一个promise对象的数组作为参数,当这个数组里的所有promise对象 全部变为resolve或reject状态的时候,它才会去调用 .then 方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// `delay`毫秒后执行resolve </span><br><span class="line">function timerPromisefy(delay) &#123;</span><br><span class="line">    return new Promise(function (resolve) &#123;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            resolve(delay); &#125;, delay</span><br><span class="line">        );</span><br><span class="line">    &#125;); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var startDate = Date.now();</span><br><span class="line">// 所有promise变为resolve后程序退出 </span><br><span class="line">Promise.all([</span><br><span class="line">    timerPromisefy(1),</span><br><span class="line">    timerPromisefy(32), </span><br><span class="line">    timerPromisefy(64), </span><br><span class="line">    timerPromisefy(128)</span><br><span class="line">]).then(function (values) &#123; </span><br><span class="line">    console.log(Date.now() - startDate + &apos;ms&apos;); // 約128ms</span><br><span class="line">    console.log(values); // [1,32,64,128]</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p><strong>注：</strong>从总用时120ms来看，传递给Promise.all的promise并不是一个个的顺序执行的,而是 同时开始、并行执行的。</p>
+<hr>
+<h3 id="Promise处理多个异步任务，Promise-race-上场"><a href="#Promise处理多个异步任务，Promise-race-上场" class="headerlink" title="Promise处理多个异步任务，Promise.race 上场"></a>Promise处理多个异步任务，Promise.race 上场</h3><p>它的使用方法和Promise.all一样,接收一个promise对象数组为参数</p>
+<p>Promise.all 在接收到的所有的对象promise都变为 FulFilled 或者 Rejected 状态之后才会继续进行后面的处理,与之相对的是Promise.race 只要有一个promise对象进入FulFilled或者Rejected状态的话,就会继续进行后面的处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Promise.race([</span><br><span class="line">timerPromisefy(1), </span><br><span class="line">timerPromisefy(32), </span><br><span class="line">timerPromisefy(64), </span><br><span class="line">timerPromisefy(128)</span><br><span class="line">]).then(function (value) &#123; </span><br><span class="line">    console.log(value); // =&gt; 1 只打印出一个最先出结果的</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<pre><code>就先酱了，用promise来进行异步编程已经不稀奇了，ES6也把promise带进了规范，详细的技巧和方法还是要多看手册和实践。
+</code></pre><p>作者 [@sha Qihe]<br>2014 年 12月 22日 </p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/12/16/Promise笔记（一）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Promise笔记（一）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Promise笔记（二）" data-title="Promise笔记（二）" data-url="http://yoursite.com/2014/12/23/Promise笔记（二）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"shaqihe"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 sha Qihe
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
