@@ -6,32 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Promise笔记（二） | 沙-博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Promise 小结(二)标签（空格分隔）： 异步 promise
-
-上一篇写了一部分，再写一些关于promise的笔记
+  <meta name="description" content="上一篇写了一部分，再写一些关于promise的笔记
 
 Promise.then() &amp;amp;&amp;amp;链式写法
-promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(va">
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(fun">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise笔记（二）">
 <meta property="og:url" content="http://yoursite.com/2014/12/23/Promise笔记（二）/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="Promise 小结(二)标签（空格分隔）： 异步 promise
-
-上一篇写了一部分，再写一些关于promise的笔记
+<meta property="og:description" content="上一篇写了一部分，再写一些关于promise的笔记
 
 Promise.then() &amp;amp;&amp;amp;链式写法
-promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(va">
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(fun">
 <meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3ce44941df94e3c19e891b27fc1f847c.png">
-<meta property="og:updated_time" content="2016-04-24T11:53:39.000Z">
+<meta property="og:updated_time" content="2016-04-24T11:55:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise笔记（二）">
-<meta name="twitter:description" content="Promise 小结(二)标签（空格分隔）： 异步 promise
-
-上一篇写了一部分，再写一些关于promise的笔记
+<meta name="twitter:description" content="上一篇写了一部分，再写一些关于promise的笔记
 
 Promise.then() &amp;amp;&amp;amp;链式写法
-promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(va">
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(fun">
 <meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3ce44941df94e3c19e891b27fc1f847c.png">
   
     <link rel="alternative" href="/atom.xml" title="沙-博客" type="application/atom+xml">
@@ -218,9 +212,7 @@ promise可以写成方法链的形式1234567 aPromise.then(function taskA(value)
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Promise-小结-二"><a href="#Promise-小结-二" class="headerlink" title="Promise 小结(二)"></a>Promise 小结(二)</h1><p>标签（空格分隔）： 异步 promise</p>
-<hr>
-<p>上一篇写了一部分，再写一些关于promise的笔记</p>
+        <p>上一篇写了一部分，再写一些关于promise的笔记</p>
 <hr>
 <h3 id="Promise-then-amp-amp-链式写法"><a href="#Promise-then-amp-amp-链式写法" class="headerlink" title="Promise.then() &amp;&amp;链式写法"></a>Promise.then() &amp;&amp;链式写法</h3><ul>
 <li>promise可以写成方法链的形式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> aPromise.then(function taskA(value) &#123; </span><br><span class="line"> // task A</span><br><span class="line">&#125;).then(function taskB(vaue)&#123;</span><br><span class="line">// task B</span><br><span class="line">&#125;).catch(function onRejected(error)&#123; //最后catch 统一捕捉异常</span><br><span class="line">console.log(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>

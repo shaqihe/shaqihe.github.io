@@ -191,9 +191,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Promise-小结-二"><a href="#Promise-小结-二" class="headerlink" title="Promise 小结(二)"></a>Promise 小结(二)</h1><p>标签（空格分隔）： 异步 promise</p>
-<hr>
-<p>上一篇写了一部分，再写一些关于promise的笔记</p>
+        <p>上一篇写了一部分，再写一些关于promise的笔记</p>
 <hr>
 <h3 id="Promise-then-amp-amp-链式写法"><a href="#Promise-then-amp-amp-链式写法" class="headerlink" title="Promise.then() &amp;&amp;链式写法"></a>Promise.then() &amp;&amp;链式写法</h3><ul>
 <li>promise可以写成方法链的形式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> aPromise.then(function taskA(value) &#123; </span><br><span class="line"> // task A</span><br><span class="line">&#125;).then(function taskB(vaue)&#123;</span><br><span class="line">// task B</span><br><span class="line">&#125;).catch(function onRejected(error)&#123; //最后catch 统一捕捉异常</span><br><span class="line">console.log(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -258,8 +256,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Promise-小结"><a href="#Promise-小结" class="headerlink" title="Promise 小结"></a>Promise 小结</h1><hr>
-<p>在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“<strong>Promise/A+规范</strong>”是一种很方便的异步编程方式。</p>
+        <p>在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“<strong>Promise/A+规范</strong>”是一种很方便的异步编程方式。</p>
 <hr>
 <h2 id="使用promise进行编程有哪些好处？"><a href="#使用promise进行编程有哪些好处？" class="headerlink" title="使用promise进行编程有哪些好处？"></a>使用promise进行编程有哪些好处？</h2><blockquote>
 <ul>
