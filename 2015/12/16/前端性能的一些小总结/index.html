@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3475e5133068621c49d569cc017c27a4.png">
 <meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/c6e5df8d8b67cdf074d3722c69f6fe32.png">
 <meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3a2e4ae5010283f4e05dce0c8c38d02c.png">
-<meta property="og:updated_time" content="2016-04-27T11:28:29.000Z">
+<meta property="og:updated_time" content="2016-04-27T11:36:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能的一些小总结">
 <meta name="twitter:description" content="前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解。
@@ -226,8 +226,7 @@
 <h1 id="1-想深层次探究前端优化"><a href="#1-想深层次探究前端优化" class="headerlink" title="1.想深层次探究前端优化"></a>1.想深层次探究前端优化</h1><ul>
 <li>想优化页面，就要知道一个页面，产生的整个过程</li>
 </ul>
-<p><strong>浏览器产生一个页面的流程如下：</strong><br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/cb5ff283c02cf644ca31e3dd77aa5e5b.png" alt="此处输入图片的描述"></p>
-<a id="more"></a>
+<p><strong>浏览器产生一个页面的流程如下：</strong><br><a id="more"></a><br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/cb5ff283c02cf644ca31e3dd77aa5e5b.png" alt="此处输入图片的描述"><br>&gt;</p>
 <p>  <strong>1.1下载：最有优化点的一部</strong></p>
 <p>  下载，这个方向是优化必要点，贴一张chrome下载文件的时间截图：<br>  <img src="http://7xqd2y.com1.z0.glb.clouddn.com/3475e5133068621c49d569cc017c27a4.png" alt="此处输入图片的描述"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//来个表格，细致分析下下载过程中每个阶段的耗时</span><br><span class="line">    1.持续时间 = 时间 *个数</span><br><span class="line">    </span><br><span class="line">    2.时间 = initial（浏览器初始化，准备数据）+request（请求到服务端） + serverProcess （服务处理数据）+response（返回数据，接受第一个字符到接受完最后一个字符的时间）</span><br><span class="line">    </span><br><span class="line">    3. initial = queue（处理队列任务） + DNS解析 + tcp协议 +ssl协议</span><br><span class="line">    </span><br><span class="line">    4. dns = delay*2（小体量信息，耗时大概是两个网络延时）</span><br><span class="line">    </span><br><span class="line">    5. tcp = delay*3 ( 三次握手)</span><br><span class="line">    </span><br><span class="line">    6. ssl = delay*5 （是一种文件安全协议，需要5次握手）</span><br><span class="line">    </span><br><span class="line">    7. request = delay + size/brandwidth(带宽)</span><br><span class="line">    </span><br><span class="line">    8. response = delay + size/brandwidth(带宽)</span><br></pre></td></tr></table></figure></p>
 <h2 id="分析出：下载性能决定的几个因素："><a href="#分析出：下载性能决定的几个因素：" class="headerlink" title="分析出：下载性能决定的几个因素："></a>分析出：下载性能决定的几个因素：</h2><ul>
