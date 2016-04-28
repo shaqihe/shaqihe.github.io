@@ -24,7 +24,7 @@ viewport
 高清图的实现
 自适应布局
 吧啦吧啦的其他。。">
-<meta property="og:updated_time" content="2016-04-28T09:54:13.000Z">
+<meta property="og:updated_time" content="2016-04-28T09:55:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端样式(rem自适应/高清图等)">
 <meta name="twitter:description" content="移动端开发的时候，除了hybrid开发，普通的移动wap站开发时，和pc比较大的区别还是在样式写法上，主要是要做的样式的自适应。
@@ -230,8 +230,7 @@ viewport
 <hr>
 <a id="more"></a>
 <p><strong>一. viewport</strong></p>
-<pre><code>简单来讲，viewport就是浏览器上，用来显示网页的那一部分区域了，也就是说，浏览器的实际宽
-</code></pre><p>度，是和我们手机的宽度不一样的，无论你的手机宽度是320px，还是640px，在手机浏览器内部的宽度<br>，始终会是浏览器本身的viewport。如今的浏览器，都会给自己的本身提供一个viewport的默认值，<br>可能是980px，或者是其他值。就以手机来说吧，目前，新版本的手机浏览器，绝大部分是以980px作<br>为默认的viewport值的。</p>
+<p> 简单来讲，viewport就是浏览器上，用来显示网页的那一部分区域了，也就是说，浏览器的实际宽<br>度，是和我们手机的宽度不一样的，无论你的手机宽度是320px，还是640px，在手机浏览器内部的宽度<br>，始终会是浏览器本身的viewport。如今的浏览器，都会给自己的本身提供一个viewport的默认值，<br>可能是980px，或者是其他值。就以手机来说吧，目前，新版本的手机浏览器，绝大部分是以980px作<br>为默认的viewport值的。</p>
 <p>但是一般的移动端设备，很难达到960px的宽度，这个时候就会出现滚动条。viewport是可以进行手动设置的，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.width: 设置viewport的宽度（即上面提及到的，浏览器的宽），这里可以为一个整数，又或者是字符串&quot;width-device&quot;</span><br><span class="line"></span><br><span class="line">2.initial-scale: 页面初始的缩放值，为数字，可以是小数</span><br><span class="line"></span><br><span class="line">3.minimum-scale: 允许用户的最小缩放值，为数字，可以是小数</span><br><span class="line"></span><br><span class="line">4.maximum-scale: 允许用户的最大缩放值，为数字，可以是小数</span><br><span class="line"></span><br><span class="line">5.height: 设置viewport的高度（我们一般而言并不能用到）</span><br><span class="line"></span><br><span class="line">6.user-scalable: 是否允许用户进行缩放，&apos;no&apos;为不允许，&apos;yes&apos;为允许</span><br><span class="line"></span><br><span class="line">//一般添加一段这个meta标签，就能对viewport进行设置：</span><br><span class="line">// 这样viewport的大小就和手机大小一样了</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1,</span><br><span class="line">maximum-scale=1, minimum-scale=1, user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>二. 各种移动设备</strong></p>
 <ul>
