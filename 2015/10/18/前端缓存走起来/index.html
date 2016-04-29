@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>前端缓存走起来 | 沙-博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="说到前端优化，“缓存”是必须要说说的，总结一下缓存的一些东西，也加固一下自己的记忆
+
+前端主要涉及的是浏览器端缓存：
+页面的缓存状态是由 http-header来决定的，一个是服务器响应信息。主要包括Pragma: no-cache、Cache-Control、 Expires、 Last-Modified、If-Modified-Since。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端缓存走起来">
+<meta property="og:url" content="http://yoursite.com/2015/10/18/前端缓存走起来/index.html">
+<meta property="og:site_name" content="沙-博客">
+<meta property="og:description" content="说到前端优化，“缓存”是必须要说说的，总结一下缓存的一些东西，也加固一下自己的记忆
+
+前端主要涉及的是浏览器端缓存：
+页面的缓存状态是由 http-header来决定的，一个是服务器响应信息。主要包括Pragma: no-cache、Cache-Control、 Expires、 Last-Modified、If-Modified-Since。。">
+<meta property="og:updated_time" content="2016-04-29T06:15:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端缓存走起来">
+<meta name="twitter:description" content="说到前端优化，“缓存”是必须要说说的，总结一下缓存的一些东西，也加固一下自己的记忆
+
+前端主要涉及的是浏览器端缓存：
+页面的缓存状态是由 http-header来决定的，一个是服务器响应信息。主要包括Pragma: no-cache、Cache-Control、 Expires、 Last-Modified、If-Modified-Since。。">
+  
+    <link rel="alternative" href="/atom.xml" title="沙-博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">sha Qihe</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">前端开发者，热爱生活，努力向上</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/shaqihe" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/cdn/" style="font-size: 10px;">cdn</a> <a href="/tags/promise/" style="font-size: 20px;">promise</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/优化/" style="font-size: 10px;">优化</a> <a href="/tags/体验/" style="font-size: 10px;">体验</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/异步/" style="font-size: 20px;">异步</a> <a href="/tags/性能/" style="font-size: 20px;">性能</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">沙！前端开发者，欢迎交流。QQ:330630770</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">sha Qihe</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">sha Qihe</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">前端开发者，热爱生活，努力向上</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/shaqihe" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-前端缓存走起来" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/18/前端缓存走起来/" class="article-date">
+  	<time datetime="2015-10-18T13:04:07.000Z" itemprop="datePublished">2015-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端缓存走起来
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cdn/">cdn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能/">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓存/">缓存</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说到前端优化，<strong>“缓存”</strong>是必须要说说的，总结一下缓存的一些东西，也加固一下自己的记忆</p>
+<hr>
+<p><strong>前端主要涉及的是浏览器端缓存：</strong></p>
+<p>页面的缓存状态是由 http-header来决定的，一个是服务器响应信息。主要包括Pragma: no-cache、Cache-Control、 Expires、 Last-Modified、If-Modified-Since。。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Request:</span><br><span class="line">1.Cache-Control: max-age=0	以秒为单位</span><br><span class="line"></span><br><span class="line">2.If-Modified-Since: Mon, 19 Nov 2012 08:38:01 GMT	缓存文件的最后修改时间。</span><br><span class="line"></span><br><span class="line">3.If-None-Match: &quot;0693f67a67cc1:0&quot;	缓存文件的Etag值</span><br><span class="line"></span><br><span class="line">4.Cache-Control: no-cache	不使用缓存</span><br><span class="line"></span><br><span class="line">5.Pragma: no-cache	不使用缓存</span><br></pre></td></tr></table></figure>
+<p><strong>Cache-Control:</strong> 是控制缓存的比较关键的,设置如果同时存在cache-control和Expires怎么办呢？</p>
+<p>浏览器总是优先使用cache-control，如果没有cache-control才考虑Expires</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// response:</span><br><span class="line"></span><br><span class="line">Cache-Control: public	响应被缓存，并且在多用户间共享，  （公有缓存和私有缓存的区别，请看另一节）</span><br><span class="line"></span><br><span class="line">Cache-Control: private	响应只能作为私有缓存，不能在用户之间共享</span><br><span class="line"></span><br><span class="line">Cache-Control:no-cache	提醒浏览器要从服务器提取文档进行验证</span><br><span class="line"></span><br><span class="line">Cache-Control:no-store	绝对禁止缓存（用于机密，敏感文件）</span><br><span class="line"></span><br><span class="line">Cache-Control: max-age=60	60秒之后缓存过期（相对时间）</span><br><span class="line"></span><br><span class="line">Date: Mon, 19 Nov 2012 08:39:00 GMT	当前response发送的时间</span><br><span class="line"></span><br><span class="line">Expires: Mon, 19 Nov 2012 08:40:01 GMT	缓存过期的时间（绝对时间）</span><br><span class="line"></span><br><span class="line">Last-Modified: Mon, 19 Nov 2012 08:38:01 GMT	服务器端文件的最后修改时间</span><br><span class="line"></span><br><span class="line">ETag: &quot;20b1add7ec1cd1:0&quot;	服务器端文件的Etag值</span><br></pre></td></tr></table></figure>
+<p><strong>ETag:</strong><br>ETag是实体标签， 根据实体内容生成的一段hash字符串（类似于MD5或者SHA1之后的结果），可以标识资源的状态。 当资源发送改变时，ETag也随之发生变化。</p>
+<p>ETag是Web服务端产生的，然后发给浏览器客户端。浏览器客户端是不用关心Etag是如何产生的。</p>
+<p>为什么使用ETag呢？ 主要是为了解决Last-Modified 无法解决的一些问题。</p>
+<ol>
+<li><p>某些服务器不能精确得到文件的最后修改时间， 这样就无法通过最后修改时间来判断文件是否更新了。</p>
+</li>
+<li><p>某些文件的修改非常频繁，在秒以下的时间内进行修改. Last-Modified只能精确到秒。</p>
+</li>
+<li><p>一些文件的最后修改时间改变了，但是内容并未改变。 我们不希望客户端认为这个文件修改了。</p>
+</li>
+</ol>
+<hr>
+<p><strong>强行告诉浏览器不适用缓存？</strong></p>
+<ol>
+<li><p>浏览器发送Http request, 给Web 服务器， header中带有Cache-Control: no-cache.   明确告诉Web服务器，客户端不使用缓存。</p>
+</li>
+<li><p>Web服务器将把最新的文档发送给浏览器客户端.</p>
+</li>
+</ol>
+<hr>
+<p><strong>2现在我们如何使用缓存</strong></p>
+<p>我们团队现在开发时候，所以静态资源都是采用“<strong>版本号+永久缓存</strong>”   </p>
+<p>业界有几种缓存策略：</p>
+<ul>
+<li>第一个：请求加参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1 永久缓存静态文件，请求加参数，标记文件的是否更改</span><br><span class="line">&lt;script type=&apos;type/javascript&apos; src=&quot;a.js?t=20151232&quot;&gt;</span><br><span class="line"></span><br><span class="line">//存在问题： </span><br><span class="line">1.html文件 和 js文件上线替换时有时间差，如果先HTML生效，</span><br><span class="line">就会访问到就的 js文件，</span><br><span class="line">2. 如果js下替换下来，一个全新的用户，浏览器上没有缓存过js</span><br><span class="line">文件，就会发生 旧的html用新js文件</span><br></pre></td></tr></table></figure>
+<p>第二个：修改文件名，永久缓存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&apos;type/javascript&apos; src=&quot;a_20151232.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">// 优点：</span><br><span class="line">1、线上的a.js不是同名文件覆盖，而是文件名+时间戳或者内容hash，</span><br><span class="line">所以可以先上线静态资源，再上线html页面，不存在间隙问题；</span><br><span class="line"></span><br><span class="line">2、遇到问题回滚版本的时候，无需回滚a.js，只须回滚页面即可；</span><br><span class="line">由于静态资源版本号，因此所有静态资源可以开启永久强缓</span><br><span class="line">存，只有更新了内容的文件才会缓存失效，缓存利用率大增；</span><br><span class="line"></span><br><span class="line">3、修改静态资源后会在线上产生新的文件，一个文件对应一个版本，</span><br><span class="line">用cdn加速也方便</span><br></pre></td></tr></table></figure>
+<p><strong>注：现在大部分静态资源，都会走cdn加速，cdn自带缓存设置，所以对于网站的优化，对静态资源cdn加速是必要的，上面所说的的缓存策略，增加版本号，一键部署cdn，都可以通过构建工具（神马 gulp、grunt、webpack、fis来实现，注：我们tema现在是用百度内部的轮子，edp构建）。 不过这些构建工具都大同小异，有兴趣的可以了解其中一二个</strong></p>
+<p>~就写这些么，可能内容比较水，也算自己的一个小总结</p>
+<hr>
+<p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 10月 9日 </p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/16/移动端样式-rem自适应-高清图等/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动端样式(rem自适应/高清图等)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/23/Promise笔记（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Promise笔记（二）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="前端缓存走起来" data-title="前端缓存走起来" data-url="http://yoursite.com/2015/10/18/前端缓存走起来/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"shaqihe"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 sha Qihe
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
