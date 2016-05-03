@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>前端MVC | 沙-博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="从工作以后，工作内容很多事基于“MVC”的单页面系统，于是就谢谢前端MVC的东西。
+
+我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
+MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端MVC">
+<meta property="og:url" content="http://yoursite.com/2016/09/12/前端MVC/index.html">
+<meta property="og:site_name" content="沙-博客">
+<meta property="og:description" content="从工作以后，工作内容很多事基于“MVC”的单页面系统，于是就谢谢前端MVC的东西。
+
+我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
+MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/8046d3b93bffe6defb6ddfba24c1df05.png">
+<meta property="og:updated_time" content="2016-05-03T07:55:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端MVC">
+<meta name="twitter:description" content="从工作以后，工作内容很多事基于“MVC”的单页面系统，于是就谢谢前端MVC的东西。
+
+我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
+MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
+<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png">
+  
+    <link rel="alternative" href="/atom.xml" title="沙-博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">sha Qihe</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">前端开发者，热爱生活，努力向上</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/shaqihe" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/cdn/" style="font-size: 10px;">cdn</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/glup/" style="font-size: 10px;">glup</a> <a href="/tags/promise/" style="font-size: 20px;">promise</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/优化/" style="font-size: 10px;">优化</a> <a href="/tags/体验/" style="font-size: 10px;">体验</a> <a href="/tags/动画/" style="font-size: 10px;">动画</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/异步/" style="font-size: 20px;">异步</a> <a href="/tags/性能/" style="font-size: 20px;">性能</a> <a href="/tags/打包/" style="font-size: 10px;">打包</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">沙！前端开发者，欢迎交流。QQ:330630770</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">sha Qihe</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">sha Qihe</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">前端开发者，热爱生活，努力向上</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/shaqihe" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-前端MVC" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/12/前端MVC/" class="article-date">
+  	<time datetime="2016-09-12T14:06:32.000Z" itemprop="datePublished">2016-09-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端MVC
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从工作以后，工作内容很多事基于“MVC”的单页面系统，于是就谢谢前端MVC的东西。</p>
+<hr>
+<p>我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。</p>
+<p><strong>MVC 几个核心的词语：</strong><br>view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p><strong>MVC包括三类对象：</strong></p>
+<ul>
+<li><p>模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。</p>
+</li>
+<li><p>视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地刷新自己。</p>
+</li>
+<li><p>控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。</p>
+</li>
+</ul>
+<p>下图是一个经典的MVC视图：<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png" alt="此处输入图片的描述"></p>
+<p>  view和model之间的观察者模式，view观察model，事先在此model上注册，以便view可以了解在数据model上发生的改变（其实这是一种事件机制）</p>
+<hr>
+<p>但是javascript中的MVC和上图又有一点区别：<br>我们使用的MVC框架是ER，适用于并能很方便地构建一个整站式的AJAX Web应用。核心的action、model和view的抽象，使得构建RIA应用变得简单可行。<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/8046d3b93bffe6defb6ddfba24c1df05.png" alt="此处输入图片的描述"></p>
+<ul>
+<li>控制器做调度者，在controller中添加事件监控</li>
+<li>整个通信基于一套事件机制（发布订阅/观察者模式）</li>
+<li>view 来控制模板和dom事件的添加</li>
+<li>model驱动开发<ul>
+<li>实际开发中，常常会以view为核心，页面上需要展示什么数据，就去model中设置数据源。发生了用户事件，我会在action中更新model，然后刷新view。有时候会遗漏更新model，直到需要数据时才发现没有保存到model中。</li>
+<li>model本身是独立的，自控制的，不依赖于view，能够同步支持多view的显示。</li>
+<li>实现数据绑定，任何对模型的更改都会在界面上反映出来。那我们只要预先写好view和model的关系映射（类似angular的viewmodel的思想）<br>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 9月 12日</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/16/前端性能的一些小总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端性能的一些小总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="前端MVC" data-title="前端MVC" data-url="http://yoursite.com/2016/09/12/前端MVC/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"shaqihe"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 sha Qihe
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
