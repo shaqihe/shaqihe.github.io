@@ -99,5 +99,3 @@ boj.get.call(obj2);  //xiaoming   改变了this指向
 作者 [@sha Qihe]
 QQ：330630770
 2015 年 5月 10日
-
-
