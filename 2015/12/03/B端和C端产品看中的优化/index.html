@@ -26,7 +26,7 @@ B端单页面系统感觉有一下几个特点：
 用户的网络环境比较好，浏览器兼容相对优质
 注重操作的流畅，单页面跳转迅速，不是太注重首屏速度
 不注重SEO">
-<meta property="og:updated_time" content="2016-05-04T05:15:56.000Z">
+<meta property="og:updated_time" content="2016-08-12T06:38:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="B端和C端产品看中的优化">
 <meta name="twitter:description" content="B端商业性项目和C端项目看中的用户体验有什么不同？
@@ -41,7 +41,7 @@ B端单页面系统感觉有一下几个特点：
     <link rel="alternative" href="/atom.xml" title="沙-博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="//favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -54,7 +54,7 @@ B端单页面系统感觉有一下几个特点：
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			<img lazy-src="/http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
 			
 		</a>
 
@@ -154,9 +154,9 @@ B端单页面系统感觉有一下几个特点：
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-			
-				<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
-			
+				
+					<img lazy-src="/http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+				
 			</div>
 			<hgroup>
 			  <h1 class="header-author">sha Qihe</h1>
@@ -246,12 +246,12 @@ B端单页面系统感觉有一下几个特点：
 <li>js模块加载应尽可能将模块打包为浏览器可接受的最大并发数个文件。</li>
 <li>打包的文件大小 建议500K左右</li>
 </ul>
-<p>2.文件合并：<br>一个页面的启动脚本，可能包括很多文件大致分下面4种：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.特别大的库单独拥有自己的一个脚本，比如ECharts之类的图表库</span><br><span class="line"></span><br><span class="line">2.UI控件库，包含基础UI控件和业务UI控件，合并为一个脚本。</span><br><span class="line"></span><br><span class="line">3.MVC框架、页面基类、工具类、系统通用功能层等业务无关的逻辑合并为一个脚本。</span><br><span class="line"></span><br><span class="line">4.一级页面的业务模块合并为一个脚本。</span><br><span class="line"></span><br><span class="line">//注意的是，各启动脚本间不应该有任何一个模块被重复合并到多个脚本中。</span><br></pre></td></tr></table></figure></p>
+<p>2.文件合并：<br>一个页面的启动脚本，可能包括很多文件大致分下面4种：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1.特别大的库单独拥有自己的一个脚本，比如ECharts之类的图表库</div><div class="line"></div><div class="line">2.UI控件库，包含基础UI控件和业务UI控件，合并为一个脚本。</div><div class="line"></div><div class="line">3.MVC框架、页面基类、工具类、系统通用功能层等业务无关的逻辑合并为一个脚本。</div><div class="line"></div><div class="line">4.一级页面的业务模块合并为一个脚本。</div><div class="line"></div><div class="line">//注意的是，各启动脚本间不应该有任何一个模块被重复合并到多个脚本中。</div></pre></td></tr></table></figure></p>
 <p>单页面中一个路由页面相关会被打包在一起，比较典型的是将Controller、Model和View合并到Controller对应的文件中。</p>
 <p>3.预加载判断(没实践经验，也是猜想的几个方案)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.用户行为预测，如用户停留在某一个列表页面时时，根据其以往</span><br><span class="line">的行为进行分析，很有可能进入新建的操作。</span><br><span class="line"></span><br><span class="line">2.临近加载，如计算用户的鼠标轨迹来预测后续可能点击的按钮等</span><br><span class="line"></span><br><span class="line">3.空闲加载，通过统一的请求管理，寻找网络空闲的时候来加载需</span><br><span class="line">要的资源，从而不影响急需的资源的加载进度。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.用户行为预测，如用户停留在某一个列表页面时时，根据其以往</div><div class="line">的行为进行分析，很有可能进入新建的操作。</div><div class="line"></div><div class="line">2.临近加载，如计算用户的鼠标轨迹来预测后续可能点击的按钮等</div><div class="line"></div><div class="line">3.空闲加载，通过统一的请求管理，寻找网络空闲的时候来加载需</div><div class="line">要的资源，从而不影响急需的资源的加载进度。</div></pre></td></tr></table></figure>
 <p> 4.版本管理</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> //现在大部分版本管理，缓存策略 都是加MD5</span><br><span class="line">1. 把不变的，或者不经常变的文件打包在一起</span><br><span class="line">2. 把变动频率高的打包在一起</span><br><span class="line"></span><br><span class="line"> //这样就能更好的利用缓存了</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> //现在大部分版本管理，缓存策略 都是加MD5</div><div class="line">1. 把不变的，或者不经常变的文件打包在一起</div><div class="line">2. 把变动频率高的打包在一起</div><div class="line"></div><div class="line"> //这样就能更好的利用缓存了</div></pre></td></tr></table></figure>
 <hr>
 <p><strong>C端页面感觉有一下几个特点：</strong></p>
 <ol>
@@ -374,7 +374,8 @@ B端单页面系统感觉有一下几个特点：
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false
+		open_in_new: false,
+		root: /
 	}
 </script>
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>

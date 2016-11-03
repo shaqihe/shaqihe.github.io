@@ -18,7 +18,7 @@
 
 前端主要涉及的是浏览器端缓存：
 页面的缓存状态是由 http-header来决定的，一个是服务器响应信息。主要包括Pragma: no-cache、Cache-Control、 Expires、 Last-Modified、If-Modified-Since。。">
-<meta property="og:updated_time" content="2016-04-29T06:15:39.000Z">
+<meta property="og:updated_time" content="2016-08-12T06:38:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端缓存走起来">
 <meta name="twitter:description" content="说到前端优化，“缓存”是必须要说说的，总结一下缓存的一些东西，也加固一下自己的记忆
@@ -29,7 +29,7 @@
     <link rel="alternative" href="/atom.xml" title="沙-博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="//favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -42,7 +42,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			<img lazy-src="/http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
 			
 		</a>
 
@@ -142,9 +142,9 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-			
-				<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
-			
+				
+					<img lazy-src="/http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+				
 			</div>
 			<hgroup>
 			  <h1 class="header-author">sha Qihe</h1>
@@ -215,10 +215,10 @@
 <p><strong>前端主要涉及的是浏览器端缓存：</strong></p>
 <p>页面的缓存状态是由 http-header来决定的，一个是服务器响应信息。主要包括Pragma: no-cache、Cache-Control、 Expires、 Last-Modified、If-Modified-Since。。</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Request:</span><br><span class="line">1.Cache-Control: max-age=0	以秒为单位</span><br><span class="line"></span><br><span class="line">2.If-Modified-Since: Mon, 19 Nov 2012 08:38:01 GMT	缓存文件的最后修改时间。</span><br><span class="line"></span><br><span class="line">3.If-None-Match: &quot;0693f67a67cc1:0&quot;	缓存文件的Etag值</span><br><span class="line"></span><br><span class="line">4.Cache-Control: no-cache	不使用缓存</span><br><span class="line"></span><br><span class="line">5.Pragma: no-cache	不使用缓存</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Request:</div><div class="line">1.Cache-Control: max-age=0	以秒为单位</div><div class="line"></div><div class="line">2.If-Modified-Since: Mon, 19 Nov 2012 08:38:01 GMT	缓存文件的最后修改时间。</div><div class="line"></div><div class="line">3.If-None-Match: &quot;0693f67a67cc1:0&quot;	缓存文件的Etag值</div><div class="line"></div><div class="line">4.Cache-Control: no-cache	不使用缓存</div><div class="line"></div><div class="line">5.Pragma: no-cache	不使用缓存</div></pre></td></tr></table></figure>
 <p><strong>Cache-Control:</strong> 是控制缓存的比较关键的,设置如果同时存在cache-control和Expires怎么办呢？</p>
 <p>浏览器总是优先使用cache-control，如果没有cache-control才考虑Expires</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// response:</span><br><span class="line"></span><br><span class="line">Cache-Control: public	响应被缓存，并且在多用户间共享，  （公有缓存和私有缓存的区别，请看另一节）</span><br><span class="line"></span><br><span class="line">Cache-Control: private	响应只能作为私有缓存，不能在用户之间共享</span><br><span class="line"></span><br><span class="line">Cache-Control:no-cache	提醒浏览器要从服务器提取文档进行验证</span><br><span class="line"></span><br><span class="line">Cache-Control:no-store	绝对禁止缓存（用于机密，敏感文件）</span><br><span class="line"></span><br><span class="line">Cache-Control: max-age=60	60秒之后缓存过期（相对时间）</span><br><span class="line"></span><br><span class="line">Date: Mon, 19 Nov 2012 08:39:00 GMT	当前response发送的时间</span><br><span class="line"></span><br><span class="line">Expires: Mon, 19 Nov 2012 08:40:01 GMT	缓存过期的时间（绝对时间）</span><br><span class="line"></span><br><span class="line">Last-Modified: Mon, 19 Nov 2012 08:38:01 GMT	服务器端文件的最后修改时间</span><br><span class="line"></span><br><span class="line">ETag: &quot;20b1add7ec1cd1:0&quot;	服务器端文件的Etag值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">// response:</div><div class="line"></div><div class="line">Cache-Control: public	响应被缓存，并且在多用户间共享，  （公有缓存和私有缓存的区别，请看另一节）</div><div class="line"></div><div class="line">Cache-Control: private	响应只能作为私有缓存，不能在用户之间共享</div><div class="line"></div><div class="line">Cache-Control:no-cache	提醒浏览器要从服务器提取文档进行验证</div><div class="line"></div><div class="line">Cache-Control:no-store	绝对禁止缓存（用于机密，敏感文件）</div><div class="line"></div><div class="line">Cache-Control: max-age=60	60秒之后缓存过期（相对时间）</div><div class="line"></div><div class="line">Date: Mon, 19 Nov 2012 08:39:00 GMT	当前response发送的时间</div><div class="line"></div><div class="line">Expires: Mon, 19 Nov 2012 08:40:01 GMT	缓存过期的时间（绝对时间）</div><div class="line"></div><div class="line">Last-Modified: Mon, 19 Nov 2012 08:38:01 GMT	服务器端文件的最后修改时间</div><div class="line"></div><div class="line">ETag: &quot;20b1add7ec1cd1:0&quot;	服务器端文件的Etag值</div></pre></td></tr></table></figure>
 <p><strong>ETag:</strong><br>ETag是实体标签， 根据实体内容生成的一段hash字符串（类似于MD5或者SHA1之后的结果），可以标识资源的状态。 当资源发送改变时，ETag也随之发生变化。</p>
 <p>ETag是Web服务端产生的，然后发给浏览器客户端。浏览器客户端是不用关心Etag是如何产生的。</p>
 <p>为什么使用ETag呢？ 主要是为了解决Last-Modified 无法解决的一些问题。</p>
@@ -245,9 +245,9 @@
 <ul>
 <li>第一个：请求加参数</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1 永久缓存静态文件，请求加参数，标记文件的是否更改</span><br><span class="line">&lt;script type=&apos;type/javascript&apos; src=&quot;a.js?t=20151232&quot;&gt;</span><br><span class="line"></span><br><span class="line">//存在问题： </span><br><span class="line">1.html文件 和 js文件上线替换时有时间差，如果先HTML生效，</span><br><span class="line">就会访问到就的 js文件，</span><br><span class="line">2. 如果js下替换下来，一个全新的用户，浏览器上没有缓存过js</span><br><span class="line">文件，就会发生 旧的html用新js文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1 永久缓存静态文件，请求加参数，标记文件的是否更改</div><div class="line">&lt;script type=&apos;type/javascript&apos; src=&quot;a.js?t=20151232&quot;&gt;</div><div class="line"></div><div class="line">//存在问题： </div><div class="line">1.html文件 和 js文件上线替换时有时间差，如果先HTML生效，</div><div class="line">就会访问到就的 js文件，</div><div class="line">2. 如果js下替换下来，一个全新的用户，浏览器上没有缓存过js</div><div class="line">文件，就会发生 旧的html用新js文件</div></pre></td></tr></table></figure>
 <p>第二个：修改文件名，永久缓存</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&apos;type/javascript&apos; src=&quot;a_20151232.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">// 优点：</span><br><span class="line">1、线上的a.js不是同名文件覆盖，而是文件名+时间戳或者内容hash，</span><br><span class="line">所以可以先上线静态资源，再上线html页面，不存在间隙问题；</span><br><span class="line"></span><br><span class="line">2、遇到问题回滚版本的时候，无需回滚a.js，只须回滚页面即可；</span><br><span class="line">由于静态资源版本号，因此所有静态资源可以开启永久强缓</span><br><span class="line">存，只有更新了内容的文件才会缓存失效，缓存利用率大增；</span><br><span class="line"></span><br><span class="line">3、修改静态资源后会在线上产生新的文件，一个文件对应一个版本，</span><br><span class="line">用cdn加速也方便</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&apos;type/javascript&apos; src=&quot;a_20151232.js&quot;&gt;</div><div class="line"></div><div class="line">// 优点：</div><div class="line">1、线上的a.js不是同名文件覆盖，而是文件名+时间戳或者内容hash，</div><div class="line">所以可以先上线静态资源，再上线html页面，不存在间隙问题；</div><div class="line"></div><div class="line">2、遇到问题回滚版本的时候，无需回滚a.js，只须回滚页面即可；</div><div class="line">由于静态资源版本号，因此所有静态资源可以开启永久强缓</div><div class="line">存，只有更新了内容的文件才会缓存失效，缓存利用率大增；</div><div class="line"></div><div class="line">3、修改静态资源后会在线上产生新的文件，一个文件对应一个版本，</div><div class="line">用cdn加速也方便</div></pre></td></tr></table></figure>
 <p><strong>注：现在大部分静态资源，都会走cdn加速，cdn自带缓存设置，所以对于网站的优化，对静态资源cdn加速是必要的，上面所说的的缓存策略，增加版本号，一键部署cdn，都可以通过构建工具（神马 gulp、grunt、webpack、fis来实现，注：我们tema现在是用百度内部的轮子，edp构建）。 不过这些构建工具都大同小异，有兴趣的可以了解其中一二个</strong></p>
 <p>~就写这些么，可能内容比较水，也算自己的一个小总结</p>
 <hr>
@@ -355,7 +355,8 @@
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false
+		open_in_new: false,
+		root: /
 	}
 </script>
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>

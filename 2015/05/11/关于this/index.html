@@ -24,7 +24,7 @@ this的指向大致分为四种：
 作为普通函数调用（this指向window）
 构造函数now时调用（指向实例出的这个对象）
 Function.prototype.call 或 Function.prototype">
-<meta property="og:updated_time" content="2016-05-04T08:04:13.000Z">
+<meta property="og:updated_time" content="2016-11-02T13:48:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于this">
 <meta name="twitter:description" content="说说 thisjavascript的 this总是指向一个对象，具体指向那个对象，就是基于函数的运行环境动态绑定的，而不是函数声明时的环境。
@@ -38,7 +38,7 @@ Function.prototype.call 或 Function.prototype">
     <link rel="alternative" href="/atom.xml" title="沙-博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="//favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -51,7 +51,7 @@ Function.prototype.call 或 Function.prototype">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+			<img lazy-src="/http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
 			
 		</a>
 
@@ -151,9 +151,9 @@ Function.prototype.call 或 Function.prototype">
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-			
-				<img lazy-src="http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
-			
+				
+					<img lazy-src="/http://7xqd2y.com1.z0.glb.clouddn.com/touxiang_meitu_1.jpg" class="js-avatar">
+				
 			</div>
 			<hgroup>
 			  <h1 class="header-author">sha Qihe</h1>
@@ -228,14 +228,14 @@ Function.prototype.call 或 Function.prototype">
 <li>Function.prototype.call 或 Function.prototype.apply 调用</li>
 </ol>
 <a id="more"></a>
-<p>//作为对象方法调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    getA: function () &#123;</span><br><span class="line">        alert(this.a)  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.getA() // 1</span><br></pre></td></tr></table></figure></p>
-<p>// 作为普通函数调用，this指向window<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">window.name = &apos;globalName&apos;;</span><br><span class="line">function getName()&#123;</span><br><span class="line">    alert(this.name)</span><br><span class="line">&#125;</span><br><span class="line">getName() // globalName</span><br><span class="line">//或者</span><br><span class="line">var </span><br><span class="line">var obj = &#123;</span><br><span class="line">    name: subName,</span><br><span class="line">    getName: function () &#123;</span><br><span class="line">        alert(this.name)  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var get = obj.getName;</span><br><span class="line">get() //这里还是指向window， 输出 “globalName”</span><br></pre></td></tr></table></figure></p>
-<p>有时候我们会遇到，在一个dom事件函数里定义的函数，this都指向window， 被视为普通函数调用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//我们可能会这么做,变量保存this</span><br><span class="line"></span><br><span class="line">div.onclick= function () &#123;</span><br><span class="line">    var that = this;</span><br><span class="line">    function test () &#123;</span><br><span class="line">        // code  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>//作为对象方法调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    a: 1,</div><div class="line">    getA: function () &#123;</div><div class="line">        alert(this.a)  </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.getA() // 1</div></pre></td></tr></table></figure></p>
+<p>// 作为普通函数调用，this指向window<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">window.name = &apos;globalName&apos;;</div><div class="line">function getName()&#123;</div><div class="line">    alert(this.name)</div><div class="line">&#125;</div><div class="line">getName() // globalName</div><div class="line">//或者</div><div class="line">var </div><div class="line">var obj = &#123;</div><div class="line">    name: subName,</div><div class="line">    getName: function () &#123;</div><div class="line">        alert(this.name)  </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var get = obj.getName;</div><div class="line">get() //这里还是指向window， 输出 “globalName”</div></pre></td></tr></table></figure></p>
+<p>有时候我们会遇到，在一个dom事件函数里定义的函数，this都指向window， 被视为普通函数调用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//我们可能会这么做,变量保存this</div><div class="line"></div><div class="line">div.onclick= function () &#123;</div><div class="line">    var that = this;</div><div class="line">    function test () &#123;</div><div class="line">        // code  </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>//作为构造器调用<br>js中没有类，单可以从构造函数中创建对象，同事提供new 运算符。</p>
 <p>大部分js函数都可以当做构造函数，只是构造函数的调用方式，用new运算符调用这个函数时，该函数总会返回一个对象，构造函数里的this就指向这个对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var MyClass = function () &#123;</span><br><span class="line"> this .name = &apos;test&apos;;</span><br><span class="line">&#125;</span><br><span class="line"> var obj = new MyClass();</span><br><span class="line"> alert(obj.name) //test</span><br><span class="line"> </span><br><span class="line"> // 注：如果构造函数返回一个对象，就蒙圈了！</span><br></pre></td></tr></table></figure>
-<p>//Function.prototype.call 或 Function.prototype.apply 调用<br>这个两个函数可以动态的改变 this的指向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name: ‘test’，</span><br><span class="line">    get: function () &#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var boj2 = &#123;</span><br><span class="line">    name: &apos;xiaoming&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">boj.get.call(obj2);  //xiaoming   改变了this指向</span><br></pre></td></tr></table></figure></p>
-<h2 id="有时间总结下call-和-apply-的一些东西，今天就先这些，吃饭去"><a href="#有时间总结下call-和-apply-的一些东西，今天就先这些，吃饭去" class="headerlink" title="有时间总结下call 和 apply 的一些东西，今天就先这些，吃饭去"></a>有时间总结下call 和 apply 的一些东西，今天就先这些，吃饭去</h2><p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 5月 10日</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var MyClass = function () &#123;</div><div class="line"> this .name = &apos;test&apos;;</div><div class="line">&#125;</div><div class="line"> var obj = new MyClass();</div><div class="line"> alert(obj.name) //test</div><div class="line"> </div><div class="line"> // 注：如果构造函数返回一个对象，就蒙圈了！</div></pre></td></tr></table></figure>
+<p>//Function.prototype.call 或 Function.prototype.apply 调用<br>这个两个函数可以动态的改变 this的指向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    name: ‘test’，</div><div class="line">    get: function () &#123;</div><div class="line">        alert(this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var boj2 = &#123;</div><div class="line">    name: &apos;xiaoming&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">boj.get.call(obj2);  //xiaoming   改变了this指向</div></pre></td></tr></table></figure></p>
+<h2 id="有时间总结下call-和-apply-的一些东西，今天就先这些，吃饭去"><a href="#有时间总结下call-和-apply-的一些东西，今天就先这些，吃饭去" class="headerlink" title="有时间总结下call 和 apply 的一些东西，今天就先这些，吃饭去"></a>有时间总结下call 和 apply 的一些东西，今天就先这些，吃饭去</h2><p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 5月 11日</p>
 
       
     </div>
@@ -339,7 +339,8 @@ Function.prototype.call 或 Function.prototype">
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false
+		open_in_new: false,
+		root: /
 	}
 </script>
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
