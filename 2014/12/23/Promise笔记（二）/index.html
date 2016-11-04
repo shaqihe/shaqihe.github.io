@@ -84,26 +84,20 @@
 
 
 
-<meta name="description" content="上一篇写了一部分，再写一些关于promise的笔记
-
-Promise.then() &amp;amp;&amp;amp;链式写法
-promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(fun">
+<meta name="description" content="上一篇写了一部分，再写一些关于promise的笔记Promise.then() &amp;amp;&amp;amp;链式写法
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(funct">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise笔记（二）">
 <meta property="og:url" content="http://yoursite.com/2014/12/23/Promise笔记（二）/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="上一篇写了一部分，再写一些关于promise的笔记
-
-Promise.then() &amp;amp;&amp;amp;链式写法
-promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(fun">
+<meta property="og:description" content="上一篇写了一部分，再写一些关于promise的笔记Promise.then() &amp;amp;&amp;amp;链式写法
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(funct">
 <meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3ce44941df94e3c19e891b27fc1f847c.png">
-<meta property="og:updated_time" content="2016-11-03T13:10:13.000Z">
+<meta property="og:updated_time" content="2016-11-04T01:58:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise笔记（二）">
-<meta name="twitter:description" content="上一篇写了一部分，再写一些关于promise的笔记
-
-Promise.then() &amp;amp;&amp;amp;链式写法
-promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(fun">
+<meta name="twitter:description" content="上一篇写了一部分，再写一些关于promise的笔记Promise.then() &amp;amp;&amp;amp;链式写法
+promise可以写成方法链的形式1234567 aPromise.then(function taskA(value) &amp;#123;  // task A&amp;#125;).then(function taskB(vaue)&amp;#123;// task B&amp;#125;).catch(funct">
 <meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3ce44941df94e3c19e891b27fc1f847c.png">
 
 
@@ -326,9 +320,7 @@ promise可以写成方法链的形式1234567 aPromise.then(function taskA(value)
       
 
       
-        <p>上一篇写了一部分，再写一些关于promise的笔记</p>
-<hr>
-<h3 id="Promise-then-amp-amp-链式写法"><a href="#Promise-then-amp-amp-链式写法" class="headerlink" title="Promise.then() &amp;&amp;链式写法"></a>Promise.then() &amp;&amp;链式写法</h3><ul>
+        <h2 id="上一篇写了一部分，再写一些关于promise的笔记"><a href="#上一篇写了一部分，再写一些关于promise的笔记" class="headerlink" title="上一篇写了一部分，再写一些关于promise的笔记"></a>上一篇写了一部分，再写一些关于promise的笔记</h2><h3 id="Promise-then-amp-amp-链式写法"><a href="#Promise-then-amp-amp-链式写法" class="headerlink" title="Promise.then() &amp;&amp;链式写法"></a>Promise.then() &amp;&amp;链式写法</h3><ul>
 <li>promise可以写成方法链的形式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> aPromise.then(function taskA(value) &#123; </div><div class="line"> // task A</div><div class="line">&#125;).then(function taskB(vaue)&#123;</div><div class="line">// task B</div><div class="line">&#125;).catch(function onRejected(error)&#123; //最后catch 统一捕捉异常</div><div class="line">console.log(error);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -533,7 +525,7 @@ promise可以写成方法链的形式1234567 aPromise.then(function taskA(value)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-then-amp-amp-链式写法"><span class="nav-number">1.</span> <span class="nav-text">Promise.then() &&链式写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise链式写法中参数如何传递"><span class="nav-number">2.</span> <span class="nav-text">Promise链式写法中参数如何传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-catch-的一些小问题"><span class="nav-number">3.</span> <span class="nav-text">Promise.catch 的一些小问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise处理多个异步任务，promise-all-上场"><span class="nav-number">4.</span> <span class="nav-text">Promise处理多个异步任务，promise.all 上场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise处理多个异步任务，Promise-race-上场"><span class="nav-number">5.</span> <span class="nav-text">Promise处理多个异步任务，Promise.race 上场</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#上一篇写了一部分，再写一些关于promise的笔记"><span class="nav-number">1.</span> <span class="nav-text">上一篇写了一部分，再写一些关于promise的笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-then-amp-amp-链式写法"><span class="nav-number">1.1.</span> <span class="nav-text">Promise.then() &&链式写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise链式写法中参数如何传递"><span class="nav-number">1.2.</span> <span class="nav-text">Promise链式写法中参数如何传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-catch-的一些小问题"><span class="nav-number">1.3.</span> <span class="nav-text">Promise.catch 的一些小问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise处理多个异步任务，promise-all-上场"><span class="nav-number">1.4.</span> <span class="nav-text">Promise处理多个异步任务，promise.all 上场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise处理多个异步任务，Promise-race-上场"><span class="nav-number">1.5.</span> <span class="nav-text">Promise处理多个异步任务，Promise.race 上场</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
