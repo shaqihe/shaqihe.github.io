@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="优化,B端," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -84,31 +84,31 @@
 
 
 
-<meta name="description" content="B端商业性项目和C端项目看中的用户体验有什么不同？B端单页面系统感觉有一下几个特点：
+<meta name="description" content="尝试使用Vue.js(一)文件划分用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址[Demo的github代码地址][2]
 
-偏向数据交互，逻辑性东西较多
-用户的网络环境比较好，浏览器兼容相对优质
-注重操作的流畅，单页面跳转迅速，不是太注重首屏速度
-不注重SEO">
+
+前端组件化开发，一直受到广大前端开发的追捧，在比较流行的几个框架里如“react”、“vue”、“angular2.0”都使用组件化开发的模式。
+
+vue是一个“渐进式框架”，也就是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="B端和C端产品看中的优化">
-<meta property="og:url" content="http://yoursite.com/2015/12/03/B端和C端产品看中的优化/index.html">
+<meta property="og:title" content="尝试使用Vue.js(一)文件划分">
+<meta property="og:url" content="http://yoursite.com/2016/10/11/尝试使用Vue.js(一)文件划分/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="B端商业性项目和C端项目看中的用户体验有什么不同？B端单页面系统感觉有一下几个特点：
+<meta property="og:description" content="尝试使用Vue.js(一)文件划分用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址[Demo的github代码地址][2]
 
-偏向数据交互，逻辑性东西较多
-用户的网络环境比较好，浏览器兼容相对优质
-注重操作的流畅，单页面跳转迅速，不是太注重首屏速度
-不注重SEO">
-<meta property="og:updated_time" content="2016-11-04T01:57:38.000Z">
+
+前端组件化开发，一直受到广大前端开发的追捧，在比较流行的几个框架里如“react”、“vue”、“angular2.0”都使用组件化开发的模式。
+
+vue是一个“渐进式框架”，也就是">
+<meta property="og:updated_time" content="2016-12-26T07:34:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="B端和C端产品看中的优化">
-<meta name="twitter:description" content="B端商业性项目和C端项目看中的用户体验有什么不同？B端单页面系统感觉有一下几个特点：
+<meta name="twitter:title" content="尝试使用Vue.js(一)文件划分">
+<meta name="twitter:description" content="尝试使用Vue.js(一)文件划分用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址[Demo的github代码地址][2]
 
-偏向数据交互，逻辑性东西较多
-用户的网络环境比较好，浏览器兼容相对优质
-注重操作的流畅，单页面跳转迅速，不是太注重首屏速度
-不注重SEO">
+
+前端组件化开发，一直受到广大前端开发的追捧，在比较流行的几个框架里如“react”、“vue”、“angular2.0”都使用组件化开发的模式。
+
+vue是一个“渐进式框架”，也就是">
 
 
 
@@ -129,10 +129,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/12/03/B端和C端产品看中的优化/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/11/尝试使用Vue.js(一)文件划分/"/>
 
 
-  <title> B端和C端产品看中的优化 | 沙-博客 </title>
+  <title> 尝试使用Vue.js(一)文件划分 | 沙-博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +264,7 @@
             
             
               
-                B端和C端产品看中的优化
+                尝试使用Vue.js(一)文件划分
               
             
           </h1>
@@ -276,8 +276,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-03T21:12:32+08:00" content="2015-12-03">
-              2015-12-03
+            <time itemprop="dateCreated" datetime="2016-10-11T19:02:10+08:00" content="2016-10-11">
+              2016-10-11
             </time>
           </span>
 
@@ -290,8 +290,20 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/性能优化/" itemprop="url" rel="index">
-                    <span itemprop="name">性能优化</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -306,8 +318,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/03/B端和C端产品看中的优化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/03/B端和C端产品看中的优化/" itemprop="commentsCount"></span>
+                <a href="/2016/10/11/尝试使用Vue.js(一)文件划分/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/11/尝试使用Vue.js(一)文件划分/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,53 +342,24 @@
       
 
       
-        <h2 id="B端商业性项目和C端项目看中的用户体验有什么不同？"><a href="#B端商业性项目和C端项目看中的用户体验有什么不同？" class="headerlink" title="B端商业性项目和C端项目看中的用户体验有什么不同？"></a>B端商业性项目和C端项目看中的用户体验有什么不同？</h2><p><strong>B端单页面系统感觉有一下几个特点：</strong></p>
-<ol>
-<li>偏向数据交互，逻辑性东西较多</li>
-<li>用户的网络环境比较好，浏览器兼容相对优质</li>
-<li>注重操作的流畅，单页面跳转迅速，不是太注重首屏速度</li>
-<li>不注重SEO</li>
-</ol>
-<a id="more"></a>
-<p><strong>针对这些特点我们做了</strong>：</p>
-<ul>
-<li>MVC模式编程，应对复杂逻辑</li>
-<li>整站Ajax交互</li>
-<li>前端自带路由（利用location.hash），解决前进后退问题</li>
-<li>开发组件，加大复用</li>
-</ul>
-<p><strong>那么在B端优化方面怎么做呢？</strong><br>1.打包策略问题：</p>
-<ul>
-<li>利用浏览器并行加载的特性（4-8个之间）</li>
-<li>把必要加载的放到这个段里，主要 AMD Loader、css文件</li>
-<li>js模块加载应尽可能将模块打包为浏览器可接受的最大并发数个文件。</li>
-<li>打包的文件大小 建议500K左右</li>
-</ul>
-<p>2.文件合并：<br>一个页面的启动脚本，可能包括很多文件大致分下面4种：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1.特别大的库单独拥有自己的一个脚本，比如ECharts之类的图表库</div><div class="line"></div><div class="line">2.UI控件库，包含基础UI控件和业务UI控件，合并为一个脚本。</div><div class="line"></div><div class="line">3.MVC框架、页面基类、工具类、系统通用功能层等业务无关的逻辑合并为一个脚本。</div><div class="line"></div><div class="line">4.一级页面的业务模块合并为一个脚本。</div><div class="line"></div><div class="line">//注意的是，各启动脚本间不应该有任何一个模块被重复合并到多个脚本中。</div></pre></td></tr></table></figure></p>
-<p>单页面中一个路由页面相关会被打包在一起，比较典型的是将Controller、Model和View合并到Controller对应的文件中。</p>
-<p>3.预加载判断(没实践经验，也是猜想的几个方案)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.用户行为预测，如用户停留在某一个列表页面时时，根据其以往</div><div class="line">的行为进行分析，很有可能进入新建的操作。</div><div class="line"></div><div class="line">2.临近加载，如计算用户的鼠标轨迹来预测后续可能点击的按钮等</div><div class="line"></div><div class="line">3.空闲加载，通过统一的请求管理，寻找网络空闲的时候来加载需</div><div class="line">要的资源，从而不影响急需的资源的加载进度。</div></pre></td></tr></table></figure>
-<p> 4.版本管理</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> //现在大部分版本管理，缓存策略 都是加MD5</div><div class="line">1. 把不变的，或者不经常变的文件打包在一起</div><div class="line">2. 把变动频率高的打包在一起</div><div class="line"></div><div class="line"> //这样就能更好的利用缓存了</div></pre></td></tr></table></figure>
+        <h2 id="尝试使用Vue-js-一-文件划分"><a href="#尝试使用Vue-js-一-文件划分" class="headerlink" title="尝试使用Vue.js(一)文件划分"></a><strong>尝试使用Vue.js(一)文件划分</strong></h2><p>用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。<br><a href="http://test.clibchina.com/#/index" target="_blank" rel="external">Demo的在线预览地址</a><br>[Demo的github代码地址][2]</p>
 <hr>
-<p><strong>C端页面感觉有一下几个特点：</strong></p>
-<ol>
-<li>看着展现速度</li>
-<li>数据交互少要展现</li>
-<li>响应时间、白屏时间都影响用户心情</li>
-</ol>
-<p><strong>我们这边尝试的方案</strong></p>
 <ul>
-<li><p>想前后端分离，想SEO，不想要白屏</p>
-<ul>
-<li>增加了node做中间层，前端开发者搞模板</li>
-<li>node层渲染数据，，直接给浏览器吐页面</li>
-</ul>
+<li><p>前端组件化开发，一直受到广大前端开发的追捧，在比较流行的几个框架里如“react”、“vue”、“angular2.0”都使用组件化开发的模式。</p>
 </li>
-<li>所有图片统统CDN</li>
+<li><p>vue是一个“渐进式框架”，也就是说‘vue’对项目的约束性不大，你可以只用在视图层，也可以去全站vue，在你网站的某个一个页面，或者某一个模块使用vue都是可以的。</p>
+</li>
 </ul>
-<hr>
-<p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 12月 1日</p>
+<a id="more"></a>
+<h2 id="本文先介绍下代码的整体文件划分"><a href="#本文先介绍下代码的整体文件划分" class="headerlink" title="本文先介绍下代码的整体文件划分"></a>本文先介绍下代码的整体文件划分</h2><ol>
+<li>项目是用了‘vue-cli’脚手架生成的（官网提供，用起来很不错）</li>
+<li>在vue-cli的基础上进行了一些改动(注意集中在src中)</li>
+</ol>
+<p><strong>下面看下src文件夹下的结构（*标记的是vue-cli基础上加的）：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">├── App.vue             （vue的顶层组件）</div><div class="line">├── assets              （静态文件）</div><div class="line">│   ├── images          （静态文件-图片）</div><div class="line">│   └── scss           （静态文件-样式，包括icon字体、rem函数等）</div><div class="line">├── cache               （* 统一存放接口，方便接口的维护和管理）</div><div class="line">│   └── cache.js        （接口文件）</div><div class="line">├── common              （*统一存放一些公共数据和方法）</div><div class="line">│   ├── constant        （*一些全局的常量）</div><div class="line">│   └── util            （*一些公共的方法）</div><div class="line">├── components</div><div class="line">│   ├── CitySelect.vue</div><div class="line">│   ├── GoTop.vue</div><div class="line">│   ├── Header.vue</div><div class="line">│   ├── Hello.vue</div><div class="line">│   ├── LoadMore.vue</div><div class="line">│   ├── Loading.vue</div><div class="line">│   └── MessageList.vue</div><div class="line">├── main.js</div><div class="line">├── pages</div><div class="line">│   ├── about.vue</div><div class="line">│   ├── happy.vue</div><div class="line">│   ├── index.vue</div><div class="line">│   ├── robot.vue</div><div class="line">│   └── weather.vue</div><div class="line">├── router          （*单独维护touter，方便修改）</div><div class="line">│   └── router.js</div><div class="line">└── store           （vuex的维护）</div><div class="line">    └── index.js</div></pre></td></tr></table></figure></p>
+<p>从上面可以看出，主要增加的是“cache” “common” 这两个文件，在开发过程中，接口的单独维护，和公共代码提取到“cmmon”文件中是一个比较好的习惯。</p>
+<p><strong>把配置文件、公共文件、或者某个单独功能（如router、store这种）这些文件单独维护，都是比较好的文件划分，对后期改动，维护都比较方便。</strong></p>
+<h2 id="2-https-github-com-shaqihe-life-app-vue"><a href="#2-https-github-com-shaqihe-life-app-vue" class="headerlink" title="  [2]: https://github.com/shaqihe/life-app-vue"></a>  [2]: <a href="https://github.com/shaqihe/life-app-vue" target="_blank" rel="external">https://github.com/shaqihe/life-app-vue</a></h2><p>作者 [@sha Qihe]</p>
+<p>2016 年 10月 11日</p>
 
       
     </div>
@@ -399,9 +382,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/优化/" rel="tag">#优化</a>
-          
-            <a href="/tags/B端/" rel="tag">#B端</a>
+            <a href="/tags/vue/" rel="tag">#vue</a>
           
         </div>
       
@@ -410,17 +391,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/16/移动端样式-rem自适应-高清图等/" rel="next" title="移动端样式(rem自适应/高清图等)">
-                <i class="fa fa-chevron-left"></i> 移动端样式(rem自适应/高清图等)
+              <a href="/2016/06/13/新开始/" rel="next" title="新的开始">
+                <i class="fa fa-chevron-left"></i> 新的开始
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/20/webpack-gulp构建react简单小结/" rel="prev" title="webpack+gulp构建react简单小结">
-                webpack+gulp构建react简单小结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,8 +423,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/03/B端和C端产品看中的优化/"
-           data-title="B端和C端产品看中的优化" data-url="http://yoursite.com/2015/12/03/B端和C端产品看中的优化/">
+      <div class="ds-thread" data-thread-key="2016/10/11/尝试使用Vue.js(一)文件划分/"
+           data-title="尝试使用Vue.js(一)文件划分" data-url="http://yoursite.com/2016/10/11/尝试使用Vue.js(一)文件划分/">
       </div>
     
   </div>
@@ -549,7 +526,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#B端商业性项目和C端项目看中的用户体验有什么不同？"><span class="nav-number">1.</span> <span class="nav-text">B端商业性项目和C端项目看中的用户体验有什么不同？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试使用Vue-js-一-文件划分"><span class="nav-number">1.</span> <span class="nav-text">尝试使用Vue.js(一)文件划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文先介绍下代码的整体文件划分"><span class="nav-number">2.</span> <span class="nav-text">本文先介绍下代码的整体文件划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-https-github-com-shaqihe-life-app-vue"><span class="nav-number">3.</span> <span class="nav-text">  [2]: https://github.com/shaqihe/life-app-vue</span></a></li></ol></div>
             
           </div>
         </section>
