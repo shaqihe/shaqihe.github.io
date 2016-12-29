@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MVC," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -84,22 +84,30 @@
 
 
 
-<meta name="description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
+<meta name="description" content="尝试使用Vue.js(二)接口代理用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址
+
+分下面一点介绍：
+  vue项目在本地开发中，如何反向代理外域名接口
+vue项目在本地开发中，如何反向代理外域名接口在本项目中，大部分接口都是用的开放的Api接口，我用的是“聚合数据”的开发接口">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端MVC">
-<meta property="og:url" content="http://yoursite.com/2015/09/12/前端MVC/index.html">
+<meta property="og:title" content="尝试使用Vue.js(二)接口代理">
+<meta property="og:url" content="http://yoursite.com/2016/12/19/尝试使用Vue.js(二)接口代理/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
-<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png">
-<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/8046d3b93bffe6defb6ddfba24c1df05.png">
-<meta property="og:updated_time" content="2016-11-04T01:57:27.000Z">
+<meta property="og:description" content="尝试使用Vue.js(二)接口代理用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址
+
+分下面一点介绍：
+  vue项目在本地开发中，如何反向代理外域名接口
+vue项目在本地开发中，如何反向代理外域名接口在本项目中，大部分接口都是用的开放的Api接口，我用的是“聚合数据”的开发接口">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/daili.jpg">
+<meta property="og:updated_time" content="2016-12-29T11:07:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端MVC">
-<meta name="twitter:description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
-<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png">
+<meta name="twitter:title" content="尝试使用Vue.js(二)接口代理">
+<meta name="twitter:description" content="尝试使用Vue.js(二)接口代理用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址
+
+分下面一点介绍：
+  vue项目在本地开发中，如何反向代理外域名接口
+vue项目在本地开发中，如何反向代理外域名接口在本项目中，大部分接口都是用的开放的Api接口，我用的是“聚合数据”的开发接口">
+<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/daili.jpg">
 
 
 
@@ -120,10 +128,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/09/12/前端MVC/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/19/尝试使用Vue.js(二)接口代理/"/>
 
 
-  <title> 前端MVC | 沙-博客 </title>
+  <title> 尝试使用Vue.js(二)接口代理 | 沙-博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +263,7 @@
             
             
               
-                前端MVC
+                尝试使用Vue.js(二)接口代理
               
             
           </h1>
@@ -267,8 +275,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-12T22:06:32+08:00" content="2015-09-12">
-              2015-09-12
+            <time itemprop="dateCreated" datetime="2016-12-19T19:02:10+08:00" content="2016-12-19">
+              2016-12-19
             </time>
           </span>
 
@@ -281,8 +289,20 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/单页面/" itemprop="url" rel="index">
-                    <span itemprop="name">单页面</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -297,8 +317,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/09/12/前端MVC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/12/前端MVC/" itemprop="commentsCount"></span>
+                <a href="/2016/12/19/尝试使用Vue.js(二)接口代理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/19/尝试使用Vue.js(二)接口代理/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -321,34 +341,26 @@
       
 
       
-        <h2 id="参与很多项目都是单页面系统，于是就写写前端MVC的东西。"><a href="#参与很多项目都是单页面系统，于是就写写前端MVC的东西。" class="headerlink" title="参与很多项目都是单页面系统，于是就写写前端MVC的东西。"></a>参与很多项目都是单页面系统，于是就写写前端MVC的东西。</h2><p>我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。</p>
-<p>附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：<br><a href="https://github.com/shaqihe/myBlog/tree/master/%E5%89%8D%E7%AB%AFMVC%E4%BB%A3%E7%A0%81" target="_blank" rel="external">简单的MVC写法</a><br><strong>MVC 几个核心的词语：</strong><br>view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p><strong>MVC包括三类对象：</strong></p>
-<ul>
-<li><p>模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。</p>
-</li>
-<li><p>视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地刷新自己。</p>
-</li>
-<li><p>控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。</p>
-</li>
-</ul>
-<p>下图是一个经典的MVC视图：<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png" alt="此处输入图片的描述"></p>
-<p>  view和model之间的观察者模式，view观察model，事先在此model上注册，以便view可以了解在数据model上发生的改变（其实这是一种事件机制）</p>
+        <h2 id="尝试使用Vue-js-二-接口代理"><a href="#尝试使用Vue-js-二-接口代理" class="headerlink" title="尝试使用Vue.js(二)接口代理"></a><strong>尝试使用Vue.js(二)接口代理</strong></h2><p>用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。<br><a href="http://test.clibchina.com/#/index" target="_blank" rel="external">Demo的在线预览地址</a><br><a href="https://github.com/shaqihe/life-app-vue" target="_blank" rel="external">Demo的github代码地址</a></p>
 <hr>
-<p>但是javascript中的MVC和上图又有一点区别：<br>我们使用的MVC框架是ER，适用于并能很方便地构建一个整站式的AJAX Web应用。核心的action、model和view的抽象，使得构建RIA应用变得简单可行。<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/8046d3b93bffe6defb6ddfba24c1df05.png" alt="此处输入图片的描述"></p>
-<ul>
-<li>控制器做调度者，在controller中添加事件监控</li>
-<li>整个通信基于一套事件机制（发布订阅/观察者模式）</li>
-<li>view 来控制模板和dom事件的添加</li>
-<li>model驱动开发<ul>
-<li>实际开发中，常常会以view为核心，页面上需要展示什么数据，就去model中设置数据源。发生了用户事件，我会在action中更新model，然后刷新view。有时候会遗漏更新model，直到需要数据时才发现没有保存到model中。</li>
-<li>model本身是独立的，自控制的，不依赖于view，能够同步支持多view的显示。</li>
-<li>实现数据绑定，任何对模型的更改都会在界面上反映出来。那我们只要预先写好view和model的关系映射（类似angular的viewmodel的思想）<br>。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 9月 12日</p>
+<p>分下面一点介绍：</p>
+<p>  <strong>vue项目在本地开发中，如何反向代理外域名接口</strong></p>
+<h2 id="vue项目在本地开发中，如何反向代理外域名接口"><a href="#vue项目在本地开发中，如何反向代理外域名接口" class="headerlink" title="vue项目在本地开发中，如何反向代理外域名接口"></a>vue项目在本地开发中，如何反向代理外域名接口</h2><p>在本项目中，大部分接口都是用的开放的Api接口，我用的是“聚合数据”的开发接口，大家可以参考。</p>
+<p><strong>在文化： src/cache/cache.js</strong> 这个文件中，维护着项目里所以的接口，这些接口写的是相对路径，本项目中并没有这些接口，所以开发的时候，就在 vue的server配置中做下代理配置，把这些接口转发到第三方地址上，解决了跨域的问题。如下：</p>
+<a id="more"></a>
+<p><strong>vue的server代理配置文件位置在：config/index.js里</strong></p>
+<p>下图是我这个vue案例中配置的截图和说明：<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/daili.jpg" alt="此处输入图片的描述"></p>
+<p>例如我 src/cache/cache.js 的一个机器人接口：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">export  const RobotCache = &#123;</div><div class="line">    /**</div><div class="line">     * 机器人相关的接口</div><div class="line">     * @param  &#123;Object&#125; Data</div><div class="line">     * @return &#123;Promise&#125;</div><div class="line">     */</div><div class="line">    getWeather(data) &#123;</div><div class="line">        let key = &apos;?key=50cd35eb206526335a1c1e0f149f98a5&amp;&apos;;</div><div class="line">        return fetch(&apos;op/robot/index&apos; + key + parseParam(data))</div><div class="line">            .then(response =&gt; response.json()).then(response =&gt; response.result.text);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接口的地址是：“op/robot/index”  就会被代理到“<a href="http://op.juhe.cn/robot/index”" target="_blank" rel="external">http://op.juhe.cn/robot/index”</a></p>
+<p><strong>代理接口可以在本地开发时，和后端联调比较方便</strong></p>
+<p>接下文章来我会写一下：</p>
+<ol>
+<li><strong>vue上线后nginx反向代理跨域接口</strong></li>
+<li><strong>vue项目优化，缓存策略在nginx中的具体音乐</strong></li>
+</ol>
+<p> 大家如果看了文章，可以留言，一起交流</p>
+<p>作者 [@sha Qihe]</p>
+<p>2016 年 12月 19日</p>
 
       
     </div>
@@ -371,7 +383,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MVC/" rel="tag">#MVC</a>
+            <a href="/tags/vue/" rel="tag">#vue</a>
           
         </div>
       
@@ -380,17 +392,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/06/ES6小记/" rel="next" title="ES6小记">
-                <i class="fa fa-chevron-left"></i> ES6小记
+              <a href="/2016/10/11/尝试使用Vue.js(一)文件划分/" rel="next" title="尝试使用Vue.js(一)文件划分">
+                <i class="fa fa-chevron-left"></i> 尝试使用Vue.js(一)文件划分
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/10/18/前端缓存走起来/" rel="prev" title="前端缓存走起来">
-                前端缓存走起来 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -416,8 +424,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/09/12/前端MVC/"
-           data-title="前端MVC" data-url="http://yoursite.com/2015/09/12/前端MVC/">
+      <div class="ds-thread" data-thread-key="2016/12/19/尝试使用Vue.js(二)接口代理/"
+           data-title="尝试使用Vue.js(二)接口代理" data-url="http://yoursite.com/2016/12/19/尝试使用Vue.js(二)接口代理/">
       </div>
     
   </div>
@@ -519,7 +527,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参与很多项目都是单页面系统，于是就写写前端MVC的东西。"><span class="nav-number">1.</span> <span class="nav-text">参与很多项目都是单页面系统，于是就写写前端MVC的东西。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试使用Vue-js-二-接口代理"><span class="nav-number">1.</span> <span class="nav-text">尝试使用Vue.js(二)接口代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue项目在本地开发中，如何反向代理外域名接口"><span class="nav-number">2.</span> <span class="nav-text">vue项目在本地开发中，如何反向代理外域名接口</span></a></li></ol></div>
             
           </div>
         </section>
