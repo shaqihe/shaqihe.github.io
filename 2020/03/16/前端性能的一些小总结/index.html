@@ -1,0 +1,777 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="优化,性能,体验," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解!1.想深层次探究前端优化,就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？
+想优化页面，就要知道一个页面，产生的整个过程
+
+浏览器产生一个页面的流程如下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端性能的一些小总结">
+<meta property="og:url" content="http://yoursite.com/2020/03/16/前端性能的一些小总结/index.html">
+<meta property="og:site_name" content="沙-博客">
+<meta property="og:description" content="前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解!1.想深层次探究前端优化,就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？
+想优化页面，就要知道一个页面，产生的整个过程
+
+浏览器产生一个页面的流程如下：">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/cb5ff283c02cf644ca31e3dd77aa5e5b.png">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3475e5133068621c49d569cc017c27a4.png">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/c6e5df8d8b67cdf074d3722c69f6fe32.png">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/3a2e4ae5010283f4e05dce0c8c38d02c.png">
+<meta property="og:updated_time" content="2016-12-30T02:40:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端性能的一些小总结">
+<meta name="twitter:description" content="前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解!1.想深层次探究前端优化,就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？
+想优化页面，就要知道一个页面，产生的整个过程
+
+浏览器产生一个页面的流程如下：">
+<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/cb5ff283c02cf644ca31e3dd77aa5e5b.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/16/前端性能的一些小总结/"/>
+
+
+  <title> 前端性能的一些小总结 | 沙-博客 </title>
+  <meta name="baidu-site-verification" content="M5BFEwgTgm" />
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e0d6f644275cb8d0414123acd2a1645a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">沙-博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">前端开发者，热爱生活，努力向上</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端性能的一些小总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2020-03-16T19:18:40+08:00" content="2020-03-16">
+              2020-03-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/性能优化/" itemprop="url" rel="index">
+                    <span itemprop="name">性能优化</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2020/03/16/前端性能的一些小总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/03/16/前端性能的一些小总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解"><a href="#前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解" class="headerlink" title=" 前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解!"></a> 前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解!</h2><h1 id="1-想深层次探究前端优化-就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？"><a href="#1-想深层次探究前端优化-就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？" class="headerlink" title="1.想深层次探究前端优化,就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？"></a>1.想深层次探究前端优化,就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？</h1><ul>
+<li>想优化页面，就要知道一个页面，产生的整个过程</li>
+</ul>
+<p><strong>浏览器产生一个页面的流程如下：</strong><br><a id="more"></a></p>
+<p><img src="http://7xqd2y.com1.z0.glb.clouddn.com/cb5ff283c02cf644ca31e3dd77aa5e5b.png" alt="此处输入图片的描述"><br>&gt;</p>
+<p>  <strong>1.1下载：最有优化点的一部</strong></p>
+<p>  下载，这个方向是优化必要点，贴一张chrome下载文件的时间截图：<br>  <img src="http://7xqd2y.com1.z0.glb.clouddn.com/3475e5133068621c49d569cc017c27a4.png" alt="此处输入图片的描述"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//来个表格，细致分析下下载过程中每个阶段的耗时</div><div class="line">    1.持续时间 = 时间 *个数</div><div class="line">    </div><div class="line">    2.时间 = initial（浏览器初始化，准备数据）+request（请求到服务端） + serverProcess （服务处理数据）+response（返回数据，接受第一个字符到接受完最后一个字符的时间）</div><div class="line">    </div><div class="line">    3. initial = queue（处理队列任务） + DNS解析 + tcp协议 +ssl协议</div><div class="line">    </div><div class="line">    4. dns = delay*2（小体量信息，耗时大概是两个网络延时）</div><div class="line">    </div><div class="line">    5. tcp = delay*3 ( 三次握手)</div><div class="line">    </div><div class="line">    6. ssl = delay*5 （是一种文件安全协议，需要5次握手）</div><div class="line">    </div><div class="line">    7. request = delay + size/brandwidth(带宽)</div><div class="line">    </div><div class="line">    8. response = delay + size/brandwidth(带宽)</div></pre></td></tr></table></figure></p>
+<h2 id="分析出：下载性能决定的几个因素："><a href="#分析出：下载性能决定的几个因素：" class="headerlink" title="分析出：下载性能决定的几个因素："></a>分析出：下载性能决定的几个因素：</h2><ul>
+<li>增加带宽</li>
+<li>减少资源排队</li>
+<li>减少网络延迟</li>
+<li>减少网络延迟影响</li>
+<li>控制资源总大小</li>
+</ul>
+<p>下面逐个分析下：</p>
+<p>  <strong>1.1.1.增加带宽：</strong><br>这个在用户端我们是无法控制的，难道公司出钱给大家都上一个百兆光纤？还有一个情况你会发现，在20M和 50M的带宽下，打开一个页面或者文件速度差不多，这就是因为带宽达到一个级别后，影响下载的速度的主要优化点就是其他方向了。<br>所以增加带宽，我们就在自己公司的网络上搞高点，用户端无能为力了。</p>
+<p><strong>1.1.2.减少资源排队：</strong></p>
+<ul>
+<li>浏览器有“单域名”最大并行请求数量的限制<br>  ie7 - 2个<br>  ie8 - 6个<br>  ie10 - 8个<br> chrome - 6个<br> 什么360浏览器好像比较变态，并行十几个。<br>建议使用时，并行下载数折中取 4个，来处理。</li>
+</ul>
+<hr>
+<ul>
+<li>分域名追求更高的并行度<br>把什么资源放到不同的域名下面，通常将静态资源分布在几个不同域，保证资源最完美地分域名存储，以提供最大并行度，让客户端加载静态资源更为迅速。</li>
+</ul>
+<ul>
+<li><strong>分域名追求更高的并行度，与域名收敛取舍</strong><br>分域名在PC上是比较可行的，因为网络环境较好，但是在移动端，多个分域名，就会造成多个DNS解析，造成很大的时间开销浪费在DNS解析上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">首先要知道，使用一个http请求去请求一个资源时，会经历些什么。简单而言：</div><div class="line">1、DNS 域名解析 --&gt;</div><div class="line">2、发起 TCP 的 3 次握手 --&gt;</div><div class="line">3、建立 TCP 连接后发起 http 请求 --&gt;</div><div class="line">4、服务器响应 http 请求</div><div class="line">5、......略</div><div class="line"></div><div class="line">在这里第一步，也是关键的第一步 DNS 解析，在移动端的 http 请求耗时中，DNS 解析占据了大部分时间。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>注：</strong>所以说，资源分域名和域名收敛要自行折中</p>
+<hr>
+<ul>
+<li>过多并行请求会造成<strong>Keep-Alive无效</strong>，进而增加网络延迟影响<br><strong>Keep-Alive是什么？</strong><br> 在http早期，每个http请求都要求打开一个tpcsocket连接，并且使用一次之后就断开这个tcp连接。<br> 使用keep-alive可以改善这种状态，即在一次TCP连接中可以持续发送多份数据而不会断开连接。通过使用keep-alive机制，可以减少tcp连接建立次数，以此提高性能和提高http服务器的吞吐率(更少的tcp连接意味着更少的耗时。</li>
+</ul>
+<hr>
+<p><strong>1.1.3.减少网络延迟及影响：</strong></p>
+<ul>
+<li><p>减少DNS查询（与分域名冲突，要找最优点）</p>
+</li>
+<li><p>减少DNS等待<br> 1.空请求DNS Prefetch，如下面代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1. 用meta信息来告知浏览器, 当前页面要做DNS预解析:&lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot; /&gt;</div><div class="line"></div><div class="line">2. 在页面header中使用link标签来强制对DNS预解析: &lt;link rel=&quot;dns-prefetch&quot; href=&quot;http://bdimg.share.baidu.com&quot; /&gt;</div><div class="line"></div><div class="line">&lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot; /&gt;</div><div class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;http://nsclick.baidu.com&quot; /&gt;</div><div class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;http://hm.baidu.com&quot; /&gt;</div><div class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;http://eiv.baidu.com&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>减少TCP链接<br> 1.Keep-Alive应用<br> 2.合并资源（就是打包咯。。）</p>
+</li>
+<li><p>让服务器距离用户更近</p>
+<ol>
+<li>CDN加速走起。。。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<p><strong>1.1.4.控制资源提炼：</strong></p>
+<ul>
+<li><p>资源体量<br>1.压缩、去注释</p>
+</li>
+<li><p>Cookie 大小<br>1.分情况用Storage代替Cookie<br>2.无Cookie需求独立CookieFree域名（一些静态资源，放到Cookie Free域名下，设置不传Cookie）</p>
+</li>
+</ul>
+<hr>
+<p><strong>1.1.5.合并资源：</strong><br><strong>原理</strong>：<br> 1.减少了tcp握手消耗<br> 2.要最大并行请求数量限制（并不是所有的东西都打包到一个文件里最好，要充分利用浏览器并行多个文件下载的特性）</p>
+<p> <strong>？合并资源存在的问题：</strong><br> 1.脚本/样式解析被延迟（文件过大，解析当然延迟了）<br> 2.存在带入无用内容的概率（多个文件打包在一起，可能存在此时还不需要的代码）<br> 3.版本更新被绑在一起（有一个小的文件改动，build时就要更改版本，缓存被破坏的概率更高）</p>
+<p> 因此要从几个方便寻找合并文件的平衡点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//一下建议有一部分是书面所得，并未实践</div><div class="line">1.文件大小（建议单个打包文件不超过 500KB）</div><div class="line">2.更新频率（有的文件更新频率过高，就尽量不打包进来，造成破坏整个文件缓存）</div><div class="line">3.特别大的库单独拥有自己的一个脚本，比如ECharts之类的图表。</div><div class="line">4.UI控件库，包含基础UI控件和业务UI控件，合并为一个脚本。</div><div class="line">5.MVC框架、页面基类、工具类、系统通用功能层等业务无关的逻辑合并为一个脚本。</div><div class="line">6.一级页面的业务模块合并为一个脚本。</div></pre></td></tr></table></figure>
+<hr>
+<p> <strong>1.1.6.缓存：</strong><br><strong>Cache缓存:</strong>(通过设置HTTP Header 参数Cache-Control实现)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. 静态资源版本号+永久缓存是基本</div><div class="line">2. 动态/入口资源短时间缓存有积极作用（比如商品的详情页缓存个几秒还是应该可以的）</div></pre></td></tr></table></figure>
+<p><strong>Last-Modified &amp; If-Modified-Since</strong>（也就是咱们常见的304）</p>
+<p><strong>localStorage 缓存数据</strong><br>HTML 的localStorage是是本地存储的新玩意，适当的时候可以代替cookie，但是注意兼容问题和体积上限（大致5M左右）</p>
+<h2 id="注：上面是大致对‘下载这一过程的总结’"><a href="#注：上面是大致对‘下载这一过程的总结’" class="headerlink" title="注：上面是大致对‘下载这一过程的总结’"></a><strong>注：</strong>上面是大致对‘下载这一过程的总结’</h2><hr>
+<p>  <strong>1.2解析：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">解析页面：</div><div class="line">1.解析是需要时间的，虽然很短</div><div class="line">2.解析发生在主线程，会阻塞其它代码执行</div><div class="line">3.解析和下载发生在不同线程，可并行HTML可使用http协议设置 Transfer-Encoding:chunk实现下载和解析并行</div></pre></td></tr></table></figure>
+<p> <img src="http://7xqd2y.com1.z0.glb.clouddn.com/c6e5df8d8b67cdf074d3722c69f6fe32.png" alt="此处输入图片的描述"></p>
+<p> 上图中，上面的是大部分网站的形式，下面这种，边下载边解析是比较少见的，上下对比起来，还是有一定的优化控件。</p>
+<p> 目前下面的这种形式Facebook有实践，大家可以搜索一下“<strong>BigPipe技术</strong>”，貌似淘宝也有一种“BigRender”的技术。（具体实现不详述了，感兴趣可以搜索下）</p>
+<hr>
+<p>  <strong>1.3样式匹配：</strong></p>
+<p>  1.基本无法成为瓶颈<br>  2.样式匹配自右向左进行<br>  3.注意避免统配选择器（*）</p>
+<p><strong>注：</strong>个人感觉一般样式选择器对性能影响不大，好的书写是有利于代码的维护。</p>
+<hr>
+<p>  <strong>1.4布局方面的优化（有优化点）：</strong></p>
+<p>  <strong>1.4.1. 浏览器repaint（重绘） &amp; relayout（排版）</strong></p>
+<p>不同的浏览器的渲染过程存在些许不同，但大体的机制是一样的，下图展示的是浏览器自下载完全部的代码后的大致流程<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/3a2e4ae5010283f4e05dce0c8c38d02c.png" alt="此处输入图片的描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.HTML代码转化成DOM</div><div class="line">2.CSS代码转化成CSSOM（CSS Object Model）</div><div class="line">3.结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）</div><div class="line">4.生成布局（layout），即将所有渲染树的所有节点进行平面合成</div><div class="line">5.将布局绘制（paint）在屏幕上</div><div class="line"></div><div class="line">//这五步里面，第一步到第三步都非常快，耗时的是第四步和第五步</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>注意：</strong> 重绘和重排的性能消耗是非常严重的，破坏用户体验造成UI卡顿。</p>
+<p><strong>？</strong>什么时候回触发重新渲染？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1.增加、删除、更新DOM节点；</div><div class="line">2.通过display:none隐藏节点会触发重绘和回流，通过visibility:hidden隐藏只会触发重绘，因为没有几何结构的改变；</div><div class="line">3.移动节点和动画；</div><div class="line">4.增加、调整样式；</div><div class="line">5.用户操作行为，如调整窗口大小、改变字体大小、滚动窗口（OMG，no!）等。</div><div class="line"></div><div class="line">//重新渲染，就需要重新生成布局和重新绘制。前者叫做&quot;重排&quot;（reflow），后者叫做&quot;重绘&quot;（repaint）。</div><div class="line">//注意点：&quot;重绘&quot;不一定需要&quot;重排&quot;，比如改变某个网页元素的颜色，就只会触发&quot;重绘&quot;，不会触发&quot;重排&quot;，因为布局没有改变。但是，&quot;重排&quot;必然导致&quot;重绘&quot;，比如改变一个网页元素的位置，就会同时触发&quot;重排&quot;和&quot;重绘&quot;，因为布局改变了。</div></pre></td></tr></table></figure></p>
+<p>现在浏览器变得很聪明了，会智能合并多次重绘动作，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">div.style.width = 12px;</div><div class="line">div.style.color = #000;</div><div class="line">这两行代码，只会触发一次重排和重绘</div></pre></td></tr></table></figure></p>
+<p>但是有时候特别书写时就不行，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div.style.color = &apos;blue&apos;;</div><div class="line">var margin = parseInt(div.style.marginTop);</div><div class="line">div.style.marginTop = (margin + 10) + &apos;px&apos;;</div><div class="line"></div><div class="line">//上面代码对div元素设置背景色以后，第二行要求浏览器给出该元素的位置，所以浏览器不得不立即重排。</div></pre></td></tr></table></figure></p>
+<p><strong>所以，从性能角度考虑，尽量不要把读操作和写操作，放在一个语句里面。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">div.style.left = div.offsetLeft + 10 + &quot;px&quot;;</div><div class="line">div.style.top = div.offsetTop + 10 + &quot;px&quot;;</div><div class="line"></div><div class="line">// good</div><div class="line">var left = div.offsetLeft;</div><div class="line">var top  = div.offsetTop;</div><div class="line">div.style.left = left + 10 + &quot;px&quot;;</div><div class="line">div.style.top = top + 10 + &quot;px&quot;;</div><div class="line"></div><div class="line">一般的规则：</div><div class="line">1.样式表越简单，重排和重绘就越快。</div><div class="line">2.重排和重绘的DOM元素层级越高，成本就越高。</div></pre></td></tr></table></figure></p>
+<p>总结重绘和重排的几个优化点：（尽量少的触发重排）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1.DOM 的多个读操作（或多个写操作），应该放在一起。不要两个读操作之间，加入一个写操作。</div><div class="line"></div><div class="line">2.如果某个样式是通过重排得到的，那么最好缓存结果。避免下一次用到的时候，浏览器又要重排。</div><div class="line"></div><div class="line">3.不要一条条地改变样式，而要通过改变class，或者csstext属性，一次性地改变样式。</div><div class="line"></div><div class="line">4.先将元素设为display:none（需要1次重排和重绘），然后对这个节点进行100次操作，最后再恢复显示（需要1次重排和重绘）。这样一来，你就用两次重新渲染，取代了可能高达100次的重新渲染。</div><div class="line"></div><div class="line">5.position属性为absolute或fixed的元素，重排的开销会比较小，因为不用考虑它对其他元素的影响。</div><div class="line"></div><div class="line">6.使用虚拟DOM的脚本库，比如React等。</div><div class="line"></div><div class="line">7.dom动画什么的，不要通过修改DOM位置进行，可以用transform等css属性，只触发重绘</div></pre></td></tr></table></figure></p>
+<hr>
+<p>一个页面的性能体验可以总结一下几点：</p>
+<ul>
+<li>对性能进行分类<ul>
+<li>首屏时间 </li>
+<li>绘制帧数 </li>
+<li>交互响应时间</li>
+</ul>
+</li>
+<li><p>时间的大致标准</p>
+<ul>
+<li>用户交互反馈100ms以上有延迟感（点个按钮100ms没反应）</li>
+<li>绘制16ms以上有掉帧感 （网上查的，对动画不是太了解）</li>
+<li>任务执行1s以上有不耐烦感（一个loading超过1s）</li>
+</ul>
+</li>
+<li><p>当一个页面动画很卡时，干脆砍了，用其他方案代替</p>
+</li>
+</ul>
+<hr>
+<p>作者 [@sha Qihe]<br>2016 年 3月 20日<br>QQ:330630770</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/优化/" rel="tag">#优化</a>
+          
+            <a href="/tags/性能/" rel="tag">#性能</a>
+          
+            <a href="/tags/体验/" rel="tag">#体验</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/19/尝试使用Vue.js(二)接口代理/" rel="next" title="尝试使用Vue.js(二)接口代理，使用peomise异步编程">
+                <i class="fa fa-chevron-left"></i> 尝试使用Vue.js(二)接口代理，使用peomise异步编程
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2020/03/16/前端性能的一些小总结/"
+           data-title="前端性能的一些小总结" data-url="http://yoursite.com/2020/03/16/前端性能的一些小总结/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/8308888?v=3&s=466"
+               alt="sha Qihe" />
+          <p class="site-author-name" itemprop="name">sha Qihe</p>
+          <p class="site-description motion-element" itemprop="description">前端开发者，热爱生活，努力向上</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shaqihe" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解"><span class="nav-number">1.</span> <span class="nav-text"> 前端性能优化，老生常谈的问题了，提到性能，可以说的太多了，想真正的对性能进行优化，必须深入了解!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-想深层次探究前端优化-就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？"><span class="nav-number"></span> <span class="nav-text">1.想深层次探究前端优化,就不仅仅停留到表面，要知道文件如何下载？浏览器如何渲染？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分析出：下载性能决定的几个因素："><span class="nav-number">1.</span> <span class="nav-text">分析出：下载性能决定的几个因素：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注：上面是大致对‘下载这一过程的总结’"><span class="nav-number">2.</span> <span class="nav-text">注：上面是大致对‘下载这一过程的总结’</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sha Qihe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"shaqihe"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
