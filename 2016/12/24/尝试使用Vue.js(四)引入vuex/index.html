@@ -1,0 +1,705 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="vue,vuex," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="尝试使用Vue.js(四)引入vuex用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址这篇文章介绍下载‘vue-cli’脚手架基础上 引入vuex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="尝试使用Vue.js(四)引入vuex">
+<meta property="og:url" content="http://yoursite.com/2016/12/24/尝试使用Vue.js(四)引入vuex/index.html">
+<meta property="og:site_name" content="沙-博客">
+<meta property="og:description" content="尝试使用Vue.js(四)引入vuex用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址这篇文章介绍下载‘vue-cli’脚手架基础上 引入vuex">
+<meta property="og:updated_time" content="2017-01-04T03:23:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="尝试使用Vue.js(四)引入vuex">
+<meta name="twitter:description" content="尝试使用Vue.js(四)引入vuex用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址这篇文章介绍下载‘vue-cli’脚手架基础上 引入vuex">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/24/尝试使用Vue.js(四)引入vuex/"/>
+
+
+  <title> 尝试使用Vue.js(四)引入vuex | 沙-博客 </title>
+  <meta name="baidu-site-verification" content="M5BFEwgTgm" />
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e0d6f644275cb8d0414123acd2a1645a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">沙-博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">前端开发者，热爱生活，努力向上</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                尝试使用Vue.js(四)引入vuex
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-24T23:32:10+08:00" content="2016-12-24">
+              2016-12-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/24/尝试使用Vue.js(四)引入vuex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/24/尝试使用Vue.js(四)引入vuex/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="尝试使用Vue-js-四-引入vuex"><a href="#尝试使用Vue-js-四-引入vuex" class="headerlink" title="尝试使用Vue.js(四)引入vuex"></a><strong>尝试使用Vue.js(四)引入vuex</strong></h2><p>用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。<br><a href="http://test.clibchina.com/#/index" target="_blank" rel="external">Demo的在线预览地址</a><br><a href="https://github.com/shaqihe/life-app-vue" target="_blank" rel="external">Demo的github代码地址</a><br>这篇文章介绍下载‘vue-cli’脚手架基础上 引入vuex</p>
+<hr>
+<a id="more"></a>
+<p>分下面一点介绍：<br> . <strong>vuex使用</strong></p>
+<hr>
+<p><strong>vue中数据的传递有两种：</strong></p>
+<p><strong><em>第一种通过 props 和 $emit(event,{})：</em></strong></p>
+<ul>
+<li><p><strong>父—&gt;子</strong>传数据，通过porps，通过属性值给子组件传数据</p>
+</li>
+<li><p><strong>子—&gt;父</strong> 通过 $emit(event,{data:xxx})触发事件，通过 $on(eventName)监听事件</p>
+</li>
+</ul>
+<p>这种方式，在数据不负责的情况下，可以使用，如果用这种方法实现非父子组件通信，就变成  子组件–&gt;父组件—&gt;另一个子组件，两个子组件通信，要以父组件为桥梁，如果遇到更复杂的，就有点难以维护了。</p>
+<p><strong><em>第二种通过Vuex来解决：</em></strong></p>
+<ul>
+<li>我自己简单的理解，vuex维护的数据，就是一个全局的一个单例，所有的组件，都引用这一个单例里的数据，所有的操作都操作同一份数据，也就做到了同一份数据改变，同步到所有的组件中。</li>
+</ul>
+<hr>
+<p><strong>vuex的引入：</strong>(vue-cli生成的工程基础上)</p>
+<p>首先：npm install vuex –save<br><strong>注：</strong>如果在一个模块化工程中使用它，必须要通过 Vue.use() 明确地安vuex功能，如这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import Vuex from &quot;vuex&quot;;</div><div class="line"></div><div class="line">Vue.use(Vuex)</div></pre></td></tr></table></figure></p>
+<p>2.<strong>看下demo中如何用的：</strong></p>
+<p>首先：新建一个 <strong>‘src/store/index.js’</strong>这个文件的内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">import Vue from &quot;vue&quot;;          //引入vue</div><div class="line">import Vuex from &quot;vuex&quot;;        //引入vuex</div><div class="line"></div><div class="line">Vue.use(Vuex);                  //增加vuex功能</div><div class="line"></div><div class="line">export default new Vuex.Store(&#123;  //此文件直接export</div><div class="line">                                //出去一个实例化好的 Vuex.Store</div><div class="line">    state: &#123;</div><div class="line">        messages: [ </div><div class="line">            &#123;</div><div class="line">                key: tool.getTimestamp(), //列表key</div><div class="line">                type: USER_TYPE.ROBOT, //类型</div><div class="line">                value: &apos;你好，您有什么需要，可以直接和我对话😁&apos;, //内容</div><div class="line">                userId: &apos;&apos; //信息发送者</div><div class="line">            &#125;</div><div class="line">        ],</div><div class="line">        userId: xxxxx,</div><div class="line">        loading: flase</div><div class="line">    &#125;,</div><div class="line">    getters: &#123;</div><div class="line">        getMessages: state =&gt; &#123;</div><div class="line">            return state.messages || [];</div><div class="line">        &#125;,</div><div class="line">        getUserId: state =&gt; &#123;</div><div class="line">            return state.userId;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    mutations: &#123;</div><div class="line">        pushMassages: (state, message) =&gt; &#123;</div><div class="line">            state.messages.push(message);</div><div class="line">        &#125;,</div><div class="line">        clearMassages: state =&gt; &#123;</div><div class="line">            state.massages = [];</div><div class="line">        &#125;,</div><div class="line">        setLoading: (state, loading) =&gt; &#123;</div><div class="line">            state.loading = loading;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    actions: &#123;</div><div class="line">        pushMassages: (&#123;</div><div class="line">            commit</div><div class="line">        &#125;, message) =&gt; &#123;</div><div class="line">            return new Promise(function(resolve, reject) &#123;</div><div class="line">                commit(&quot;pushMassages&quot;, message);</div><div class="line">                resolve();</div><div class="line">            &#125;);</div><div class="line">        &#125;,</div><div class="line">        clearMassages: (&#123;</div><div class="line">            commit</div><div class="line">        &#125;) =&gt; &#123;</div><div class="line">            return new Promise(function(resolve, reject) &#123;</div><div class="line">                commit(&quot;clearMassages&quot;);</div><div class="line">                resolve();</div><div class="line">            &#125;);</div><div class="line">        &#125;,</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>一个vuex的store，主要四个属性：</p>
+<ol>
+<li>state：就是数据，所有的组件所需要的数据，都在state里</li>
+<li>getters：组件获取state里的数据可以通过store.state.xx, 但是这样如果还需要一些额外的处理，还得单独处理，所以在getters里统一处理一下东西，用的时候直接从 getters里拿数据</li>
+<li>mutations：mutations里是对 state的一些操作，vuex所有对state的操作都必须通过 ‘mutations’，mutations的操作都是同步的！</li>
+<li>actions： actions也是操作state的数据而诞生的，你会疑问：‘不是已经有mutations了吗？’，刚才说了mutations只能同步操作state，<strong>actions就是为异步操作state诞生的</strong>，可以把一些异步接口之后操作state的行为放到 actions里做。actions里的方法可以返回一个promise对象。</li>
+</ol>
+<hr>
+<p><strong>‘src/store/index.js’写好以后，就是在’src/main.js’ 应用vuex：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import App from &apos;./App&apos;</div><div class="line">import store from &quot;./store&quot;; //引入store的配置</div><div class="line"></div><div class="line">/* eslint-disable no-new */</div><div class="line">new Vue(&#123;</div><div class="line">    store, //应用配置</div><div class="line">    render: h =&gt; h(App)</div><div class="line">&#125;).$mount(&quot;#app&quot;);</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>上面两步写好，在组件中怎么用呢？可以参考’src/components/messageList.vue’：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">//我只写下js部分的代码</div><div class="line">    export default &#123;</div><div class="line">        name: &apos;messageList&apos;,</div><div class="line">        data ()&#123;</div><div class="line">            return &#123;</div><div class="line">                message: &apos;&apos;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        computed: &#123;</div><div class="line">            messageList() &#123;  //通过getters 获取store的数据</div><div class="line">                return this.$store.getters.getMessages;</div><div class="line">            &#125;,</div><div class="line">            userId() &#123; //通过getters 获取store的数据</div><div class="line">                return this.$store.getters.getUserId;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            contract() &#123;&#125;,</div><div class="line">            //发送消息</div><div class="line">            sendMessage () &#123;</div><div class="line">                if (this.message == &apos;&apos;) &#123;</div><div class="line">                    return;</div><div class="line">                &#125;</div><div class="line">                 this.$store.dispatch(&apos;pushMassages&apos;,</div><div class="line">                &#123;</div><div class="line">                    key: tool.getTimestamp(),</div><div class="line">                    type: USER_TYPE.PEOLE,</div><div class="line">                    value: this.message, </div><div class="line">                    userId: &apos;&apos; </div><div class="line">                &#125;).then(data =&gt;&#123;this.$store.dispatch(&apos;pushMassages&apos;,&#123;   </div><div class="line">                // 通过“dispatch”调用actions的方法</div><div class="line">                            key: tool.getTimestamp(), </div><div class="line">                            type: USER_TYPE.ROBOT, </div><div class="line">                            value: data,</div><div class="line">                            userId: &apos;&apos; </div><div class="line">                         &#125;).then(data </div><div class="line">                         //actions返回一个promise，进行下一步操作</div><div class="line">                =&gt;&#123;this.clearInput()&#125;);</div><div class="line">                &#125;)</div><div class="line">                &#125;);</div><div class="line">            &#125;,</div><div class="line">            clearInput() &#123;</div><div class="line">                this.message = &apos;&apos;;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>具体实现可以看下 <a href="https://github.com/shaqihe/life-app-vue" target="_blank" rel="external">Demo的github代码地址</a> 中的‘src/store/index’ 和 ‘src/main’ 两个文件</p>
+<p> <strong>注：vuex的细节理解和技巧总结，下一篇单独写一下吧。不放这个里写了</strong></p>
+<p>作者 [@sha Qihe]</p>
+<p>2016 年 12月 24日</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag">#vue</a>
+          
+            <a href="/tags/vuex/" rel="tag">#vuex</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/22/尝试使用Vue.js(三)引入vue-router/" rel="next" title="尝试使用Vue.js(三)引入vue-router">
+                <i class="fa fa-chevron-left"></i> 尝试使用Vue.js(三)引入vue-router
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/16/前端性能的一些小总结/" rel="prev" title="前端性能的一些小总结">
+                前端性能的一些小总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/24/尝试使用Vue.js(四)引入vuex/"
+           data-title="尝试使用Vue.js(四)引入vuex" data-url="http://yoursite.com/2016/12/24/尝试使用Vue.js(四)引入vuex/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/8308888?v=3&s=466"
+               alt="sha Qihe" />
+          <p class="site-author-name" itemprop="name">sha Qihe</p>
+          <p class="site-description motion-element" itemprop="description">前端开发者，热爱生活，努力向上</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shaqihe" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试使用Vue-js-四-引入vuex"><span class="nav-number">1.</span> <span class="nav-text">尝试使用Vue.js(四)引入vuex</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sha Qihe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"shaqihe"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
