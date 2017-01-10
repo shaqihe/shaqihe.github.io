@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="this," />
+  <meta name="keywords" content="vue,nginx," />
 
 
 
@@ -84,34 +84,16 @@
 
 
 
-<meta name="description" content="说说 thisjavascript的 this总是指向一个对象，具体指向那个对象，就是基于函数的运行环境动态绑定的，而不是函数声明时的环境。
-this的指向大致分为四种：
-
-作为对象的方法调用（this就指向这个对象）
-作为普通函数调用（this指向window）
-构造函数now时调用（指向实例出的这个对象）
-Function.prototype.call 或 Function.prototype">
+<meta name="description" content="尝试使用Vue.js(五)服务器部署，nginx配置用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址这篇文章介绍下载‘vue-cli’开发好后怎么配合nginx部署">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于this">
-<meta property="og:url" content="http://yoursite.com/2015/05/11/关于this/index.html">
+<meta property="og:title" content="尝试使用Vue.js(五)服务器部署，nginx配置">
+<meta property="og:url" content="http://yoursite.com/2016/12/28/尝试使用Vue.js(五)服务器部署，nginx配置/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="说说 thisjavascript的 this总是指向一个对象，具体指向那个对象，就是基于函数的运行环境动态绑定的，而不是函数声明时的环境。
-this的指向大致分为四种：
-
-作为对象的方法调用（this就指向这个对象）
-作为普通函数调用（this指向window）
-构造函数now时调用（指向实例出的这个对象）
-Function.prototype.call 或 Function.prototype">
-<meta property="og:updated_time" content="2016-11-03T13:07:43.000Z">
+<meta property="og:description" content="尝试使用Vue.js(五)服务器部署，nginx配置用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址这篇文章介绍下载‘vue-cli’开发好后怎么配合nginx部署">
+<meta property="og:updated_time" content="2017-01-10T12:23:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于this">
-<meta name="twitter:description" content="说说 thisjavascript的 this总是指向一个对象，具体指向那个对象，就是基于函数的运行环境动态绑定的，而不是函数声明时的环境。
-this的指向大致分为四种：
-
-作为对象的方法调用（this就指向这个对象）
-作为普通函数调用（this指向window）
-构造函数now时调用（指向实例出的这个对象）
-Function.prototype.call 或 Function.prototype">
+<meta name="twitter:title" content="尝试使用Vue.js(五)服务器部署，nginx配置">
+<meta name="twitter:description" content="尝试使用Vue.js(五)服务器部署，nginx配置用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址这篇文章介绍下载‘vue-cli’开发好后怎么配合nginx部署">
 
 
 
@@ -132,10 +114,10 @@ Function.prototype.call 或 Function.prototype">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/05/11/关于this/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/28/尝试使用Vue.js(五)服务器部署，nginx配置/"/>
 
 
-  <title> 关于this | 沙-博客 </title>
+  <title> 尝试使用Vue.js(五)服务器部署，nginx配置 | 沙-博客 </title>
   <meta name="baidu-site-verification" content="M5BFEwgTgm" />
 </head>
 
@@ -268,7 +250,7 @@ Function.prototype.call 或 Function.prototype">
             
             
               
-                关于this
+                尝试使用Vue.js(五)服务器部署，nginx配置
               
             
           </h1>
@@ -280,8 +262,8 @@ Function.prototype.call 或 Function.prototype">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-05-11T19:02:10+08:00" content="2015-05-11">
-              2015-05-11
+            <time itemprop="dateCreated" datetime="2016-12-28T20:02:10+08:00" content="2016-12-28">
+              2016-12-28
             </time>
           </span>
 
@@ -301,6 +283,18 @@ Function.prototype.call 或 Function.prototype">
 
                 
                 
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
 
               
             </span>
@@ -310,8 +304,8 @@ Function.prototype.call 或 Function.prototype">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/05/11/关于this/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/11/关于this/" itemprop="commentsCount"></span>
+                <a href="/2016/12/28/尝试使用Vue.js(五)服务器部署，nginx配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/28/尝试使用Vue.js(五)服务器部署，nginx配置/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -334,23 +328,31 @@ Function.prototype.call 或 Function.prototype">
       
 
       
-        <h2 id="说说-this"><a href="#说说-this" class="headerlink" title="说说 this"></a><strong>说说 this</strong></h2><p>javascript的 this总是指向一个对象，具体指向那个对象，就是基于函数的运行环境动态绑定的，而不是函数声明时的环境。</p>
-<p>this的指向大致分为四种：</p>
-<ol>
-<li>作为对象的方法调用（this就指向这个对象）</li>
-<li>作为普通函数调用（this指向window）</li>
-<li>构造函数now时调用（指向实例出的这个对象）</li>
-<li>Function.prototype.call 或 Function.prototype.apply 调用</li>
-</ol>
+        <h2 id="尝试使用Vue-js-五-服务器部署，nginx配置"><a href="#尝试使用Vue-js-五-服务器部署，nginx配置" class="headerlink" title="尝试使用Vue.js(五)服务器部署，nginx配置"></a><strong>尝试使用Vue.js(五)服务器部署，nginx配置</strong></h2><p>用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。<br><a href="http://test.clibchina.com/#/index" target="_blank" rel="external">Demo的在线预览地址</a><br><a href="https://github.com/shaqihe/life-app-vue" target="_blank" rel="external">Demo的github代码地址</a><br>这篇文章介绍下载‘vue-cli’开发好后怎么配合nginx部署</p>
+<hr>
 <a id="more"></a>
-<p>//作为对象方法调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    a: 1,</div><div class="line">    getA: function () &#123;</div><div class="line">        alert(this.a)  </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.getA() // 1</div></pre></td></tr></table></figure></p>
-<p>// 作为普通函数调用，this指向window<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">window.name = &apos;globalName&apos;;</div><div class="line">function getName()&#123;</div><div class="line">    alert(this.name)</div><div class="line">&#125;</div><div class="line">getName() // globalName</div><div class="line">//或者</div><div class="line">var </div><div class="line">var obj = &#123;</div><div class="line">    name: subName,</div><div class="line">    getName: function () &#123;</div><div class="line">        alert(this.name)  </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var get = obj.getName;</div><div class="line">get() //这里还是指向window， 输出 “globalName”</div></pre></td></tr></table></figure></p>
-<p>有时候我们会遇到，在一个dom事件函数里定义的函数，this都指向window， 被视为普通函数调用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//我们可能会这么做,变量保存this</div><div class="line"></div><div class="line">div.onclick= function () &#123;</div><div class="line">    var that = this;</div><div class="line">    function test () &#123;</div><div class="line">        // code  </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>//作为构造器调用<br>js中没有类，单可以从构造函数中创建对象，同事提供new 运算符。</p>
-<p>大部分js函数都可以当做构造函数，只是构造函数的调用方式，用new运算符调用这个函数时，该函数总会返回一个对象，构造函数里的this就指向这个对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var MyClass = function () &#123;</div><div class="line"> this .name = &apos;test&apos;;</div><div class="line">&#125;</div><div class="line"> var obj = new MyClass();</div><div class="line"> alert(obj.name) //test</div><div class="line"> </div><div class="line"> // 注：如果构造函数返回一个对象，就蒙圈了！</div></pre></td></tr></table></figure>
-<p>//Function.prototype.call 或 Function.prototype.apply 调用<br>这个两个函数可以动态的改变 this的指向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    name: ‘test’，</div><div class="line">    get: function () &#123;</div><div class="line">        alert(this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var boj2 = &#123;</div><div class="line">    name: &apos;xiaoming&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">boj.get.call(obj2);  //xiaoming   改变了this指向</div></pre></td></tr></table></figure></p>
-<h2 id="有时间总结下call-和-apply-的一些东西，今天就先这些，吃饭去"><a href="#有时间总结下call-和-apply-的一些东西，今天就先这些，吃饭去" class="headerlink" title="有时间总结下call 和 apply 的一些东西，今天就先这些，吃饭去"></a>有时间总结下call 和 apply 的一些东西，今天就先这些，吃饭去</h2><p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 5月 11日</p>
+<p>分下面一点介绍：</p>
+<ol>
+<li><strong>vue打包好后怎么配合nginx部署</strong></li>
+</ol>
+<hr>
+<p><strong><em>如果使用vue浏览器端渲染，：</em></strong></p>
+<p>   如果纯浏览器端渲染，不涉及Vue SSR（服务器端渲染），那就天然形成前后端分离了，接口全部异步，这样的的模式，在部署上也习惯前后端各种部署，<strong>启一个‘nginx’</strong>服务器，nginx对静态文件处理还是比较溜的，所以打包好的vue代码直接用nginx访问，而接口则用nginx代理到后端服务器就OK了，具体步骤如下：。</p>
+<p><strong>‘vue-cli的脚手架打包这些都有了，不细说’</strong><br><strong>环境上nginx安装过程，不细说了</strong><br>过程：</p>
+<ol>
+<li>vue-cli工程，执行‘npm run build’打包工程，得到一个‘dist’文件，所有打包好的代码都在dist文件中了，这就是部署需要的代码。</li>
+<li>配置nginx，如下：</li>
+</ol>
+<p><strong>nginx的顶层的几个属性配置暂时不说了，涉及到的主要是server属性的配置，如下：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80;         //nginx坚挺80端口</div><div class="line">    server_name test.clibchina.com;   //网站的域名</div><div class="line">    location / &#123;    //把根目录直接设置到打包好的‘dist’文件下，主入口是index</div><div class="line">        root / xxx/ xxx / xxx / dist;  //这块改成自己dist在的路径，linux系统 输入 pwd可以看到当前路径</div><div class="line">        index index.html index.htm;</div><div class="line">    &#125;</div><div class="line">    //这个是设置缓存策略，把所有的静态文件，设置成在本地永久缓存</div><div class="line">    location~.*\.(gif | jpg | js | css | jpeg | png | bmp | swf) $ &#123;</div><div class="line">        root / xxx/ xxx / xxx / dist;  //这块改成自己dist在的路径</div><div class="line">        add_header Cache - Control max - age = 259200000000;</div><div class="line">    &#125;</div><div class="line">    //设置接口代理，‘/api’开头的请求接口反向代理到其他服务器</div><div class="line">    location / api &#123;</div><div class="line">        rewrite ^ . + api / ? (.*) $ / $1</div><div class="line">        break;</div><div class="line">        include uwsgi_params;</div><div class="line">        proxy_pass http: //japi.juhe.cn;</div><div class="line">    &#125;</div><div class="line">    //设置接口代理，‘/op’开头的请求接口反向代理到其他服务器</div><div class="line">    location / op &#123;</div><div class="line">        rewrite ^ . + op / ? (.*) $ / $1</div><div class="line">        break;</div><div class="line">        include uwsgi_params;</div><div class="line">        proxy_pass http: //op.juhe.cn;</div><div class="line">    &#125;</div><div class="line">    //设置接口代理，‘/happy’开头的请求接口反向代理到其他服务器</div><div class="line">    location / happy &#123;</div><div class="line">        rewrite ^ . + happy / ? (.*) $ / $1</div><div class="line">        break;</div><div class="line">        include uwsgi_params;</div><div class="line">        proxy_pass http: //v.juhe.cn;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>主要说下这几点</p>
+<ol>
+<li>配置根目录</li>
+<li>配置缓存策略：因为打包会根据文件内容生成文件指纹（内容不同，文件名也会不同），所以使用用就缓存，只要文件名字没变，就走本地缓存，这样再访问一次之后，只要文件内容没再变，就走本地缓存，以后访问速度会快不少。（博客里有两篇文章，一个是关于前端优化，一个是缓存可以看下）</li>
+<li>后端接口反向代理，这个和本地开发，在vue项目里反向代理是一个意思，可以看vue（二）那个文章看本地开发反向代理配置。现在我们大部分可以用这种模式，后端提供异步接口，前端ajax请求，部署的时候可以分开部署，反向代理后端接口就行了</li>
+</ol>
+<p><strong>主要理解下，缓存配置的策略：本地永久缓存配合打包产生文件指纹，是一个比较好的优化点</strong></p>
+<p>作者 [@sha Qihe]</p>
+<p>2016 年 12月 28日</p>
 
       
     </div>
@@ -373,7 +375,9 @@ Function.prototype.call 或 Function.prototype">
       
         <div class="post-tags">
           
-            <a href="/tags/this/" rel="tag">#this</a>
+            <a href="/tags/vue/" rel="tag">#vue</a>
+          
+            <a href="/tags/nginx/" rel="tag">#nginx</a>
           
         </div>
       
@@ -382,16 +386,16 @@ Function.prototype.call 或 Function.prototype">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/12/23/Promise笔记（二）/" rel="next" title="Promise笔记（二）">
-                <i class="fa fa-chevron-left"></i> Promise笔记（二）
+              <a href="/2016/12/24/尝试使用Vue.js(四)引入vuex/" rel="next" title="尝试使用Vue.js(四)引入vuex">
+                <i class="fa fa-chevron-left"></i> 尝试使用Vue.js(四)引入vuex
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/05/28/call和apply方法小记/" rel="prev" title="call和apply方法小记">
-                call和apply方法小记 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/16/前端性能的一些小总结/" rel="prev" title="前端性能的一些小总结">
+                前端性能的一些小总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -418,8 +422,8 @@ Function.prototype.call 或 Function.prototype">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/05/11/关于this/"
-           data-title="关于this" data-url="http://yoursite.com/2015/05/11/关于this/">
+      <div class="ds-thread" data-thread-key="2016/12/28/尝试使用Vue.js(五)服务器部署，nginx配置/"
+           data-title="尝试使用Vue.js(五)服务器部署，nginx配置" data-url="http://yoursite.com/2016/12/28/尝试使用Vue.js(五)服务器部署，nginx配置/">
       </div>
     
   </div>
@@ -521,7 +525,7 @@ Function.prototype.call 或 Function.prototype">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说说-this"><span class="nav-number">1.</span> <span class="nav-text">说说 this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有时间总结下call-和-apply-的一些东西，今天就先这些，吃饭去"><span class="nav-number">2.</span> <span class="nav-text">有时间总结下call 和 apply 的一些东西，今天就先这些，吃饭去</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试使用Vue-js-五-服务器部署，nginx配置"><span class="nav-number">1.</span> <span class="nav-text">尝试使用Vue.js(五)服务器部署，nginx配置</span></a></li></ol></div>
             
           </div>
         </section>
