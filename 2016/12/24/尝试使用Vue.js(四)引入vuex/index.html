@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/24/尝试使用Vue.js(四)引入vuex/index.html">
 <meta property="og:site_name" content="沙-博客">
 <meta property="og:description" content="尝试使用Vue.js(四)引入vuex用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址这篇文章介绍下载‘vue-cli’脚手架基础上 引入vuex">
-<meta property="og:updated_time" content="2017-01-04T03:23:05.000Z">
+<meta property="og:updated_time" content="2017-01-22T07:03:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="尝试使用Vue.js(四)引入vuex">
 <meta name="twitter:description" content="尝试使用Vue.js(四)引入vuex用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址Demo的github代码地址这篇文章介绍下载‘vue-cli’脚手架基础上 引入vuex">
@@ -341,7 +341,7 @@
 <li><p><strong>子—&gt;父</strong> 通过 $emit(event,{data:xxx})触发事件，通过 $on(eventName)监听事件</p>
 </li>
 </ul>
-<p>这种方式，在数据不负责的情况下，可以使用，如果用这种方法实现非父子组件通信，就变成  子组件–&gt;父组件—&gt;另一个子组件，两个子组件通信，要以父组件为桥梁，如果遇到更复杂的，就有点难以维护了。</p>
+<p>这种方式，在数据不复杂的情况下，可以使用，如果用这种方法实现非父子组件通信，就变成  子组件–&gt;父组件—&gt;另一个子组件，两个子组件通信，要以父组件为桥梁，如果遇到更复杂的，就有点难以维护了。</p>
 <p><strong><em>第二种通过Vuex来解决：</em></strong></p>
 <ul>
 <li>我自己简单的理解，vuex维护的数据，就是一个全局的一个单例，所有的组件，都引用这一个单例里的数据，所有的操作都操作同一份数据，也就做到了同一份数据改变，同步到所有的组件中。</li>
