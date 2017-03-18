@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MVC," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -84,22 +84,24 @@
 
 
 
-<meta name="description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
+<meta name="description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：
+简单的Vue-mvvm的功能,代码链接VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
+一个简单的分工流涉及到几个对象：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端MVC">
-<meta property="og:url" content="http://yoursite.com/2015/09/12/前端MVC/index.html">
+<meta property="og:title" content="vue的mvvm双向绑定简单实现">
+<meta property="og:url" content="http://yoursite.com/2017/03/01/vue的mvvm双向绑定的简单实现/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
-<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png">
-<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/8046d3b93bffe6defb6ddfba24c1df05.png">
-<meta property="og:updated_time" content="2016-11-04T01:57:27.000Z">
+<meta property="og:description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：
+简单的Vue-mvvm的功能,代码链接VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
+一个简单的分工流涉及到几个对象：">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/vue2a.jpg">
+<meta property="og:updated_time" content="2017-03-18T06:53:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端MVC">
-<meta name="twitter:description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
-<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png">
+<meta name="twitter:title" content="vue的mvvm双向绑定简单实现">
+<meta name="twitter:description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：
+简单的Vue-mvvm的功能,代码链接VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
+一个简单的分工流涉及到几个对象：">
+<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/vue2a.jpg">
 
 
 
@@ -120,10 +122,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/09/12/前端MVC/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/01/vue的mvvm双向绑定的简单实现/"/>
 
 
-  <title> 前端MVC | 沙-博客 </title>
+  <title> vue的mvvm双向绑定简单实现 | 沙-博客 </title>
   <meta name="baidu-site-verification" content="M5BFEwgTgm" />
 </head>
 
@@ -256,7 +258,7 @@
             
             
               
-                前端MVC
+                vue的mvvm双向绑定简单实现
               
             
           </h1>
@@ -268,8 +270,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-12T22:06:32+08:00" content="2015-09-12">
-              2015-09-12
+            <time itemprop="dateCreated" datetime="2017-03-01T19:02:10+08:00" content="2017-03-01">
+              2017-03-01
             </time>
           </span>
 
@@ -282,8 +284,20 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/单页面/" itemprop="url" rel="index">
-                    <span itemprop="name">单页面</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -298,8 +312,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/09/12/前端MVC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/12/前端MVC/" itemprop="commentsCount"></span>
+                <a href="/2017/03/01/vue的mvvm双向绑定的简单实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/01/vue的mvvm双向绑定的简单实现/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,34 +336,43 @@
       
 
       
-        <h2 id="参与很多项目都是单页面系统，于是就写写前端MVC的东西。"><a href="#参与很多项目都是单页面系统，于是就写写前端MVC的东西。" class="headerlink" title="参与很多项目都是单页面系统，于是就写写前端MVC的东西。"></a>参与很多项目都是单页面系统，于是就写写前端MVC的东西。</h2><p>我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。</p>
-<p>附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：<br><a href="https://github.com/shaqihe/myBlog/tree/master/%E5%89%8D%E7%AB%AFMVC%E4%BB%A3%E7%A0%81" target="_blank" rel="external">简单的MVC写法</a><br><strong>MVC 几个核心的词语：</strong><br>view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p><strong>MVC包括三类对象：</strong></p>
+        <p>vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：</p>
+<p><a href="https://github.com/shaqihe/vue-mvvm" target="_blank" rel="external">简单的Vue-mvvm的功能,代码链接</a><br><strong>VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。</strong></p>
+<p>一个简单的分工流涉及到几个对象：</p>
+<p><img src="http://7xqd2y.com1.z0.glb.clouddn.com/vue2a.jpg" alt="此处输入图片的描述"></p>
+<a id="more"></a>
+<p>图中：</p>
 <ul>
-<li><p>模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。</p>
-</li>
-<li><p>视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地刷新自己。</p>
-</li>
-<li><p>控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。</p>
-</li>
+<li>绿色：Observer，负责数据劫持，增加geter、seter</li>
+<li>蓝色：Warcher，订阅Observer的seter触发的钩子</li>
+<li>黄色：Compile，解析模板，分析每个节点和model上的数据关系</li>
+<li>灰色：模板、视图</li>
 </ul>
-<p>下图是一个经典的MVC视图：<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png" alt="此处输入图片的描述"></p>
-<p>  view和model之间的观察者模式，view观察model，事先在此model上注册，以便view可以了解在数据model上发生的改变（其实这是一种事件机制）</p>
+<p>大家看代码的文件顺序建议为：Observer -&gt; Compile -&gt; Warcher -&gt; Vue<br><a href="https://github.com/shaqihe/vue-mvvm" target="_blank" rel="external">源代码链接，移步git</a></p>
+<h2 id="Observe："><a href="#Observe：" class="headerlink" title="Observe："></a>Observe：</h2><ol>
+<li>使用Object.defineProperty转化为getter与setter</li>
+<li>这个文件主要完成，把一个对象的属性，在geter、seter阶段增加数据劫持，在geter节点增加事件订阅，在setter节点发布事件，触发订阅者回调</li>
+</ol>
+<h2 id="Compile："><a href="#Compile：" class="headerlink" title="Compile："></a>Compile：</h2><p>compile 是模板编辑解析，将Dom元素解析，找出指令和占位符，和Watcher建立关系，Watcher 把订阅关系注册到 Observer的监听队列里，当Observer 发布消息时，根据不同的指令，进行Dom不同的操作<br><strong>作用：</strong></p>
+<ol>
+<li>页面初始化的时候  解析出模板（页面），把数据填充上</li>
+<li>数据发生变化的时候，update(),把新的数据跟新到模板上</li>
+</ol>
+<h2 id="Watcher："><a href="#Watcher：" class="headerlink" title="Watcher："></a>Watcher：</h2><p>Watcher 订阅者作为  Observer和compile的桥梁，主要做的事件是：</p>
+<ol>
+<li>自身实例化的时候，往订阅器（Dep）中添加自己（这个过程是自动调用Observer的geter，并且把自己添加到对应的data.xxx的订阅器中）</li>
+<li>自身有一个update()方法</li>
+<li>当属性发生改变，调用Dep.notify()发布事件，Wather调用自身的update方法，并触发compile中绑定的回调</li>
+</ol>
+<h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>Vue作为数据绑定的入口，整合Observer、Compile和Watcher三者</p>
+<ol>
+<li>通过Observer来监听自己的model数据变化</li>
+<li>通过Compile来解析编译模板指令</li>
+<li>最终利用Watcher搭起Observer和Compile之间的通信桥梁</li>
+<li>达到数据变化 -&gt; 视图更新；视图交互变化(input) -&gt; 数据model变更的双向绑定效果。</li>
+</ol>
+<p><a href="https://github.com/shaqihe/vue-mvvm" target="_blank" rel="external">源代码链接，移步git</a></p>
 <hr>
-<p>但是javascript中的MVC和上图又有一点区别：<br>我们使用的MVC框架是ER，适用于并能很方便地构建一个整站式的AJAX Web应用。核心的action、model和view的抽象，使得构建RIA应用变得简单可行。<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/8046d3b93bffe6defb6ddfba24c1df05.png" alt="此处输入图片的描述"></p>
-<ul>
-<li>控制器做调度者，在controller中添加事件监控</li>
-<li>整个通信基于一套事件机制（发布订阅/观察者模式）</li>
-<li>view 来控制模板和dom事件的添加</li>
-<li>model驱动开发<ul>
-<li>实际开发中，常常会以view为核心，页面上需要展示什么数据，就去model中设置数据源。发生了用户事件，我会在action中更新model，然后刷新view。有时候会遗漏更新model，直到需要数据时才发现没有保存到model中。</li>
-<li>model本身是独立的，自控制的，不依赖于view，能够同步支持多view的显示。</li>
-<li>实现数据绑定，任何对模型的更改都会在界面上反映出来。那我们只要预先写好view和model的关系映射（类似angular的viewmodel的思想）<br>。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 9月 12日</p>
 
       
     </div>
@@ -372,7 +395,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MVC/" rel="tag">#MVC</a>
+            <a href="/tags/vue/" rel="tag">#vue</a>
           
         </div>
       
@@ -381,16 +404,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/06/ES6小记/" rel="next" title="ES6小记">
-                <i class="fa fa-chevron-left"></i> ES6小记
+              <a href="/2016/12/28/尝试使用Vue.js(五)服务器部署，nginx配置/" rel="next" title="尝试使用Vue.js(五)服务器部署，nginx配置">
+                <i class="fa fa-chevron-left"></i> 尝试使用Vue.js(五)服务器部署，nginx配置
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/18/前端缓存走起来/" rel="prev" title="前端缓存走起来">
-                前端缓存走起来 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/16/前端性能的一些小总结/" rel="prev" title="前端性能的一些小总结">
+                前端性能的一些小总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -417,8 +440,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/09/12/前端MVC/"
-           data-title="前端MVC" data-url="http://yoursite.com/2015/09/12/前端MVC/">
+      <div class="ds-thread" data-thread-key="2017/03/01/vue的mvvm双向绑定的简单实现/"
+           data-title="vue的mvvm双向绑定简单实现" data-url="http://yoursite.com/2017/03/01/vue的mvvm双向绑定的简单实现/">
       </div>
     
   </div>
@@ -520,7 +543,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参与很多项目都是单页面系统，于是就写写前端MVC的东西。"><span class="nav-number">1.</span> <span class="nav-text">参与很多项目都是单页面系统，于是就写写前端MVC的东西。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Observe："><span class="nav-number">1.</span> <span class="nav-text">Observe：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compile："><span class="nav-number">2.</span> <span class="nav-text">Compile：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watcher："><span class="nav-number">3.</span> <span class="nav-text">Watcher：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue"><span class="nav-number">4.</span> <span class="nav-text">Vue</span></a></li></ol></div>
             
           </div>
         </section>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/03/01/vue%E7%9A%84mvvm%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</loc>
+    
+    <lastmod>2017-03-18T06:53:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/12/24/%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8Vue.js(%E5%9B%9B)%E5%BC%95%E5%85%A5vuex/</loc>
     
     <lastmod>2017-01-22T07:03:13.000Z</lastmod>
