@@ -84,22 +84,23 @@
 
 
 
-<meta name="description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：
-简单的Vue-mvvm的功能,代码链接VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
+<meta name="description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：源代码链接，移步git——–
+VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
 一个简单的分工流涉及到几个对象：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue的mvvm双向绑定简单实现">
 <meta property="og:url" content="http://yoursite.com/2017/03/01/vue的mvvm双向绑定的简单实现/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：
-简单的Vue-mvvm的功能,代码链接VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
+<meta property="og:description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：源代码链接，移步git——–
+VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
 一个简单的分工流涉及到几个对象：">
 <meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/vue2a.jpg">
-<meta property="og:updated_time" content="2017-03-18T06:53:31.000Z">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/demo.gif">
+<meta property="og:updated_time" content="2017-03-21T03:01:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue的mvvm双向绑定简单实现">
-<meta name="twitter:description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：
-简单的Vue-mvvm的功能,代码链接VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
+<meta name="twitter:description" content="vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：源代码链接，移步git——–
+VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。
 一个简单的分工流涉及到几个对象：">
 <meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/vue2a.jpg">
 
@@ -336,8 +337,8 @@
       
 
       
-        <p>vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：</p>
-<p><a href="https://github.com/shaqihe/vue-mvvm" target="_blank" rel="external">简单的Vue-mvvm的功能,代码链接</a><br><strong>VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。</strong></p>
+        <p>vue的mvvm实现，通过代码实现一个超级简单的mvvm的功能，具体的代码移步git链接：<br><strong><a href="https://github.com/shaqihe/vue-mvvm" target="_blank" rel="external">源代码链接，移步git——–</a></strong></p>
+<p><strong>VUE的数据的双向同步，主要通过 defineProperty把数据转化为getter与setter。</strong></p>
 <p>一个简单的分工流涉及到几个对象：</p>
 <p><img src="http://7xqd2y.com1.z0.glb.clouddn.com/vue2a.jpg" alt="此处输入图片的描述"></p>
 <a id="more"></a>
@@ -364,14 +365,15 @@
 <li>自身有一个update()方法</li>
 <li>当属性发生改变，调用Dep.notify()发布事件，Wather调用自身的update方法，并触发compile中绑定的回调</li>
 </ol>
-<h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p>Vue作为数据绑定的入口，整合Observer、Compile和Watcher三者</p>
+<h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue:"></a>Vue:</h2><p>Vue作为数据绑定的入口，整合Observer、Compile和Watcher三者</p>
 <ol>
 <li>通过Observer来监听自己的model数据变化</li>
 <li>通过Compile来解析编译模板指令</li>
 <li>最终利用Watcher搭起Observer和Compile之间的通信桥梁</li>
 <li>达到数据变化 -&gt; 视图更新；视图交互变化(input) -&gt; 数据model变更的双向绑定效果。</li>
 </ol>
-<p><a href="https://github.com/shaqihe/vue-mvvm" target="_blank" rel="external">源代码链接，移步git</a></p>
+<p><strong><a href="https://github.com/shaqihe/vue-mvvm" target="_blank" rel="external">源代码链接，移步git</a></strong></p>
+<p><img src="http://7xqd2y.com1.z0.glb.clouddn.com/demo.gif" alt="效果"></p>
 <hr>
 
       
@@ -543,7 +545,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Observe："><span class="nav-number">1.</span> <span class="nav-text">Observe：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compile："><span class="nav-number">2.</span> <span class="nav-text">Compile：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watcher："><span class="nav-number">3.</span> <span class="nav-text">Watcher：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue"><span class="nav-number">4.</span> <span class="nav-text">Vue</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Observe："><span class="nav-number">1.</span> <span class="nav-text">Observe：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compile："><span class="nav-number">2.</span> <span class="nav-text">Compile：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watcher："><span class="nav-number">3.</span> <span class="nav-text">Watcher：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue"><span class="nav-number">4.</span> <span class="nav-text">Vue:</span></a></li></ol></div>
             
           </div>
         </section>
