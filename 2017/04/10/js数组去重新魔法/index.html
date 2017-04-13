@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端, 沙, 沙启" />
+  <meta name="keywords" content="Array,js," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="前端开发者，热爱生活，努力向上">
-<meta property="og:type" content="website">
-<meta property="og:title" content="沙-博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/03/index.html">
+<meta name="description" content="今天看到一个Array去重的比较有趣的方法，记一下。、传统的数组去重？一般就是 结合for循环，结合 indexof等例如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数组去重小魔法">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/js数组去重新魔法/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="前端开发者，热爱生活，努力向上">
+<meta property="og:description" content="今天看到一个Array去重的比较有趣的方法，记一下。、传统的数组去重？一般就是 结合for循环，结合 indexof等例如">
+<meta property="og:updated_time" content="2017-04-13T13:31:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="沙-博客">
-<meta name="twitter:description" content="前端开发者，热爱生活，努力向上">
+<meta name="twitter:title" content="js数组去重小魔法">
+<meta name="twitter:description" content="今天看到一个Array去重的比较有趣的方法，记一下。、传统的数组去重？一般就是 结合for循环，结合 indexof等例如">
 
 
 
@@ -113,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2020/03/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/10/js数组去重新魔法/"/>
 
 
-  <title> 归档 | 沙-博客 </title>
+  <title> js数组去重小魔法 | 沙-博客 </title>
   <meta name="baidu-site-verification" content="M5BFEwgTgm" />
 </head>
 
@@ -148,7 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -228,66 +229,163 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 19 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js数组去重小魔法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-10T17:21:34+08:00" content="2017-04-10">
+              2017-04-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/10/js数组去重新魔法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/10/js数组去重新魔法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <h2 id="今天看到一个Array去重的比较有趣的方法，记一下。、"><a href="#今天看到一个Array去重的比较有趣的方法，记一下。、" class="headerlink" title="今天看到一个Array去重的比较有趣的方法，记一下。、"></a>今天看到一个Array去重的比较有趣的方法，记一下。、</h2><h2 id="传统的数组去重？"><a href="#传统的数组去重？" class="headerlink" title="传统的数组去重？"></a><strong>传统的数组去重？</strong></h2><p>一般就是 结合for循环，结合 indexof等例如</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 2, 3, 4, 1, 1, 3]</div><div class="line"></div><div class="line">var arrobj = &#123;&#125;,</div><div class="line">    newArr = [];</div><div class="line"></div><div class="line">for (var i = arr.lenth; i &gt;= 0; i--) &#123;</div><div class="line">    if (!arrobj[i]) &#123;</div><div class="line">        arrobj[i] = true;</div><div class="line">        newArr.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//newArr 为去重后的数组；</div></pre></td></tr></table></figure>
+<p><strong>去重黑科技？</strong></p>
+<p>####ES6新方法：利用Set 对象，这是一种数据结构“集合”，高中数据知识就学了，–&gt;“集合中的各个元素之间，必须是不同的。这是集合元素的互异性要求。”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 2, 3, 4, 1, 1, 3]</div><div class="line"></div><div class="line">var newArr = [... new Set(arr)];</div><div class="line"></div><div class="line">//newArr 为去重后的数组；</div></pre></td></tr></table></figure>
+<p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<hr>
+<p>作者 [@sha Qihe]</p>
+<p>2017 年 4月 10日</p>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2020">2020</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Array/" rel="tag">#Array</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/01/vue的mvvm双向绑定的简单实现/" rel="next" title="vue的mvvm双向绑定简单实现">
+                <i class="fa fa-chevron-left"></i> vue的mvvm双向绑定简单实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/16/前端性能的一些小总结/" rel="prev" title="前端性能的一些小总结">
+                前端性能的一些小总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2020/03/16/前端性能的一些小总结/" itemprop="url">
-              
-                <span itemprop="name">前端性能的一些小总结</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-03-16T19:18:40+08:00"
-              content="2020-03-16" >
-          03-16
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -295,6 +393,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/10/js数组去重新魔法/"
+           data-title="js数组去重小魔法" data-url="http://yoursite.com/2017/04/10/js数组去重新魔法/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -314,8 +420,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars0.githubusercontent.com/u/8308888?v=3&s=466"
@@ -376,6 +491,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#今天看到一个Array去重的比较有趣的方法，记一下。、"><span class="nav-number">1.</span> <span class="nav-text">今天看到一个Array去重的比较有趣的方法，记一下。、</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传统的数组去重？"><span class="nav-number">2.</span> <span class="nav-text">传统的数组去重？</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -479,11 +605,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
 
 
   
