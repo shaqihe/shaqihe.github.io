@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 声明文档使用的字符编码 -->
+    <meta charset='utf-8'>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- 页面描述 -->
+    <meta name="description" content="不超过150个字符"/>
+    <!-- 页面关键词 -->
+    <meta name="keywords" content=""/>
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com"/>
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow"/>
+    <!-- 为移动设备添加 viewport -->
+    <!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz -->
+
+    <!-- iOS 设备 begin -->
+    <meta name="apple-mobile-web-app-title" content="标题">
+    <!-- 添加到主屏后的标题（iOS 6 新增） -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+
+    <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+    <!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 不让百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script type="text/javascript" src="script/core.js"></script>
+    <script src="script/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var i,j;
+            setInterval(function () {
+                if (typeof i != 'undefined') {
+                    $('.flip-container').eq(i).removeClass('animating');
+                }
+
+                j = parseInt(Math.random() * 9) % 9; // 1 -- 9
+
+                if(i == j) {
+                    j = (j + 1) % 9;
+                }
+
+                i = j;
+
+                $('.flip-container').eq(i).addClass('animating');
+            }, 2000)
+        });
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>Yola</title>
+</head>
+<body>
+<div class="ad"></div>
+<div class="ad-con">
+    <div class="logo">
+        <img src="images/logo.png">
+    </div>
+    <div class="logo-wor">
+        <img src="images/logo-wor.png">
+    </div>
+    <div class="slogan">
+        美女如云，翻到手软
+    </div>
+    <a class="header-btn" href="https://lkme.cc/VoC/CuZtQUPt9">
+        和美女视频
+    </a>
+</div>
+<div class="flip">
+    <ul class="flip-ul">
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic01.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-01.png">
+            </div>
+        </li>
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic02.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-02.png">
+            </div>
+        </li>
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic03.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-03.png">
+            </div>
+        </li>
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic04.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-04.png">
+            </div>
+        </li>
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic05.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-05.png">
+            </div>
+        </li>
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic06.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-06.png">
+            </div>
+        </li>
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic07.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-07.png">
+            </div>
+        </li>
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic08.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-08.png">
+            </div>
+        </li>
+        <li class="flip-container">
+            <div class="front">
+                <img src="images/pic09.png">
+            </div>
+            <div class="back">
+                <img src="images/pic-p-09.png">
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
