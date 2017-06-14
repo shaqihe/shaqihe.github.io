@@ -389,8 +389,7 @@
                                         <table>
                                             <tr>
                                                 <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td>
-                                                <td
-                                                    class="code"><pre><div class="line">function asyncFunction() &#123;</div><div class="line">    return new Promise(function (resolve, reject) &#123; //①</div><div class="line">    setTimeout(function () &#123;</div><div class="line">        resolve(&apos;Async Hello world&apos;); &#125;, 16); //②</div><div class="line">    &#125;); </div><div class="line">&#125;</div><div class="line">asyncFunction().then(function (value) &#123; console.log(value); // =&gt; &apos;Async Hello world&apos;</div><div class="line">&#125;).catch(function (error) &#123; console.log(error);</div><div class="line">&#125;);</div></pre></td>
+                                                <td class="code"><pre><div class="line">function asyncFunction() &#123;</div><div class="line">    return new Promise(function (resolve, reject) &#123; //①</div><div class="line">    setTimeout(function () &#123;</div><div class="line">        resolve(&apos;Async Hello world&apos;); &#125;, 16); //②</div><div class="line">    &#125;); </div><div class="line">&#125;</div><div class="line">asyncFunction().then(function (value) &#123; console.log(value); // =&gt; &apos;Async Hello world&apos;</div><div class="line">&#125;).catch(function (error) &#123; console.log(error);</div><div class="line">&#125;);</div></pre></td>
                                             </tr>
                                         </table>
                                     </figure>
@@ -434,8 +433,7 @@
                                         <table>
                                             <tr>
                                                 <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td>
-                                                <td
-                                                    class="code"><pre><div class="line">function getURL(URL) &#123;</div><div class="line">    return new Promise(function (resolve, reject) &#123;</div><div class="line">        var req = new XMLHttpRequest();  //栗子就不做ie兼容了</div><div class="line">        req.open(&apos;GET&apos;, URL, true); </div><div class="line">        req.onload = function () &#123;</div><div class="line">            if (req.status === 200) &#123; </div><div class="line">                resolve(req.responseText);</div><div class="line">            &#125; </div><div class="line">            else &#123;</div><div class="line">                reject(new Error(req.statusText));</div><div class="line">            &#125; </div><div class="line">        &#125;;</div><div class="line">        req.onerror = function () &#123; </div><div class="line">            reject(new Error(req.statusText)）;</div><div class="line">        &#125;;</div><div class="line">        req.send(); </div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line">// 运行示例</div><div class="line">var URL = &quot;http://httpbin.org/get&quot;; </div><div class="line">getURL(URL).then(function onFulfilled(value) &#123;</div><div class="line">console.log(value); &#125;).catch(function onRejected(error) &#123;</div><div class="line">console.error(error); &#125;);</div></pre></td>
+                                                <td class="code"><pre><div class="line">function getURL(URL) &#123;</div><div class="line">    return new Promise(function (resolve, reject) &#123;</div><div class="line">        var req = new XMLHttpRequest();  //栗子就不做ie兼容了</div><div class="line">        req.open(&apos;GET&apos;, URL, true); </div><div class="line">        req.onload = function () &#123;</div><div class="line">            if (req.status === 200) &#123; </div><div class="line">                resolve(req.responseText);</div><div class="line">            &#125; </div><div class="line">            else &#123;</div><div class="line">                reject(new Error(req.statusText));</div><div class="line">            &#125; </div><div class="line">        &#125;;</div><div class="line">        req.onerror = function () &#123; </div><div class="line">            reject(new Error(req.statusText)）;</div><div class="line">        &#125;;</div><div class="line">        req.send(); </div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line">// 运行示例</div><div class="line">var URL = &quot;http://httpbin.org/get&quot;; </div><div class="line">getURL(URL).then(function onFulfilled(value) &#123;</div><div class="line">console.log(value); &#125;).catch(function onRejected(error) &#123;</div><div class="line">console.error(error); &#125;);</div></pre></td>
                                             </tr>
                                         </table>
                                     </figure>
@@ -528,8 +526,7 @@
                                                 <table>
                                                     <tr>
                                                         <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td>
-                                                        <td
-                                                            class="code"><pre><div class="line">new Promise(</div><div class="line">    function (resolve,reject) &#123; </div><div class="line">        reject(new Error(&quot;出错了&quot;));</div><div class="line">    &#125;</div><div class="line">);</div><div class="line">// 是Promise.reject(newError(&quot;出错了&quot;))的语法糖。</div><div class="line">//如下:</div><div class="line">Promise.reject(new Error(&quot;BOOM!&quot;)).catch(</div><div class="line">    function(error)&#123; </div><div class="line">        console.error(error);</div><div class="line">    &#125;</div><div class="line">);</div></pre></td>
+                                                        <td class="code"><pre><div class="line">new Promise(</div><div class="line">    function (resolve,reject) &#123; </div><div class="line">        reject(new Error(&quot;出错了&quot;));</div><div class="line">    &#125;</div><div class="line">);</div><div class="line">// 是Promise.reject(newError(&quot;出错了&quot;))的语法糖。</div><div class="line">//如下:</div><div class="line">Promise.reject(new Error(&quot;BOOM!&quot;)).catch(</div><div class="line">    function(error)&#123; </div><div class="line">        console.error(error);</div><div class="line">    &#125;</div><div class="line">);</div></pre></td>
                                                     </tr>
                                                 </table>
                                             </figure>
@@ -712,34 +709,33 @@
                                 <div class="post-toc-content">
                                     <ol class="nav">
                                         <li class="nav-item nav-level-2"><a class="nav-link" href="#在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“Promise-A-规范”是一种很方便的异步编程方式。"><span class="nav-number">1.</span> <span class="nav-text">在前端开发中，有个很熟悉的词叫做“回调”，在处理一些异步的函数的时候，回调被广泛应用，但是大量用回调来编程，会出现嵌套层级过多，代码风格不规范，不清晰的问题。“Promise/A+规范”是一种很方便的异步编程方式。</span></a></li>
-                                        <li
-                                            class="nav-item nav-level-2"><a class="nav-link" href="#使用promise进行编程有哪些好处？"><span class="nav-number">2.</span> <span class="nav-text">使用promise进行编程有哪些好处？</span></a></li>
-                                            <li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-简介"><span class="nav-number">3.</span> <span class="nav-text">Promise 简介</span></a>
-                                                <ol class="nav-child">
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#1-构建promise对象"><span class="nav-number">3.1.</span> <span class="nav-text">1. 构建promise对象</span></a></li>
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#2-常用的方法"><span class="nav-number">3.2.</span> <span class="nav-text">2. 常用的方法</span></a></li>
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#3-静态方法"><span class="nav-number">3.3.</span> <span class="nav-text">3. 静态方法</span></a></li>
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#4-来个栗子"><span class="nav-number">3.4.</span> <span class="nav-text">4. 来个栗子</span></a></li>
-                                                </ol>
-                                            </li>
-                                            <li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-状态详解"><span class="nav-number">4.</span> <span class="nav-text">Promise 状态详解</span></a>
-                                                <ol class="nav-child">
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#1-大致三个状态"><span class="nav-number">4.1.</span> <span class="nav-text">1. 大致三个状态</span></a></li>
-                                                </ol>
-                                            </li>
-                                            <li class="nav-item nav-level-2"><a class="nav-link" href="#编写Promise代码："><span class="nav-number">5.</span> <span class="nav-text">编写Promise代码：</span></a>
-                                                <ol class="nav-child">
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建promise对象"><span class="nav-number">5.1.</span> <span class="nav-text">1. 创建promise对象</span></a></li>
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#来个XHR的promise对象的栗子"><span class="nav-number">5.2.</span> <span class="nav-text">来个XHR的promise对象的栗子</span></a></li>
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#6-编写promise对象处理方法"><span class="nav-number">5.3.</span> <span class="nav-text">6. 编写promise对象处理方法</span></a></li>
-                                                </ol>
-                                            </li>
-                                            <li class="nav-item nav-level-2"><a class="nav-link" href="#详解promise"><span class="nav-number">6.</span> <span class="nav-text">详解promise</span></a>
-                                                <ol class="nav-child">
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用-Promise-resolve"><span class="nav-number">6.1.</span> <span class="nav-text">1. 使用 Promise.resolve</span></a></li>
-                                                    <li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用-Promise-reject"><span class="nav-number">6.2.</span> <span class="nav-text">2. 使用 Promise.reject</span></a></li>
-                                                </ol>
-                                            </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#使用promise进行编程有哪些好处？"><span class="nav-number">2.</span> <span class="nav-text">使用promise进行编程有哪些好处？</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-简介"><span class="nav-number">3.</span> <span class="nav-text">Promise 简介</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#1-构建promise对象"><span class="nav-number">3.1.</span> <span class="nav-text">1. 构建promise对象</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#2-常用的方法"><span class="nav-number">3.2.</span> <span class="nav-text">2. 常用的方法</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#3-静态方法"><span class="nav-number">3.3.</span> <span class="nav-text">3. 静态方法</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#4-来个栗子"><span class="nav-number">3.4.</span> <span class="nav-text">4. 来个栗子</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-状态详解"><span class="nav-number">4.</span> <span class="nav-text">Promise 状态详解</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#1-大致三个状态"><span class="nav-number">4.1.</span> <span class="nav-text">1. 大致三个状态</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#编写Promise代码："><span class="nav-number">5.</span> <span class="nav-text">编写Promise代码：</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建promise对象"><span class="nav-number">5.1.</span> <span class="nav-text">1. 创建promise对象</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#来个XHR的promise对象的栗子"><span class="nav-number">5.2.</span> <span class="nav-text">来个XHR的promise对象的栗子</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#6-编写promise对象处理方法"><span class="nav-number">5.3.</span> <span class="nav-text">6. 编写promise对象处理方法</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#详解promise"><span class="nav-number">6.</span> <span class="nav-text">详解promise</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用-Promise-resolve"><span class="nav-number">6.1.</span> <span class="nav-text">1. 使用 Promise.resolve</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用-Promise-reject"><span class="nav-number">6.2.</span> <span class="nav-text">2. 使用 Promise.reject</span></a></li>
+                                            </ol>
+                                        </li>
                                     </ol>
                                 </div>
 
