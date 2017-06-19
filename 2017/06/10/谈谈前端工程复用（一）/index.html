@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="js,组件,复用," />
 
 
 
@@ -84,16 +84,27 @@
 
 
 
-<meta name="description" content="尝试使用Vue.js(一)文件划分用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址[Demo的github代码地址][2]">
+<meta name="description" content="在前端工程开发中，一直有一个话题比较火，就是“复用”，为什么标题上在说“复用”的同时，也提到了“分治”？我看来，一块代码，一块功能，想做到“复用”，就同时做到“分治”。把独立的功能，和指责分治到独立到代码角色中，并且抽取出来，那么这块代码到可复用性也会提高。
+
+注意： 这篇先大概介绍下，几个复用的角色，详细内容后面再写。
+“看过‘民工大叔’ 在谈论前端工程化�和模块化的时候就说，模块化的目的也是为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="尝试使用Vue.js(一)文件划分">
-<meta property="og:url" content="http://yoursite.com/2016/10/11/尝试使用Vue.js(一)文件划分/index.html">
+<meta property="og:title" content="谈谈前端工程中的复用和分治（一）">
+<meta property="og:url" content="http://yoursite.com/2017/06/10/谈谈前端工程复用（一）/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="尝试使用Vue.js(一)文件划分用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址[Demo的github代码地址][2]">
-<meta property="og:updated_time" content="2016-12-30T02:41:20.000Z">
+<meta property="og:description" content="在前端工程开发中，一直有一个话题比较火，就是“复用”，为什么标题上在说“复用”的同时，也提到了“分治”？我看来，一块代码，一块功能，想做到“复用”，就同时做到“分治”。把独立的功能，和指责分治到独立到代码角色中，并且抽取出来，那么这块代码到可复用性也会提高。
+
+注意： 这篇先大概介绍下，几个复用的角色，详细内容后面再写。
+“看过‘民工大叔’ 在谈论前端工程化�和模块化的时候就说，模块化的目的也是为">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/mokuai.png">
+<meta property="og:updated_time" content="2017-06-19T11:17:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="尝试使用Vue.js(一)文件划分">
-<meta name="twitter:description" content="尝试使用Vue.js(一)文件划分用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。Demo的在线预览地址[Demo的github代码地址][2]">
+<meta name="twitter:title" content="谈谈前端工程中的复用和分治（一）">
+<meta name="twitter:description" content="在前端工程开发中，一直有一个话题比较火，就是“复用”，为什么标题上在说“复用”的同时，也提到了“分治”？我看来，一块代码，一块功能，想做到“复用”，就同时做到“分治”。把独立的功能，和指责分治到独立到代码角色中，并且抽取出来，那么这块代码到可复用性也会提高。
+
+注意： 这篇先大概介绍下，几个复用的角色，详细内容后面再写。
+“看过‘民工大叔’ 在谈论前端工程化�和模块化的时候就说，模块化的目的也是为">
+<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/mokuai.png">
 
 
 
@@ -114,10 +125,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/11/尝试使用Vue.js(一)文件划分/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/10/谈谈前端工程复用（一）/"/>
 
 
-  <title> 尝试使用Vue.js(一)文件划分 | 沙-博客 </title>
+  <title> 谈谈前端工程中的复用和分治（一） | 沙-博客 </title>
   <meta name="baidu-site-verification" content="M5BFEwgTgm" />
 </head>
 
@@ -250,7 +261,7 @@
             
             
               
-                尝试使用Vue.js(一)文件划分
+                谈谈前端工程中的复用和分治（一）
               
             
           </h1>
@@ -262,8 +273,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-11T19:02:10+08:00" content="2016-10-11">
-              2016-10-11
+            <time itemprop="dateCreated" datetime="2017-06-10T17:21:34+08:00" content="2017-06-10">
+              2017-06-10
             </time>
           </span>
 
@@ -283,18 +294,6 @@
 
                 
                 
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
 
               
             </span>
@@ -304,8 +303,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/11/尝试使用Vue.js(一)文件划分/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/11/尝试使用Vue.js(一)文件划分/" itemprop="commentsCount"></span>
+                <a href="/2017/06/10/谈谈前端工程复用（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/10/谈谈前端工程复用（一）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -328,24 +327,30 @@
       
 
       
-        <h2 id="尝试使用Vue-js-一-文件划分"><a href="#尝试使用Vue-js-一-文件划分" class="headerlink" title="尝试使用Vue.js(一)文件划分"></a><strong>尝试使用Vue.js(一)文件划分</strong></h2><p>用‘vue’尝试写了个小Demo，熟悉一下vue的流程，和vue生态圈里的‘vue-router’、‘vuex’等。<br><a href="http://test.clibchina.com/#/index" target="_blank" rel="external">Demo的在线预览地址</a><br>[Demo的github代码地址][2]</p>
+        <p>在前端工程开发中，一直有一个话题比较火，就是“复用”，为什么标题上在说“复用”的同时，也提到了“分治”？我看来，一块代码，一块功能，想做到“复用”，就同时做到“分治”。把独立的功能，和指责分治到独立到代码角色中，并且抽取出来，那么这块代码到可复用性也会提高。</p>
 <hr>
-<a id="more"></a>
+<p><strong>注意： 这篇先大概介绍下，几个复用的角色，详细内容后面再写。</strong></p>
+<p><strong>“看过‘民工大叔’ 在谈论前端工程化�和模块化的时候就说，模块化的目的也是为了分治，所有在考虑前端复用和分治的问题之前，可以选择一个合适的模块化方案”</strong></p>
+<h2 id="1-背景交代："><a href="#1-背景交代：" class="headerlink" title=" 1. 背景交代："></a> 1. <strong>背景交代：</strong></h2><p>我们项目组，现在有多个项目和工程，这些项目和工程有很多代码功能是相似又不完全相同，相似的代码多次开发，对开发效率是一中浪费。所有用了以下的结局方案，来提高几个业务线的代码“复用”性。</p>
+<h2 id="2-代码功能划分抽象："><a href="#2-代码功能划分抽象：" class="headerlink" title="2. 代码功能划分抽象："></a>2. 代码功能划分抽象：</h2><p>我们把代码划分成几个角色，提高代码的复用性。<br><strong>每个代码角色是一个单独的工程，就像一个�组件一样，能被任何工程单独引用。</strong></p>
 <ul>
-<li><p>前端组件化开发，一直受到广大前端开发的追捧，在比较流行的几个框架里如“react”、“vue”、“angular2.0”都使用组件化开发的模式。</p>
-</li>
-<li><p>vue是一个“渐进式框架”，也就是说‘vue’对项目的约束性不大，你可以只用在视图层，也可以去全站vue，在你网站的某个一个页面，或者某一个模块使用vue都是可以的。</p>
+<li>组件：组件级别，复用性最高，例如一个input/button/tree等</li>
+<li>模块：模块是一部分独立业务功能等集合，这些业务功能可能会被多个业务线重复使用，抽取出来。在模块中会用到‘组件’以及‘数据缓存’。（例如：一个员工管理到模块，可能包括员工到增加，删除，权限，这种功能，在多个产品线中可能都是相似到）</li>
+<li>数据缓存：我们称做cache，cahce的角色就说前端的数据模型，它内部有缓存机制，前后的开发，遵守约定的数据模型，cache层就能做到很好的服用，（例如：我们编写一个岗位/部门关系的cache，把岗位/部门的数据信息都�放在这个cache中为何，在同一个项目，活着其他业务线中，都可以用这个cache的代码，cache就说提高数据，只有每个业务线存在同一种数据模型的约束就ok），cache有一点注意，就是cache提供的方法，和数据结构可能是可以复用，单身每个业务线的接口可能有所不同，所有在cache的复用上，需提供出一个接口的配置入口就行。用来配置接口的url。</li>
+</ul>
+<p><strong>这几个角色会单独详细介绍</strong></p>
+<p> 关系如下图：</p>
+<p>一般的复用力度大概是这几种情况：</p>
+<ul>
+<li>业务线可以用 组件/模块/cache</li>
+<li>模块可以用 组件/cache</li>
+<li><p>组件可以用 组件/cache</p>
+<p><img src="http://7xqd2y.com1.z0.glb.clouddn.com/mokuai.png" alt="此处输入图片的描述"></p>
 </li>
 </ul>
-<h2 id="本文先介绍下代码的整体文件划分"><a href="#本文先介绍下代码的整体文件划分" class="headerlink" title="本文先介绍下代码的整体文件划分"></a>本文先介绍下代码的整体文件划分</h2><ol>
-<li>项目是用了‘vue-cli’脚手架生成的（官网提供，用起来很不错）</li>
-<li>在vue-cli的基础上进行了一些改动(注意集中在src中)</li>
-</ol>
-<p><strong>下面看下src文件夹下的结构（*标记的是vue-cli基础上加的）：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">├── App.vue             （vue的顶层组件）</div><div class="line">├── assets              （静态文件）</div><div class="line">│   ├── images          （静态文件-图片）</div><div class="line">│   └── scss           （静态文件-样式，包括icon字体、rem函数等）</div><div class="line">├── cache               （* 统一存放接口，方便接口的维护和管理）</div><div class="line">│   └── cache.js        （接口文件）</div><div class="line">├── common              （*统一存放一些公共数据和方法）</div><div class="line">│   ├── constant        （*一些全局的常量）</div><div class="line">│   └── util            （*一些公共的方法）</div><div class="line">├── components</div><div class="line">│   ├── CitySelect.vue</div><div class="line">│   ├── GoTop.vue</div><div class="line">│   ├── Header.vue</div><div class="line">│   ├── Hello.vue</div><div class="line">│   ├── LoadMore.vue</div><div class="line">│   ├── Loading.vue</div><div class="line">│   └── MessageList.vue</div><div class="line">├── main.js</div><div class="line">├── pages</div><div class="line">│   ├── about.vue</div><div class="line">│   ├── happy.vue</div><div class="line">│   ├── index.vue</div><div class="line">│   ├── robot.vue</div><div class="line">│   └── weather.vue</div><div class="line">├── router          （*单独维护touter，方便修改）</div><div class="line">│   └── router.js</div><div class="line">└── store           （vuex的维护）</div><div class="line">    └── index.js</div></pre></td></tr></table></figure></p>
-<p>从上面可以看出，主要增加的是“cache” “common” 这两个文件，在开发过程中，接口的单独维护，和公共代码提取到“cmmon”文件中是一个比较好的习惯。</p>
-<p><strong>把配置文件、公共文件、或者某个单独功能（如router、store这种）这些文件单独维护，都是比较好的文件划分，对后期改动，维护都比较方便。</strong></p>
-<h2 id="2-https-github-com-shaqihe-life-app-vue"><a href="#2-https-github-com-shaqihe-life-app-vue" class="headerlink" title="  [2]: https://github.com/shaqihe/life-app-vue"></a>  [2]: <a href="https://github.com/shaqihe/life-app-vue" target="_blank" rel="external">https://github.com/shaqihe/life-app-vue</a></h2><p>作者 [@sha Qihe]</p>
-<p>2016 年 10月 11日</p>
+<hr>
+<p>作者 [@sha Qihe]</p>
+<p>2017 年 6月 10日</p>
 
       
     </div>
@@ -368,7 +373,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag">#vue</a>
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/组件/" rel="tag">#组件</a>
+          
+            <a href="/tags/复用/" rel="tag">#复用</a>
           
         </div>
       
@@ -377,16 +386,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/10/js继承/" rel="next" title="js继承两种比较推荐的实现">
-                <i class="fa fa-chevron-left"></i> js继承两种比较推荐的实现
+              <a href="/2017/05/05/Dom无关事件，发布订阅模式/" rel="next" title="Dom无关事件，发布订阅模式">
+                <i class="fa fa-chevron-left"></i> Dom无关事件，发布订阅模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/19/尝试使用Vue.js(二)接口代理/" rel="prev" title="尝试使用Vue.js(二)接口代理，使用peomise异步编程">
-                尝试使用Vue.js(二)接口代理，使用peomise异步编程 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/16/前端性能的一些小总结/" rel="prev" title="前端性能的一些小总结">
+                前端性能的一些小总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -413,8 +422,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/11/尝试使用Vue.js(一)文件划分/"
-           data-title="尝试使用Vue.js(一)文件划分" data-url="http://yoursite.com/2016/10/11/尝试使用Vue.js(一)文件划分/">
+      <div class="ds-thread" data-thread-key="2017/06/10/谈谈前端工程复用（一）/"
+           data-title="谈谈前端工程中的复用和分治（一）" data-url="http://yoursite.com/2017/06/10/谈谈前端工程复用（一）/">
       </div>
     
   </div>
@@ -516,7 +525,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试使用Vue-js-一-文件划分"><span class="nav-number">1.</span> <span class="nav-text">尝试使用Vue.js(一)文件划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文先介绍下代码的整体文件划分"><span class="nav-number">2.</span> <span class="nav-text">本文先介绍下代码的整体文件划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-https-github-com-shaqihe-life-app-vue"><span class="nav-number">3.</span> <span class="nav-text">  [2]: https://github.com/shaqihe/life-app-vue</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-背景交代："><span class="nav-number">1.</span> <span class="nav-text"> 1. 背景交代：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-代码功能划分抽象："><span class="nav-number">2.</span> <span class="nav-text">2. 代码功能划分抽象：</span></a></li></ol></div>
             
           </div>
         </section>
