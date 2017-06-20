@@ -446,33 +446,14 @@
 
       
         
-          
-            <p>在前端工程开发中，一直有一个话题比较火，就是“复用”，为什么标题上在说“复用”的同时，也提到了“分治”？我看来，一块代码，一块功能，想做到“复用”，就同时做到“分治”。把独立的功能，和指责分治到独立到代码角色中，并且抽取出来，那么这块代码到可复用性也会提高。</p>
+          <p>在前端工程开发中，一直有一个话题比较火，就是“复用”，为什么标题上在说“复用”的同时，也提到了“分治”？我看来，一块代码，一块功能，想做到“复用”，就同时做到“分治”。把独立的功能，和指责分治到独立到代码角色中，并且抽取出来，那么这块代码到可复用性也会提高。</p>
 <hr>
-<p><strong>注意： 这篇先大概介绍下，几个复用的角色，详细内容后面再写。</strong></p>
-<p><strong>“看过‘民工大叔’ 在谈论前端工程化�和模块化的时候就说，模块化的目的也是为了分治，所有在考虑前端复用和分治的问题之前，可以选择一个合适的模块化方案”</strong></p>
-<h2 id="1-背景交代："><a href="#1-背景交代：" class="headerlink" title=" 1. 背景交代："></a> 1. <strong>背景交代：</strong></h2><p>我们项目组，现在有多个项目和工程，这些项目和工程有很多代码功能是相似又不完全相同，相似的代码多次开发，对开发效率是一中浪费。所有用了以下的结局方案，来提高几个业务线的代码“复用”性。</p>
-<h2 id="2-代码功能划分抽象："><a href="#2-代码功能划分抽象：" class="headerlink" title="2. 代码功能划分抽象："></a>2. 代码功能划分抽象：</h2><p>我们把代码划分成几个角色，提高代码的复用性。<br><strong>每个代码角色是一个单独的工程，就像一个�组件一样，能被任何工程单独引用。</strong></p>
-<ul>
-<li>组件：组件级别，复用性最高，例如一个input/button/tree等</li>
-<li>模块：模块是一部分独立业务功能等集合，这些业务功能可能会被多个业务线重复使用，抽取出来。在模块中会用到‘组件’以及‘数据缓存’。（例如：一个员工管理到模块，可能包括员工到增加，删除，权限，这种功能，在多个产品线中可能都是相似到）</li>
-<li>数据缓存：我们称做cache，cahce的角色就说前端的数据模型，它内部有缓存机制，前后的开发，遵守约定的数据模型，cache层就能做到很好的服用，（例如：我们编写一个岗位/部门关系的cache，把岗位/部门的数据信息都�放在这个cache中为何，在同一个项目，活着其他业务线中，都可以用这个cache的代码，cache就说提高数据，只有每个业务线存在同一种数据模型的约束就ok），cache有一点注意，就是cache提供的方法，和数据结构可能是可以复用，单身每个业务线的接口可能有所不同，所有在cache的复用上，需提供出一个接口的配置入口就行。用来配置接口的url。</li>
-</ul>
-<p><strong>这几个角色会单独详细介绍</strong></p>
-<p> 关系如下图：</p>
-<p>一般的复用力度大概是这几种情况：</p>
-<ul>
-<li>业务线可以用 组件/模块/cache</li>
-<li>模块可以用 组件/cache</li>
-<li><p>组件可以用 组件/cache</p>
-<p><img src="http://7xqd2y.com1.z0.glb.clouddn.com/mokuai.png" alt="此处输入图片的描述"></p>
-</li>
-</ul>
-<hr>
-<p>作者 [@sha Qihe]</p>
-<p>2017 年 6月 10日</p>
-
-          
+<p><strong>注意： 这篇先大概介绍下，几个复用的角色，详细内容后面再写。</strong><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/06/10/谈谈前端工程复用（一）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1592,7 +1573,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1600,7 +1581,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1609,7 +1590,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
