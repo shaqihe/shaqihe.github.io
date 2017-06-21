@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,继承," />
+  <meta name="keywords" content="js," />
 
 
 
@@ -84,19 +84,28 @@
 
 
 
-<meta name="description" content="js继承的实现方法比较多，写两种比较推荐的
-js是通过原型的方式实现继承的，比较推荐的方式是“组合继承”和“寄生组合继承”">
+<meta name="description" content="数组的几个迭代的方法，一次性写一下，绝对简单，有尼玛有时候使用的时候，模糊用法，记一下，加深下印象
+
+5个迭代方法，每个方法都是接收两个参数，要在每一项上运行的函数和运行函数作用域对象－this（可选）。
+传入的这个函数可以接收三个参数：数组项的值，该数组项的位置，和数组本身。
+根据使用的方法不同，这个传入的函数执行后返回值可能会／不会影响访问的返回值。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js继承两种比较推荐的实现">
-<meta property="og:url" content="http://yoursite.com/2016/04/10/js继承/index.html">
+<meta property="og:title" content="数组的几个迭代的方法">
+<meta property="og:url" content="http://yoursite.com/2016/02/10/数组的迭代方法/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="js继承的实现方法比较多，写两种比较推荐的
-js是通过原型的方式实现继承的，比较推荐的方式是“组合继承”和“寄生组合继承”">
-<meta property="og:updated_time" content="2017-05-23T13:19:41.000Z">
+<meta property="og:description" content="数组的几个迭代的方法，一次性写一下，绝对简单，有尼玛有时候使用的时候，模糊用法，记一下，加深下印象
+
+5个迭代方法，每个方法都是接收两个参数，要在每一项上运行的函数和运行函数作用域对象－this（可选）。
+传入的这个函数可以接收三个参数：数组项的值，该数组项的位置，和数组本身。
+根据使用的方法不同，这个传入的函数执行后返回值可能会／不会影响访问的返回值。">
+<meta property="og:updated_time" content="2017-06-21T13:45:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js继承两种比较推荐的实现">
-<meta name="twitter:description" content="js继承的实现方法比较多，写两种比较推荐的
-js是通过原型的方式实现继承的，比较推荐的方式是“组合继承”和“寄生组合继承”">
+<meta name="twitter:title" content="数组的几个迭代的方法">
+<meta name="twitter:description" content="数组的几个迭代的方法，一次性写一下，绝对简单，有尼玛有时候使用的时候，模糊用法，记一下，加深下印象
+
+5个迭代方法，每个方法都是接收两个参数，要在每一项上运行的函数和运行函数作用域对象－this（可选）。
+传入的这个函数可以接收三个参数：数组项的值，该数组项的位置，和数组本身。
+根据使用的方法不同，这个传入的函数执行后返回值可能会／不会影响访问的返回值。">
 
 
 
@@ -117,10 +126,10 @@ js是通过原型的方式实现继承的，比较推荐的方式是“组合继
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/04/10/js继承/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/02/10/数组的迭代方法/"/>
 
 
-  <title> js继承两种比较推荐的实现 | 沙-博客 </title>
+  <title> 数组的几个迭代的方法 | 沙-博客 </title>
   <meta name="baidu-site-verification" content="M5BFEwgTgm" />
 </head>
 
@@ -253,7 +262,7 @@ js是通过原型的方式实现继承的，比较推荐的方式是“组合继
             
             
               
-                js继承两种比较推荐的实现
+                数组的几个迭代的方法
               
             
           </h1>
@@ -265,8 +274,8 @@ js是通过原型的方式实现继承的，比较推荐的方式是“组合继
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-10T17:21:34+08:00" content="2016-04-10">
-              2016-04-10
+            <time itemprop="dateCreated" datetime="2016-02-10T22:01:34+08:00" content="2016-02-10">
+              2016-02-10
             </time>
           </span>
 
@@ -295,8 +304,8 @@ js是通过原型的方式实现继承的，比较推荐的方式是“组合继
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/10/js继承/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/10/js继承/" itemprop="commentsCount"></span>
+                <a href="/2016/02/10/数组的迭代方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/10/数组的迭代方法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -319,16 +328,23 @@ js是通过原型的方式实现继承的，比较推荐的方式是“组合继
       
 
       
-        <p>js继承的实现方法比较多，写两种比较推荐的</p>
-<p><strong>js是通过原型的方式实现继承的，比较推荐的方式是“组合继承”和“寄生组合继承”</strong></p>
-<a id="more"></a>
-<p><strong>1.组合继承：</strong><br>通过对象冒充，实现属性继承（apply/call方法）<br>通过原型指向父级的实例<br>如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function Animal(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">&#125;</div><div class="line">Animal.prototype.getName = function () &#123;</div><div class="line">    return this.name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//继承Animal：</div><div class="line"></div><div class="line">function Cat(name, age) &#123;</div><div class="line">    Animal.call(this, name); //调用父级的构造函数，实现属性继承</div><div class="line">    this.age = age; //添加自己的属性</div><div class="line">&#125;</div><div class="line">//自己的原型，指向父级的实例，实现方法继承</div><div class="line">Cat.prototype = new Animal ();</div></pre></td></tr></table></figure>
-<p><strong>2.寄生组合继承：</strong><br>通过对象冒充，实现属性继承（apply/call方法）<br>通过一个空函数砍掉父类的实例属性，原型继承的时候不会再实例化一次属性了。<br>如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function Animal(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">&#125;</div><div class="line">Animal.prototype.getName = function () &#123;</div><div class="line">    return this.name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//继承Animal：</div><div class="line">function Cat(name, age) &#123;</div><div class="line">    Animal.call(this, name); //调用父级的构造函数，实现属性继承</div><div class="line">    this.age = age; //添加自己的属性</div><div class="line">&#125;</div><div class="line"></div><div class="line">(function()&#123;</div><div class="line">  // 创建一个没有实例方法的函数（类）</div><div class="line">  var Super = function()&#123;&#125;;</div><div class="line">  Super.prototype = Animal.prototype;</div><div class="line">  //将实例作为子类的原型</div><div class="line">  Cat.prototype = new Super();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+        <p>数组的几个迭代的方法，一次性写一下，绝对简单，有尼玛有时候使用的时候，模糊用法，记一下，加深下印象</p>
+<hr>
+<pre><code>5个迭代方法，每个方法都是接收两个参数，要在每一项上运行的函数和运行函数作用域对象－this（可选）。
+传入的这个函数可以接收三个参数：数组项的值，该数组项的位置，和数组本身。
+根据使用的方法不同，这个传入的函数执行后返回值可能会／不会影响访问的返回值。
+</code></pre><a id="more"></a>
+<ul>
+<li><strong>every()</strong>: 对数组中对每一项运行给定对函数，如果每一项都返回true，则返回true。</li>
+<li><strong>some()</strong>:对数组中对每一项运行给定对函数，如果有一项能返回true，则返回true。</li>
+<li><strong>filter()</strong>:对数组中对每一项运行给定对函数，返回该函数返回true的项所组成的数组。</li>
+<li><strong>forEach()</strong>:对数组中对每一项运行给定对函数，没有返回值，和for循环相似。</li>
+<li><strong>map()</strong>:对数组中对每一项运行给定对函数，返回每次函数执行后返回值组成的数组。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//every:</div><div class="line">   var arr = [1,2,3,4,5,2,3]</div><div class="line">   var everyRes = arr.every(function (item,index,array) &#123;</div><div class="line">        return (item &gt; 2);</div><div class="line">   &#125;);</div><div class="line">   alert(everyRes)  // false</div><div class="line"></div><div class="line">// some:</div><div class="line"> var arr = [1,2,3,4,5,2,3]</div><div class="line">   var everyRes = arr.every(function (item,index,array) &#123;</div><div class="line">        return (item &gt; 2);</div><div class="line">   &#125;);</div><div class="line">   alert(everyRes)  // true</div><div class="line"></div><div class="line">  // filter:</div><div class="line"> var arr = [1,2,3,4,5,2,3]</div><div class="line">   var everyRes = arr.every(function (item,index,array) &#123;</div><div class="line">        return (item &gt; 2);</div><div class="line">   &#125;);</div><div class="line">   console.log(everyRes)  // [2,3,4,5,3]</div><div class="line"></div><div class="line">// map:</div><div class="line"> var arr = [1,2,3,4,5,2,3]</div><div class="line">   var everyRes = arr.every(function (item,index,array) &#123;</div><div class="line">        return (item * 2);</div><div class="line">   &#125;);</div><div class="line">   console.log(everyRes)  // [2,4,6,8,10,4,6]</div><div class="line"></div><div class="line">  // forEach:  和for循环一样用法</div></pre></td></tr></table></figure>
 <hr>
 <p>作者 [@sha Qihe]</p>
-<p>2016 年 4月 10日</p>
+<p>2016 年 2月 10日</p>
 
       
     </div>
@@ -353,8 +369,6 @@ js是通过原型的方式实现继承的，比较推荐的方式是“组合继
           
             <a href="/tags/js/" rel="tag">#js</a>
           
-            <a href="/tags/继承/" rel="tag">#继承</a>
-          
         </div>
       
 
@@ -362,16 +376,16 @@ js是通过原型的方式实现继承的，比较推荐的方式是“组合继
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/10/数组的迭代方法/" rel="next" title="数组的几个迭代的方法">
-                <i class="fa fa-chevron-left"></i> 数组的几个迭代的方法
+              <a href="/2016/01/20/webpack-gulp构建react简单小结/" rel="next" title="webpack+gulp构建react简单小结">
+                <i class="fa fa-chevron-left"></i> webpack+gulp构建react简单小结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/11/尝试使用Vue.js(一)文件划分/" rel="prev" title="尝试使用Vue.js(一)文件划分">
-                尝试使用Vue.js(一)文件划分 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/10/js继承/" rel="prev" title="js继承两种比较推荐的实现">
+                js继承两种比较推荐的实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -398,8 +412,8 @@ js是通过原型的方式实现继承的，比较推荐的方式是“组合继
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/10/js继承/"
-           data-title="js继承两种比较推荐的实现" data-url="http://yoursite.com/2016/04/10/js继承/">
+      <div class="ds-thread" data-thread-key="2016/02/10/数组的迭代方法/"
+           data-title="数组的几个迭代的方法" data-url="http://yoursite.com/2016/02/10/数组的迭代方法/">
       </div>
     
   </div>
