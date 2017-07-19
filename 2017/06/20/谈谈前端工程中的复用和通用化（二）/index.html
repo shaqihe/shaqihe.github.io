@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MVC," />
+  <meta name="keywords" content="js,组件,复用," />
 
 
 
@@ -84,22 +84,25 @@
 
 
 
-<meta name="description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
+<meta name="description" content="上一篇说到“我们项目组，现在有多个项目和工程，这些项目和工程有很多代码功能是相似又不完全相同，相似的代码多次开发，对开发效率是一中浪费。所有用了以下的结局方案，来提高几个业务线的代码“复用”性。”在复用的过程中，有几个重要的角色，这篇就说下其中一个角色－“组件”
+
+这篇文章大概说下在通用性这块，组件是如何设计和划分。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端MVC">
-<meta property="og:url" content="http://yoursite.com/2015/09/12/前端MVC/index.html">
+<meta property="og:title" content="谈谈前端工程中的复用和通用化（二）">
+<meta property="og:url" content="http://yoursite.com/2017/06/20/谈谈前端工程中的复用和通用化（二）/index.html">
 <meta property="og:site_name" content="沙-博客">
-<meta property="og:description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
-<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png">
-<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/8046d3b93bffe6defb6ddfba24c1df05.png">
-<meta property="og:updated_time" content="2016-11-04T01:57:27.000Z">
+<meta property="og:description" content="上一篇说到“我们项目组，现在有多个项目和工程，这些项目和工程有很多代码功能是相似又不完全相同，相似的代码多次开发，对开发效率是一中浪费。所有用了以下的结局方案，来提高几个业务线的代码“复用”性。”在复用的过程中，有几个重要的角色，这篇就说下其中一个角色－“组件”
+
+这篇文章大概说下在通用性这块，组件是如何设计和划分。">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/zujian.png">
+<meta property="og:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/yewuzujian.jpg">
+<meta property="og:updated_time" content="2017-07-19T11:32:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端MVC">
-<meta name="twitter:description" content="参与很多项目都是单页面系统，于是就写写前端MVC的东西。我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。
-附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：简单的MVC写法MVC 几个核心的词语：view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。">
-<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png">
+<meta name="twitter:title" content="谈谈前端工程中的复用和通用化（二）">
+<meta name="twitter:description" content="上一篇说到“我们项目组，现在有多个项目和工程，这些项目和工程有很多代码功能是相似又不完全相同，相似的代码多次开发，对开发效率是一中浪费。所有用了以下的结局方案，来提高几个业务线的代码“复用”性。”在复用的过程中，有几个重要的角色，这篇就说下其中一个角色－“组件”
+
+这篇文章大概说下在通用性这块，组件是如何设计和划分。">
+<meta name="twitter:image" content="http://7xqd2y.com1.z0.glb.clouddn.com/zujian.png">
 
 
 
@@ -120,10 +123,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/09/12/前端MVC/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/20/谈谈前端工程中的复用和通用化（二）/"/>
 
 
-  <title> 前端MVC | 沙-博客 </title>
+  <title> 谈谈前端工程中的复用和通用化（二） | 沙-博客 </title>
   <meta name="baidu-site-verification" content="M5BFEwgTgm" />
 </head>
 
@@ -256,7 +259,7 @@
             
             
               
-                前端MVC
+                谈谈前端工程中的复用和通用化（二）
               
             
           </h1>
@@ -268,8 +271,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-12T22:06:32+08:00" content="2015-09-12">
-              2015-09-12
+            <time itemprop="dateCreated" datetime="2017-06-20T22:21:34+08:00" content="2017-06-20">
+              2017-06-20
             </time>
           </span>
 
@@ -282,8 +285,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/单页面/" itemprop="url" rel="index">
-                    <span itemprop="name">单页面</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -298,8 +301,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/09/12/前端MVC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/12/前端MVC/" itemprop="commentsCount"></span>
+                <a href="/2017/06/20/谈谈前端工程中的复用和通用化（二）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/20/谈谈前端工程中的复用和通用化（二）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,34 +325,46 @@
       
 
       
-        <h2 id="参与很多项目都是单页面系统，于是就写写前端MVC的东西。"><a href="#参与很多项目都是单页面系统，于是就写写前端MVC的东西。" class="headerlink" title="参与很多项目都是单页面系统，于是就写写前端MVC的东西。"></a>参与很多项目都是单页面系统，于是就写写前端MVC的东西。</h2><p>我们team现在用的是百度内部的轮子，一套比较轻的mvc框架，业界还有各种MV*框架，什么angular、vue等。</p>
-<p>附带个代码dome链接，这是我们项目中的一个简单的mvc的写法：<br><a href="https://github.com/shaqihe/myBlog/tree/master/%E5%89%8D%E7%AB%AFMVC%E4%BB%A3%E7%A0%81" target="_blank" rel="external">简单的MVC写法</a><br><strong>MVC 几个核心的词语：</strong><br>view、model、controller、解耦、监听、通知、主动、被动、注册、绑定、渲染等等等。。。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p><strong>MVC包括三类对象：</strong></p>
-<ul>
-<li><p>模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。</p>
-</li>
-<li><p>视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地刷新自己。</p>
-</li>
-<li><p>控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。</p>
-</li>
-</ul>
-<p>下图是一个经典的MVC视图：<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/e9d45bd52764c65cdbf2d22576050481.png" alt="此处输入图片的描述"></p>
-<p>  view和model之间的观察者模式，view观察model，事先在此model上注册，以便view可以了解在数据model上发生的改变（其实这是一种事件机制）</p>
+        <p>上一篇说到<br><strong>“我们项目组，现在有多个项目和工程，这些项目和工程有很多代码功能是相似又不完全相同，相似的代码多次开发，对开发效率是一中浪费。所有用了以下的结局方案，来提高几个业务线的代码“复用”性。”</strong><br>在复用的过程中，有几个重要的角色，这篇就说下其中一个角色－<strong>“组件”</strong></p>
 <hr>
-<p>但是javascript中的MVC和上图又有一点区别：<br>我们使用的MVC框架是ER，适用于并能很方便地构建一个整站式的AJAX Web应用。核心的action、model和view的抽象，使得构建RIA应用变得简单可行。<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/8046d3b93bffe6defb6ddfba24c1df05.png" alt="此处输入图片的描述"></p>
+<p><strong>这篇文章大概说下在通用性这块，组件是如何设计和划分。</strong><br><a id="more"></a></p>
+<p>我们组用的是内部mvvc框架，但是用法和思想和外界的vue等也很相似，工程开发中的思想是通用的。</p>
+<p><strong>组件主要分两种：</strong></p>
+<ol>
+<li>跟业务无关的通用组件：例如input／buttton／list等等</li>
+<li>强相关的业务组件：例如标签组件／过滤器组件</li>
+</ol>
+<p><strong>1.通用组件：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">可配置性，是组件比不可少的重要功能。那分析一道：一个完整的组</div><div class="line">件应该如何组成？大概下面四点。</div></pre></td></tr></table></figure></p>
 <ul>
-<li>控制器做调度者，在controller中添加事件监控</li>
-<li>整个通信基于一套事件机制（发布订阅/观察者模式）</li>
-<li>view 来控制模板和dom事件的添加</li>
-<li>model驱动开发<ul>
-<li>实际开发中，常常会以view为核心，页面上需要展示什么数据，就去model中设置数据源。发生了用户事件，我会在action中更新model，然后刷新view。有时候会遗漏更新model，直到需要数据时才发现没有保存到model中。</li>
-<li>model本身是独立的，自控制的，不依赖于view，能够同步支持多view的显示。</li>
-<li>实现数据绑定，任何对模型的更改都会在界面上反映出来。那我们只要预先写好view和model的关系映射（类似angular的viewmodel的思想）<br>。</li>
-</ul>
+<li><strong>配置机制</strong>： 组件在被其他组件或者模块使用的时候固定的使用参数配置（和vue／react相似，也就是通过组件属性配置） 另一类是当组件被接入到业务线后就固定的业务统一配置信息，不同的业务线有不同的配置，通过读取业务线全局配置来做。</li>
+<li><strong>组件逻辑</strong>：组件的核心功能实现，主要维护组件抽象出来的数据模型，为组件结构或者使用者提供属性访问、接口调用、事件回调等</li>
+<li><strong>组件结构</strong>：组件的结构，其实就是模版，模版中使用组件逻辑层暴漏出的数据/事件/接口等来完成信息发布和展示。在数据驱动的开发思想想，不应该在模版中做太多的操作，较复杂的逻辑要放到组件逻辑层来处理，通过数据驱动模版变化。</li>
+<li><p><strong>组件样式</strong>：样式可以抽象出两种：1.每个业务线自己独特的皮肤样式（字号，颜色，背景等）2.业务线一般不会配置的样式，如组件的展现形式，形状等；<br><strong>第1种样式如何配置</strong>？，可以通过皮肤的形式来配置，字号，颜色这种属性不在css里写死，而是通过calss在dom属性上，例如 14px，#333 的字体对应的 class是 fs2cl3;  每个业务线中有一套自己的皮肤文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">A业务线中: .s2cl3 &#123; font-size: 14px; color:#333&#125;</div><div class="line">B业务线中: .s2cl3 &#123; font-size: 12px; color:#666&#125;</div><div class="line">在组件中凡是涉及到可配置的样式，不会在自身的样式文件中来写，都通过class来控制，每个业务线有自己的一份class皮肤，就能做到样式可配置</div></pre></td></tr></table></figure>
+<p> <strong>这里组件结构和组件样式可以根据不同的平台自己定制，然后将逻辑、结构、样式组装成一个完整的UI组件给到上层业务使用，如果业务有需要深度定制的情况下可以重写结构、样式，通用业务逻辑实现部分可重用</strong></p>
 </li>
 </ul>
 <hr>
-<p>作者 [@sha Qihe]<br>QQ：330630770<br>2015 年 9月 12日</p>
+<p> 组件逻辑部分，其实是复用性最高的，web端组件，wap端组件，大的差别还是在样式和结构上。所以一个组件的抽象可以如下图：<br> <img src="http://7xqd2y.com1.z0.glb.clouddn.com/zujian.png" alt="此处输入图片的描述"><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">同一套逻辑，可以对应不同的结构和样式文件，复用逻辑部分，重写结构就能完成wap／web两个展现形式的组件</div></pre></td></tr></table></figure></p>
+<hr>
+<p> 同样：业务线想重度定制组件，可以继承组件逻辑，重写逻辑中的同名方法，并且可以重写组件的结构部分。</p>
+<hr>
+<p> <strong>2.强相关的业务组件：</strong></p>
+<ul>
+<li><p>业务组件一般会组合数据层(cache)形成一个更大粒度的复用单元，而通用组件一般不建议直接组合数据层强绑定特定数据源.</p>
+</li>
+<li><p>业务组件，一般提供给特定的业务模块使用，组件内部可能耦合一部分数据相关的逻辑，夸场景复用的情况较少（不过复用，重写，和配置是和通用组件相同的，只是使用场景有些变化）。</p>
+</li>
+</ul>
+<p>如下图：<br><img src="http://7xqd2y.com1.z0.glb.clouddn.com/yewuzujian.jpg" alt="此处输入图片的描述"></p>
+<p><strong>编写一个组件的总结：</strong></p>
+<ul>
+<li>一个组件编写时，要主要配置性，和暴漏接口/事件的合理，个人认为一个编写通用组件是，不要考虑它的使用场景，一个组件长什么样子，取决于实例这个组件时传的参数和配置，组件可以看作一个函数，你给特定的参数，它就返回特定的姿态。</li>
+<li>组件内部的数据，应该是保持自我封闭，自我操作。和外部通信和交互，通过事件维护，做到组件内部是一个干净的环境，不关系外界，适当的时候只需要抛出（emit）出对应的事件和数据就行了。</li>
+</ul>
+<hr>
+<p>作者 [@sha Qihe]</p>
+<p>2017 年 6月 20日</p>
 
       
     </div>
@@ -372,7 +387,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MVC/" rel="tag">#MVC</a>
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/组件/" rel="tag">#组件</a>
+          
+            <a href="/tags/复用/" rel="tag">#复用</a>
           
         </div>
       
@@ -381,16 +400,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/06/ES6小记/" rel="next" title="ES6小记">
-                <i class="fa fa-chevron-left"></i> ES6小记
+              <a href="/2017/06/10/谈谈前端工程复用（一）/" rel="next" title="谈谈前端工程中的复用和通用化（一）">
+                <i class="fa fa-chevron-left"></i> 谈谈前端工程中的复用和通用化（一）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/18/前端缓存走起来/" rel="prev" title="前端缓存走起来">
-                前端缓存走起来 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/16/前端性能的一些小总结/" rel="prev" title="前端性能的一些小总结">
+                前端性能的一些小总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -417,8 +436,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/09/12/前端MVC/"
-           data-title="前端MVC" data-url="http://yoursite.com/2015/09/12/前端MVC/">
+      <div class="ds-thread" data-thread-key="2017/06/20/谈谈前端工程中的复用和通用化（二）/"
+           data-title="谈谈前端工程中的复用和通用化（二）" data-url="http://yoursite.com/2017/06/20/谈谈前端工程中的复用和通用化（二）/">
       </div>
     
   </div>
@@ -520,7 +539,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参与很多项目都是单页面系统，于是就写写前端MVC的东西。"><span class="nav-number">1.</span> <span class="nav-text">参与很多项目都是单页面系统，于是就写写前端MVC的东西。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
