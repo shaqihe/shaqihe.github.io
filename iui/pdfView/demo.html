@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+    <script type="text/javascript">
+        setTimeout (function () {
+            var iframe = document.createElement("iframe");
+            var sss = "http://nos.netease.com/edu-lesson-pdfsrc/82B1AE0F0B6AAD541BB19961A5ACA09F-1504685850937?Signature=%2FMSBuf4H5iSPq9abAgLltJPBvsUfH%2FSUP%2BsuIiFH64o%3D&Expires=1504703305&NOSAccessKeyId=7ba71f968e4340f1ab476ecb300190fa&download=网易新员工入职指引+V1.0.pdf"
+            var file = 'http://7xqd2y.com1.z0.glb.clouddn.com/javascript-promise-book.pdf';
+            var file1 = 'http://nos.netease.com/edu-lesson-pdfsrc/82B1AE0F0B6AAD541BB19961A5ACA09F-1504685850937?Signature=%2FMSBuf4H5iSPq9abAgLltJPBvsUfH%2FSUP%2BsuIiFH64o%3D&Expires=1504703305&NOSAccessKeyId=7ba71f968e4340f1ab476ecb300190fa&download=%E7%BD%91%E6%98%93%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E6%8C%87%E5%BC%95+V1.0.pdf';
+            iframe.src = "./web/viewer.html?file=" + sss;
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            document.body.appendChild(iframe);
+        },500);
+    </script>
+</html>
