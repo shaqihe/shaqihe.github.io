@@ -1,0 +1,169 @@
+<style>
+    ul li {
+        list-style: none;
+    }
+    
+    .box {
+        width: 52px;
+        height: 105px;
+        border: 1px solid #ccc;
+        position: fixed;
+        z-index: 9999;
+        top: 62%;
+        right: 70px;
+        _position: absolute;
+        _bottom: auto;
+        _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+    }
+    
+    .box ul li {
+        width: 48px;
+        display: block;
+        height: 50px;
+        padding: 2px;
+        overflow: hidden
+    }
+    
+    .weixin {
+        background: url(kele/assets/images/keleQR.png) no-repeat;
+        background-position: 0 87%;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+    }
+    
+    .weixin:hover {
+        background-position: 0 93%
+    }
+    
+    .weixin:hover .weixin-logo {
+        width: 170px;
+        height: 204px;
+    }
+    
+    .idea:hover .idea-logo {
+        width: 170px;
+        height: 204px;
+    }
+    
+    .idea {
+        background: url(kele/assets/images/keleQR.png) no-repeat;
+        background-position: 0 43%;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+    }
+    
+    .idea:hover {
+        background-position: 0 49%;
+    }
+    
+    .app {
+        background: url(kele/assets/images/keleQR.png) no-repeat;
+        background-position: 0 55%;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+    }
+    
+    .app:hover {
+        background-position: 0 61%;
+    }
+    
+    .app:hover .app-logo {
+        width: 170px;
+        height: 204px;
+    }
+    
+ 
+    
+    .idea-logo {
+        background: url(kele/assets/images/keleQR.png) no-repeat;
+        background-position: 0 0;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        position: absolute;
+        top: -154px;
+        left: -171px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+    }
+    
+	
+</style>
+
+
+<!-- /* 链接改为你的图片 */ -->
+<style>
+   .weixin-logo {
+        /* 链接改为你的微信二维码图片 */
+        background: url(kele/assets/images/weixin_qr.png) no-repeat;
+        background-position: 0 0;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        position: absolute;
+        top: -154px;
+        left: -171px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+    }
+    .app-logo {
+         /*链接改为你的app二维码图片 */
+        background: url(kele/assets/images/app_qr.png) no-repeat;
+        background-position: 0 26%;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        position: absolute;
+        top: -18px;
+        left: -171px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+    }
+</style>
+
+
+<div class="box">
+    <ul>
+        <li class="weixin">
+            <div class="weixin-logo"></div>
+        </li>
+
+        <li class="app">
+            <div class="app-logo"></div>
+        </li>
+    </ul>
+</div>
+
+
+<!-- 这部分内容是个例子，可以自定义PC版的菜单 -->
+<!--
+<div id="banerX" style="display:none">
+    <div id="nav" style="font-size: 15px;">
+        <a href="/test?r=index/index&amp;u=393332" class="iconM active" style="padding:8px 27px;"><i class="iconfont"></i><span style="margin-right: 7px;">今日上新</span>
+        </a>
+        <a class="" href="/test?r=l&amp;u=393332" style="padding:8px 15px;">领券优惠直播
+        </a>
+
+        <a class="" href="/test?r=ddq&amp;u=393332" style="padding:8px 15px;">
+            咚咚抢<div style="position:absolute; width:24px; height:32px; background:#FFCC00;margin-left: 107px; margin-top: -25px; background:url(http://a.vpimg3.com/upload/dop/2016/01/04/148/HOTT_qeu.gif)"></div>
+        </a>
+        <a href="/test?r=p&amp;u=393332" class="iconH " style="padding:8px 15px;">超级人气榜</a>
+        <a class="" href="/test?r=nine&amp;u=393332" style="padding:8px 15px;" _hover-ignore="1">9块9包邮</a>
+        <a class="app_download " href="/index.php?r=app/download&amp;u=1"><i></i><b>APP</b>下载</a>
+    </div>
+</div>
+ <script>
+     $("#baner").html($("#banerX").html());
+</script> -->

@@ -1,0 +1,97 @@
+/*
+* KeLe大淘客CMS
+* 获取方法，QQ群：599675377
+* 版本 v1.x.x
+* */
+
+.kl-div {
+    display: none
+}
+
+*,
+:before,
+:after {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.shoufa-wrapper .title-wrapper .shoufa-tit .shoufa-img {
+    width: 56px;
+    height: 18px;
+}
+
+.shoufa-wrapper .title-wrapper .shoufa-tit {
+    height: 16px;
+}
+
+.release-list {
+    padding-bottom: 50px;
+}
+
+p,
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.shoufa-wrapper .title-wrapper .shoufa-tit .shoufa-img {
+    width: 56px;
+    height: 18px;
+}
+
+.shoufa-wrapper .title-wrapper .shoufa-tit {
+    height: 16px;
+}
+
+.ads-list .goods-item a.img .coupon-wrapper,
+.goods-list .goods-item a.img .coupon-wrapper,
+.goods-list2 .goods-item a.img .coupon-wrapper,
+.goods-list .goods-item a.img .today-wrapper,
+.goods-list2 .goods-item a.img .today-wrapper {
+    position: relative;
+    z-index: 10;
+    font-size: 10px;
+    text-align: center;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    background-color: #e53563;
+    color: #fff;
+    padding: 0px 5px;
+    font-family: "Microsoft Yahei";
+}
+
+.ads-list .goods-item a.img .coupon-wrapper b,
+.goods-list .goods-item a.img .coupon-wrapper b,
+.goods-list2 .goods-item a.img .coupon-wrapper b,
+.goods-list .goods-item a.img .today-wrapper b,
+.goods-list2 .goods-item a.img s.today-wrapper b {
+    font-family: Arial;
+    font-size: 10px;
+    font-family: "Microsoft Yahei";
+}
+
+.goods-list .goods-item a.img .today-wrapper,
+.goods-list2 .goods-item a.img .today-wrapper {
+    /*  position: absolute;
+    left: 0;
+    top: 0; */
+    z-index: 10;
+    text-align: center;
+    background-color: #2BD4C2;
+    color: #FFFFFF;
+    /* padding: 1px ; */
+}
+
+.goods-list .goods-item a.img img,
+.goods-list2 .goods-item a.img img {
+    width: 100%;
+    border: none;
+    vertical-align: top;
+    margin-top: -1.5rem;
+}
+
+.ads-list .goods-item a.img img {
+    width: 100%;
+    border: none;
+    margin-top: -1.5rem;
+}

@@ -1,0 +1,37 @@
+<div class="am-cf">
+    <input style="display:none;" id="keleTkl" value="【{{title}},券后价{{price}}元】复制框内整段文字，打开「手机淘宝APP」即可「领取优惠券」并购买{{kouling}}">
+    <input style="display:none;" id="keleTkl2" value="{{kouling}}">
+    <p class="am-text-warning am-text-default">【淘口令购买】长按框内 &gt; 全选 &gt; 复制</p>
+    <div class="detail-command-box am-panel">
+        <div class="am-panel-bd">
+            <span id="code1_ios" class="kl-tkl">【{{title}},券后价{{price}}元】复制框内整段文字，打开「手机淘宝APP」即可「领取优惠券」并购买{{kouling}}</span>
+            <textarea class="kl-tkl" id="android1" onfocus="iptNum(this, true);" oninput="iptNum(this, false);">【{{title}},券后价{{price}}元】复制框内整段文字，打开「手机淘宝APP」即可「领取优惠券」并购买{{kouling}}</textarea>
+        </div>
+    </div>
+
+
+    <div class="am-text-center am-margin-top-sm">
+        <button type="button" class="am-btn am-btn-danger am-round btn-kouling am-btn-sm" data-clipboard-text="{{kouling}}">  一键复制</button>
+    </div>
+	<div>
+	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	</div>
+
+
+    <p>
+        <span class="am-text-primary">点击复制后，请打开【手机淘宝APP】购买！ 注：若复制失败，请手动复制淘口令
+    </span>&nbsp
+        <span class="am-text-warning ">
+          温馨提示：手机无【手机淘宝APP】者，可选择领券购买方式哦~
+    </span>
+    </p>
+</div>
+<script src="./kele/script/autosize.min.js"></script>
+
+<script>
+    $(function() {
+
+        autosize($('#android1'));
+    });
+</script>

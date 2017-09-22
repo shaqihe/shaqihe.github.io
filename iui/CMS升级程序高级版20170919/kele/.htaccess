@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^kele.data$ test.data

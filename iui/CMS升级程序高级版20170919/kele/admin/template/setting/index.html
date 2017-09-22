@@ -1,0 +1,168 @@
+<div class="am-cf am-padding">
+    <div class="am-fl am-cf"><strong class="am-text-primary">基础设置</strong> /
+        <small>Setting</small>
+    </div>
+</div>
+<div class="am-margin">
+    <form id="form" class="am-form am-form-horizontal">
+        <div class="am-form-group">
+            <p class="am-u-md-2 am-form-label am-text-primary">系统参数</p>
+
+        </div>
+
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">访问密码</label>
+            <div class="am-u-md-6"><input type="text" placeholder="你的访问密码" v-model="setting.kele_password"></div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">访问管理页面的密码,请勿泄露</span></div>
+        </div>
+<!--        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">域名</label>
+            <div class="am-u-md-6"><input type="text" placeholder="无需填写" v-model="setting.kele_appDomain"></div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7"> 授权域名,请勿修改和泄漏</span> </div>
+        </div>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">系统SK</label>
+            <div class="am-u-md-6"> <input type="text" placeholder="无需填写，QQ群：67809360" v-model="setting.kele_secretKey"></div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">授权SecretKey,请勿修改和泄漏</span></div>
+        </div> -->
+        <hr>
+
+        <div class="am-form-group">
+            <p class="am-u-md-2 am-form-label am-text-primary">界面设置</p>
+
+        </div>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">淘口令显示</label>
+            <div class="am-u-md-6">
+                <label class="am-radio-inline">
+                    <input type="radio"   value="on" v-model="setting.dataoke_kouLing" > 打开
+                </label>
+                <label class="am-radio-inline">
+                    <input type="radio" value="off" v-model="setting.dataoke_kouLing" > 关闭
+                </label>
+            </div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">是否显示淘口令【商品详细页】</span></div>
+
+        </div>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">首页4格导航</label>
+            <div class="am-u-md-6">
+                <label class="am-radio-inline">
+                    <input type="radio" value="on" v-model="setting.dataoke_navGrid" > 打开
+                </label>
+                <label class="am-radio-inline">
+                    <input type="radio" value="off" v-model="setting.dataoke_navGrid" > 关闭
+                </label>
+            </div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">是否显示4格导航【首页】，可定制为10格</span></div>
+
+        </div>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">底部导航菜单显示</label>
+            <div class="am-u-md-6">
+                <label class="am-radio-inline">
+                    <input type="radio"  value="on" v-model="setting.dataoke_menu" > 打开
+                </label>
+                <label class="am-radio-inline">
+                    <input type="radio" value="off" v-model="setting.dataoke_menu" > 关闭
+                </label>
+            </div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">是否显示导航菜单</span></div>
+        </div>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">导航按钮显示</label>
+            <div class="am-u-md-6">
+                <label class="am-radio-inline">
+                    <input type="radio" value="on" v-model="setting.dataoke_navButton"> 打开
+                </label>
+                <label class="am-radio-inline">
+                    <input type="radio" value="off" v-model="setting.dataoke_navButton"> 关闭
+                </label>
+            </div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">是否显示导航菜单</span></div>
+        </div>
+        <hr>
+        <div class="am-form-group">
+            <p class="am-u-md-2 am-form-label am-text-primary">API参数</p>
+
+        </div>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">淘宝联盟PID</label>
+            <div class="am-u-md-6">
+                <input type="text" placeholder="填写淘宝联盟PID-mm开头" v-model="setting.taobao_pid">
+            </div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">淘宝联盟：<a href="http://pub.alimama.com" class="am-link-muted"  target="_blank">http://pub.alimama.com</a></span>
+            </div>
+        </div>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">淘宝联盟appkey</label>
+            <div class="am-u-md-6">
+                <input type="text" placeholder="Appkey" v-model="setting.taobao_appKey">
+            </div>
+            <div class="am-u-md-4">
+                <span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">淘宝开放平台：<a href="http://my.open.taobao.com" class="am-link-muted" target="_blank">http://my.open.taobao.com</a></span>
+            </div>
+        </div>
+
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label">淘宝联盟App Secret</label>
+            <div class="am-u-md-6">
+                <input type="text" placeholder="填写淘宝App Secretkey" v-model="setting.taobao_secretKey">
+            </div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">淘宝开放平台：<a href="http://my.open.taobao.com" class="am-link-muted" target="_blank">http://my.open.taobao.com</a></span>
+            </div>
+        </div>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label"> 大淘客Appkey</label>
+            <div class="am-u-md-6">
+                <input type="text" placeholder="填写大淘客开放平台Appkey（如不了解 无需设置）" v-model="setting.dataoke_appKey">
+            </div>
+            <div class="am-u-md-4"><span class="am-badge am-badge-secondary am-text-sm am-radius margin-top-7">大淘客开放平台：<a class="am-link-muted" href="http://www.dataoke.com/ucenter/appkey_apply.asp" target="_blank">http://www.dataoke.com/ucenter/appkey_apply.asp</a></span>
+            </div>
+        </div>
+        <hr>
+        <div class="am-form-group">
+            <label class="am-u-md-2 am-form-label"></label>
+            <div class="am-u-md-6">
+                <but ton type="button" class="am-btn am-btn-primary" v-on:click="updateSetting">保存设置</button>
+            </div>
+            <div class="am-u-md-4"></div>
+        </div>
+    </form>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#form',
+        data: {
+            setting: {}
+        },
+        methods: {
+            updateSetting: function() {
+                var data = JSON.parse(JSON.stringify(vm.setting));
+                $.post('./api.php?q=setting', data)
+                    .done(function(response) {
+                        if (response.status == 1) {
+                            $("#kele_confirm_info").html(response.info);
+                            $('#kele_confirm').modal({
+                                closeViaDimmer: false,
+                                onConfirm: function(options) {
+                                    window.location.href = "?v=setting/index";
+                                },
+                            });
+                        } else {
+                            $("#kele_alert_info").html(response.info);
+                            $('#kele_alert').modal({
+                                closeViaDimmer: false
+                            });
+                        }
+                    })
+
+            }
+        }
+    });
+    $.get('./api.php?q=setting')
+        .done(function(response) {
+            vm.setting = response;
+
+        })
+</script>

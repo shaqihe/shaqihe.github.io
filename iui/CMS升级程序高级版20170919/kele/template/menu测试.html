@@ -1,0 +1,89 @@
+<style>
+    .menu {
+        width: 100%;
+        position: absolute;
+        position: fixed;
+        bottom: 0;
+        background: #fff;
+        border-top: .1rem solid #F3E7E3;
+        z-index: 999;
+    }
+    
+    .menu img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-bottom: .2rem;
+    }
+    
+    .menu a {
+        display: inline-block;
+        color: #3d0505;
+    }
+    
+    .menu a span {
+        font-size: 1.2rem;
+    }
+    
+     :before,
+     :after {
+        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+    }
+</style>
+<div class="menu">
+    <ul class="am-avg-sm-5 am-text-center am-padding-top-xs">
+        <li class="am-vertical-align am-text-danger k-menu-item">
+            <a href="index.php?r=index/wap">
+                <img src="./kele/assets/images/home.png" class="am-text-center am-vertical-align-middle">
+                <br>
+                <span class="am-text-center am-vertical-align-middle">领券直播</span>
+            </a>
+        </li>
+        <li class="am-vertical-align k-menu-item">
+            <a href="index.php?r=ddq/wap">
+                <img src="./kele/assets/images/clock.png" class="am-text-center am-vertical-align-middle">
+                <br>
+                <span class="am-text-center am-vertical-align-middle">咚咚抢</span>
+            </a>
+        </li>
+        <li class="am-vertical-align k-menu-item">
+            <a href="index.php?r=index/9">
+                <img src="./kele/assets/images/9kuai9.png" class="am-text-center am-vertical-align-middle">
+                <br>
+                <span class="am-text-center am-vertical-align-middle">9块9</span>
+            </a>
+        </li>
+        <li class="am-vertical-align k-menu-item">
+            <a href="index.php?r=index/r">
+                <img src="./kele/assets/images/tuijian.png" class="am-text-center am-vertical-align-middle">
+                <br>
+                <span class=" am-text-center am-vertical-align-middle">小编推荐</span>
+            </a>
+        </li>
+        <li class="am-vertical-align k-menu-item">
+            <a href="index.php?r=p/wap">
+                <img src="./kele/assets/images/renqi.png" class="am-text-center am-vertical-align-middle">
+                <br>
+                <span class="am-text-center am-vertical-align-middle">超人气榜</span>
+            </a>
+        </li>
+        </li>
+
+    </ul>
+</div>
+<script type="text/javascript">
+    var urlstr = location.href;
+    //alert(urlstr);  
+    var urlstatus = false;
+    $(".menu a").each(function() {
+        if ((urlstr + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href') != '') {
+            $(this).find("span").addClass('am-text-danger');
+            urlstatus = true;
+        } else {
+            $(this).find("span").removeClass('am-text-danger');
+        }
+    });
+    if (!urlstatus) {
+        $(".menu span").eq(0).addClass('am-text-danger');
+    }
+</script>

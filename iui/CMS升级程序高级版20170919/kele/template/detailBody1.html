@@ -1,0 +1,62 @@
+<div class="dialog">
+    <div class="detail-mask"></div>
+    <div class="detail-mask-content">
+        <div class="detail-mask-allow">
+            <img src="./kele/assets/images/allow-top.png?t=" alt="">
+        </div>
+        <div class="detail-mask-command">
+            <div class="detail-mask-command-head">
+                <div class="detail-mask-command-ios">
+                    <p><span>请点击右上角</span> <img src="./kele/assets/images/browser-allow.png" alt=""></p>
+                    <p><span>并选择<i>在<i class="media-arial">Safari</i>中打开</i></span> <img src="./kele/assets/images/browser.png" alt=""></p>
+                </div>
+                <div class="detail-mask-command-android">
+                    <p><span>请点击右上角</span> <img class="android-img" src="./kele/assets/images/browser-allow.png" alt=""></p>
+                    <p><span>并选择<i> 在浏览器中打开</i></span></p>
+                </div>
+                <p><span>就可以到淘宝下单啦！</span></p>
+            </div>
+            <div class="detail-mask-con">
+                <div class="detail-mask-con-title">
+                    <div class="detail-mask-title-box">
+                        <p>或者</p>
+                    </div>
+                    <div class="detail-mask-line"></div>
+                </div>
+                <p class="detail-mask-tips">长按复制下方淘口令，打开手机淘宝购买</p>
+                <div class="btn detail-mask-command-box">
+                    <span id="code2_ios" class="kl-tkl2">{{kouling}}</span>
+                    <textarea id="android2" onfocus="iptNum(this, true);" oninput="iptNum(this, false);" class="kl-tkl2">{{kouling}}</textarea>
+
+                </div>
+
+                <div class="copy_taowords am-margin-bottom">
+
+                    <div class="am-text-center am-margin-top-sm">
+                        <button type="button" class="am-btn am-btn-danger am-round btn-kouling" data-clipboard-text="{{kouling}}">  一键复制</button>
+
+                        <div class="am-margin-top-sm am-text-xs am-text-primary am-margin-horizontal-sm">点击复制后，请打开【手机淘宝】购买！ <br> 注：若复制失败，请手动复制淘口令
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="//lib.baomitu.com/clipboard.js/1.6.1/clipboard.min.js"></script>
+<script src="./kele/script/kele.detail.js?v=20170226"></script>
+<script>
+    $(".btn-kouling").attr("data-clipboard-text", $("#keleTkl").val())
+    var clipboard = new Clipboard('.btn-kouling')
+    clipboard.on('success', function(e) {
+
+        $(".btn-kouling").text("复制成功")
+
+        $(".btn-kouling").addClass("am-btn-success").removeClass("am-text-primary")
+    });
+
+    clipboard.on('error', function(e) {
+        $(".btn-kouling").text("复制失败")
+        $(".btn-kouling").addClass("am-btn-default").removeClass("am-text-primary")
+    });
+</script>
